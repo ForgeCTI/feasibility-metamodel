@@ -1,16 +1,14 @@
-# Feasibility-Oriented Metamodel
+# A CTI Metamodel for Intelligence-driven and Infrastructure-aware Feasibility Evaluation
 
-Static GitHub Pages site for interactively browsing the feasibility-oriented metamodel.
+Static GitHub Pages visualization of the feasibility-oriented metamodel.
 
 ## Run locally
-
-From this folder:
 
 ```bash
 python -m http.server 8000
 ```
 
-Open:
+Then open:
 
 ```text
 http://localhost:8000/
@@ -18,10 +16,18 @@ http://localhost:8000/
 
 ## Notes
 
-- The site uses plain HTML, CSS, and JavaScript.
-- Cytoscape.js is loaded from a CDN.
-- Entities use relative positions stored in `metamodel.js` as `data.relativePosition`.
-- `script.js` converts relative positions into fixed Cytoscape positions using a large virtual canvas so entities do not overlap on small screens.
-- Nodes are locked to preserve the intended layout.
-- Each entity stores name, description, information class, possible sources of information, sub-metamodel, outgoing relationships, and incoming relationships.
-- Each edge stores source-side and target-side cardinalities.
+This version adapts the visualization to the visual identity of the main FORGE CTI website:
+
+- dark gradient background;
+- translucent card panels;
+- cyan/purple accent palette;
+- rounded cards and pill controls;
+- dark graph canvas with cyan grid;
+- entity colors preserved for the metamodel information classes.
+
+The layout uses relative node positions mapped onto a large virtual canvas to reduce overlaps.
+
+
+## Version v9 - Draw.io-like spacing
+
+This version extracts the entity coordinates from the `Leonardo's touch` page of the Draw.io source and maps them to Cytoscape using a Draw.io-like virtual canvas. The result preserves relative distances between entities much more closely than viewport-relative positioning.

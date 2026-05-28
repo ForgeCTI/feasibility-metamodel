@@ -23,7 +23,7 @@ const metamodel = {
     "submetamodels": {
       "organization": {
         "label": "Organization",
-        "description": "Organizational context, business requirements, sectors, countries, and security requirements."
+        "description": "The organization sub-metamodel, refines the organizational context needed to scope feasibility analysis and support prioritization"
       },
       "infrastructure": {
         "label": "Infrastructure",
@@ -35,8 +35,18 @@ const metamodel = {
       }
     },
     "possibleSourcesPolicy": "Each entity includes an entity-specific possibleSourcesOfInformation array used by the sidebar renderer.",
-    "positioning": "relative-to-canvas",
-    "positioningDescription": "Each node stores data.relativePosition with x/y in [0,1]. script.js converts these values into Cytoscape preset positions based on the current graph canvas size."
+    "positioning": "drawio-relative-layout",
+    "positioningDescription": "Each node stores exact Draw.io center coordinates and normalized relative coordinates. script.js maps them to a Draw.io-like virtual canvas with a spacing multiplier to preserve distances.",
+    "drawioLayout": {
+      "sourceMinX": 100.0,
+      "sourceMinY": 760.0,
+      "sourceWidth": 1570.0,
+      "sourceHeight": 910.0,
+      "spacing": 1.18,
+      "marginX": 160,
+      "marginY": 120,
+      "description": "Coordinates extracted from the Leonardo's touch page of metamodel_v2.drawio.html."
+    }
   },
   "nodes": [
     {
@@ -116,13 +126,22 @@ const metamodel = {
         ],
         "incomingRelations": [],
         "relativePosition": {
-          "x": 0.1603,
-          "y": 0.0892
-        }
-      },
-      "position": {
-        "x": 190.0,
-        "y": 750.0
+          "x": 0.095541,
+          "y": 0.010989
+        },
+        "drawioPosition": {
+          "x": 250.0,
+          "y": 770.0
+        },
+        "drawioGeometry": {
+          "x": 190.0,
+          "y": 750.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -176,13 +195,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.2352,
-          "y": 0.4308
-        }
-      },
-      "position": {
-        "x": 330.0,
-        "y": 1120.0
+          "x": 0.184713,
+          "y": 0.417582
+        },
+        "drawioPosition": {
+          "x": 390.0,
+          "y": 1140.0
+        },
+        "drawioGeometry": {
+          "x": 330.0,
+          "y": 1120.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -302,13 +330,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.3261,
-          "y": 0.6246
-        }
-      },
-      "position": {
-        "x": 500.0,
-        "y": 1330.0
+          "x": 0.292994,
+          "y": 0.648352
+        },
+        "drawioPosition": {
+          "x": 560.0,
+          "y": 1350.0
+        },
+        "drawioGeometry": {
+          "x": 500.0,
+          "y": 1330.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -375,13 +412,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.4759,
-          "y": 0.7538
-        }
-      },
-      "position": {
-        "x": 780.0,
-        "y": 1470.0
+          "x": 0.471338,
+          "y": 0.802198
+        },
+        "drawioPosition": {
+          "x": 840.0,
+          "y": 1490.0
+        },
+        "drawioGeometry": {
+          "x": 780.0,
+          "y": 1470.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -461,13 +507,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.3261,
-          "y": 0.92
-        }
-      },
-      "position": {
-        "x": 500.0,
-        "y": 1650.0
+          "x": 0.292994,
+          "y": 1.0
+        },
+        "drawioPosition": {
+          "x": 560.0,
+          "y": 1670.0
+        },
+        "drawioGeometry": {
+          "x": 500.0,
+          "y": 1650.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -561,13 +616,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.8023,
-          "y": 0.2092
-        }
-      },
-      "position": {
-        "x": 1390.0,
-        "y": 880.0
+          "x": 0.859873,
+          "y": 0.153846
+        },
+        "drawioPosition": {
+          "x": 1450.0,
+          "y": 900.0
+        },
+        "drawioGeometry": {
+          "x": 1390.0,
+          "y": 880.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -713,13 +777,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.7485,
-          "y": 0.5231
-        }
-      },
-      "position": {
-        "x": 1289.5,
-        "y": 1220.0
+          "x": 0.79586,
+          "y": 0.527473
+        },
+        "drawioPosition": {
+          "x": 1349.5,
+          "y": 1240.0
+        },
+        "drawioGeometry": {
+          "x": 1289.5,
+          "y": 1220.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -787,13 +860,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.8772,
-          "y": 0.3846
-        }
-      },
-      "position": {
-        "x": 1529.95,
-        "y": 1070.0
+          "x": 0.949013,
+          "y": 0.362637
+        },
+        "drawioPosition": {
+          "x": 1589.95,
+          "y": 1090.0
+        },
+        "drawioGeometry": {
+          "x": 1529.95,
+          "y": 1070.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -848,13 +930,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.7325,
-          "y": 0.6431
-        }
-      },
-      "position": {
-        "x": 1259.5,
-        "y": 1350.0
+          "x": 0.776752,
+          "y": 0.67033
+        },
+        "drawioPosition": {
+          "x": 1319.5,
+          "y": 1370.0
+        },
+        "drawioGeometry": {
+          "x": 1259.5,
+          "y": 1350.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -922,13 +1013,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.8023,
-          "y": 0.4677
-        }
-      },
-      "position": {
-        "x": 1390.0,
-        "y": 1160.0
+          "x": 0.859873,
+          "y": 0.461538
+        },
+        "drawioPosition": {
+          "x": 1450.0,
+          "y": 1180.0
+        },
+        "drawioGeometry": {
+          "x": 1390.0,
+          "y": 1160.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -983,13 +1083,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.3261,
-          "y": 0.4308
-        }
-      },
-      "position": {
-        "x": 500.0,
-        "y": 1120.0
+          "x": 0.292994,
+          "y": 0.417582
+        },
+        "drawioPosition": {
+          "x": 560.0,
+          "y": 1140.0
+        },
+        "drawioGeometry": {
+          "x": 500.0,
+          "y": 1120.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1030,13 +1139,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.2726,
-          "y": 0.7538
-        }
-      },
-      "position": {
-        "x": 400.0,
-        "y": 1470.0
+          "x": 0.229299,
+          "y": 0.802198
+        },
+        "drawioPosition": {
+          "x": 460.0,
+          "y": 1490.0
+        },
+        "drawioGeometry": {
+          "x": 400.0,
+          "y": 1470.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1077,13 +1195,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.4599,
-          "y": 0.8831
-        }
-      },
-      "position": {
-        "x": 750.0,
-        "y": 1610.0
+          "x": 0.452229,
+          "y": 0.956044
+        },
+        "drawioPosition": {
+          "x": 810.0,
+          "y": 1630.0
+        },
+        "drawioGeometry": {
+          "x": 750.0,
+          "y": 1610.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1124,13 +1251,22 @@ const metamodel = {
         ],
         "incomingRelations": [],
         "relativePosition": {
-          "x": 0.599,
-          "y": 0.7446
-        }
-      },
-      "position": {
-        "x": 1010.0,
-        "y": 1460.0
+          "x": 0.617834,
+          "y": 0.791209
+        },
+        "drawioPosition": {
+          "x": 1070.0,
+          "y": 1480.0
+        },
+        "drawioGeometry": {
+          "x": 1010.0,
+          "y": 1460.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1197,13 +1333,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.6578,
-          "y": 0.3015
-        }
-      },
-      "position": {
-        "x": 1120.0,
-        "y": 980.0
+          "x": 0.687898,
+          "y": 0.263736
+        },
+        "drawioPosition": {
+          "x": 1180.0,
+          "y": 1000.0
+        },
+        "drawioGeometry": {
+          "x": 1120.0,
+          "y": 980.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1271,13 +1416,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.08,
-          "y": 0.4215
-        }
-      },
-      "position": {
-        "x": 40.0,
-        "y": 1110.0
+          "x": 0.0,
+          "y": 0.406593
+        },
+        "drawioPosition": {
+          "x": 100.0,
+          "y": 1130.0
+        },
+        "drawioGeometry": {
+          "x": 40.0,
+          "y": 1110.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1358,13 +1512,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.5455,
-          "y": 0.5508
-        }
-      },
-      "position": {
-        "x": 910.0,
-        "y": 1250.0
+          "x": 0.55414,
+          "y": 0.56044
+        },
+        "drawioPosition": {
+          "x": 970.0,
+          "y": 1270.0
+        },
+        "drawioGeometry": {
+          "x": 910.0,
+          "y": 1250.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1405,13 +1568,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.6209,
-          "y": 0.6708
-        }
-      },
-      "position": {
-        "x": 1051.0,
-        "y": 1380.0
+          "x": 0.643949,
+          "y": 0.703297
+        },
+        "drawioPosition": {
+          "x": 1111.0,
+          "y": 1400.0
+        },
+        "drawioGeometry": {
+          "x": 1051.0,
+          "y": 1380.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1466,13 +1638,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.92,
-          "y": 0.2092
-        }
-      },
-      "position": {
-        "x": 1610.0,
-        "y": 880.0
+          "x": 1.0,
+          "y": 0.153846
+        },
+        "drawioPosition": {
+          "x": 1670.0,
+          "y": 900.0
+        },
+        "drawioGeometry": {
+          "x": 1610.0,
+          "y": 880.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1513,13 +1694,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.1656,
-          "y": 0.5508
-        }
-      },
-      "position": {
-        "x": 200.0,
-        "y": 1250.0
+          "x": 0.101911,
+          "y": 0.56044
+        },
+        "drawioPosition": {
+          "x": 260.0,
+          "y": 1270.0
+        },
+        "drawioGeometry": {
+          "x": 200.0,
+          "y": 1250.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1574,13 +1764,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.8023,
-          "y": 0.3015
-        }
-      },
-      "position": {
-        "x": 1390.0,
-        "y": 980.0
+          "x": 0.859873,
+          "y": 0.263736
+        },
+        "drawioPosition": {
+          "x": 1450.0,
+          "y": 1000.0
+        },
+        "drawioGeometry": {
+          "x": 1390.0,
+          "y": 980.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1621,13 +1820,22 @@ const metamodel = {
         ],
         "incomingRelations": [],
         "relativePosition": {
-          "x": 0.6688,
-          "y": 0.7446
-        }
-      },
-      "position": {
-        "x": 1140.5,
-        "y": 1460.0
+          "x": 0.700955,
+          "y": 0.791209
+        },
+        "drawioPosition": {
+          "x": 1200.5,
+          "y": 1480.0
+        },
+        "drawioGeometry": {
+          "x": 1140.5,
+          "y": 1460.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1734,13 +1942,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.4545,
-          "y": 0.6246
-        }
-      },
-      "position": {
-        "x": 740.0,
-        "y": 1330.0
+          "x": 0.44586,
+          "y": 0.648352
+        },
+        "drawioPosition": {
+          "x": 800.0,
+          "y": 1350.0
+        },
+        "drawioGeometry": {
+          "x": 740.0,
+          "y": 1330.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1808,13 +2025,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.5455,
-          "y": 0.6246
-        }
-      },
-      "position": {
-        "x": 910.0,
-        "y": 1330.0
+          "x": 0.55414,
+          "y": 0.648352
+        },
+        "drawioPosition": {
+          "x": 970.0,
+          "y": 1350.0
+        },
+        "drawioGeometry": {
+          "x": 910.0,
+          "y": 1330.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1869,13 +2095,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.4652,
-          "y": 0.08
-        }
-      },
-      "position": {
-        "x": 760.0,
-        "y": 740.0
+          "x": 0.458599,
+          "y": 0.0
+        },
+        "drawioPosition": {
+          "x": 820.0,
+          "y": 760.0
+        },
+        "drawioGeometry": {
+          "x": 760.0,
+          "y": 740.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -1969,13 +2204,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.615,
-          "y": 0.5508
-        }
-      },
-      "position": {
-        "x": 1040.0,
-        "y": 1250.0
+          "x": 0.636943,
+          "y": 0.56044
+        },
+        "drawioPosition": {
+          "x": 1100.0,
+          "y": 1270.0
+        },
+        "drawioGeometry": {
+          "x": 1040.0,
+          "y": 1250.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2029,13 +2273,22 @@ const metamodel = {
         ],
         "incomingRelations": [],
         "relativePosition": {
-          "x": 0.4759,
-          "y": 0.7077
-        }
-      },
-      "position": {
-        "x": 780.0,
-        "y": 1420.0
+          "x": 0.471338,
+          "y": 0.747253
+        },
+        "drawioPosition": {
+          "x": 840.0,
+          "y": 1440.0
+        },
+        "drawioGeometry": {
+          "x": 780.0,
+          "y": 1420.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2168,13 +2421,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.8023,
-          "y": 0.3846
-        }
-      },
-      "position": {
-        "x": 1390.0,
-        "y": 1070.0
+          "x": 0.859873,
+          "y": 0.362637
+        },
+        "drawioPosition": {
+          "x": 1450.0,
+          "y": 1090.0
+        },
+        "drawioGeometry": {
+          "x": 1390.0,
+          "y": 1070.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2242,13 +2504,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.7967,
-          "y": 0.7538
-        }
-      },
-      "position": {
-        "x": 1379.5,
-        "y": 1470.0
+          "x": 0.853185,
+          "y": 0.802198
+        },
+        "drawioPosition": {
+          "x": 1439.5,
+          "y": 1490.0
+        },
+        "drawioGeometry": {
+          "x": 1379.5,
+          "y": 1470.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2302,13 +2573,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.7402,
-          "y": 0.8392
-        }
-      },
-      "position": {
-        "x": 1274.0,
-        "y": 1562.5
+          "x": 0.795541,
+          "y": 0.901099
+        },
+        "drawioPosition": {
+          "x": 1349.0,
+          "y": 1580.0
+        },
+        "drawioGeometry": {
+          "x": 1274.0,
+          "y": 1562.5,
+          "width": 150.0,
+          "height": 35.0
+        },
+        "layoutWidth": 150.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 138.0
       }
     },
     {
@@ -2363,13 +2643,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.5567,
-          "y": 0.3015
-        }
-      },
-      "position": {
-        "x": 931.0,
-        "y": 980.0
+          "x": 0.567516,
+          "y": 0.263736
+        },
+        "drawioPosition": {
+          "x": 991.0,
+          "y": 1000.0
+        },
+        "drawioGeometry": {
+          "x": 931.0,
+          "y": 980.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2463,13 +2752,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.4652,
-          "y": 0.3015
-        }
-      },
-      "position": {
-        "x": 760.0,
-        "y": 980.0
+          "x": 0.458599,
+          "y": 0.263736
+        },
+        "drawioPosition": {
+          "x": 820.0,
+          "y": 1000.0
+        },
+        "drawioGeometry": {
+          "x": 760.0,
+          "y": 980.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2524,13 +2822,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.7006,
-          "y": 0.4585
-        }
-      },
-      "position": {
-        "x": 1200.0,
-        "y": 1150.0
+          "x": 0.738854,
+          "y": 0.450549
+        },
+        "drawioPosition": {
+          "x": 1260.0,
+          "y": 1170.0
+        },
+        "drawioGeometry": {
+          "x": 1200.0,
+          "y": 1150.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2585,13 +2892,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.3689,
-          "y": 0.7354
-        }
-      },
-      "position": {
-        "x": 580.0,
-        "y": 1450.0
+          "x": 0.343949,
+          "y": 0.78022
+        },
+        "drawioPosition": {
+          "x": 640.0,
+          "y": 1470.0
+        },
+        "drawioGeometry": {
+          "x": 580.0,
+          "y": 1450.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2632,13 +2948,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.92,
-          "y": 0.3108
-        }
-      },
-      "position": {
-        "x": 1610.0,
-        "y": 990.0
+          "x": 1.0,
+          "y": 0.274725
+        },
+        "drawioPosition": {
+          "x": 1670.0,
+          "y": 1010.0
+        },
+        "drawioGeometry": {
+          "x": 1610.0,
+          "y": 990.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2692,13 +3017,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.3796,
-          "y": 0.2092
-        }
-      },
-      "position": {
-        "x": 600.0,
-        "y": 880.0
+          "x": 0.356688,
+          "y": 0.153846
+        },
+        "drawioPosition": {
+          "x": 660.0,
+          "y": 900.0
+        },
+        "drawioGeometry": {
+          "x": 600.0,
+          "y": 880.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2739,13 +3073,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.615,
-          "y": 0.44
-        }
-      },
-      "position": {
-        "x": 1040.0,
-        "y": 1130.0
+          "x": 0.636943,
+          "y": 0.428571
+        },
+        "drawioPosition": {
+          "x": 1100.0,
+          "y": 1150.0
+        },
+        "drawioGeometry": {
+          "x": 1040.0,
+          "y": 1130.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2800,13 +3143,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.5567,
-          "y": 0.8092
-        }
-      },
-      "position": {
-        "x": 931.0,
-        "y": 1530.0
+          "x": 0.567516,
+          "y": 0.868132
+        },
+        "drawioPosition": {
+          "x": 991.0,
+          "y": 1550.0
+        },
+        "drawioGeometry": {
+          "x": 931.0,
+          "y": 1530.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     },
     {
@@ -2860,13 +3212,22 @@ const metamodel = {
           }
         ],
         "relativePosition": {
-          "x": 0.92,
-          "y": 0.1538
-        }
-      },
-      "position": {
-        "x": 1610.0,
-        "y": 820.0
+          "x": 1.0,
+          "y": 0.087912
+        },
+        "drawioPosition": {
+          "x": 1670.0,
+          "y": 840.0
+        },
+        "drawioGeometry": {
+          "x": 1610.0,
+          "y": 820.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0
       }
     }
   ],

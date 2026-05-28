@@ -1,5 +1,5 @@
 const CLASS_COLORS = {
-  "generic-a-priori": "#ef4444",
+  "generic-a-priori": "#ff4d5e",
   "instance-specific": "#3b82f6",
   "a-posteriori": "#facc15"
 };
@@ -23,33 +23,33 @@ const cy = cytoscape({
       style: {
         label: "data(name)",
         shape: "rectangle",
-        width: 150,
-        height: 56,
-        "background-color": "#e5e7eb",
+        width: "data(layoutWidth)",
+        height: "data(layoutHeight)",
+        "background-color": "#0c1727",
         "border-width": 6,
         "border-style": "double",
-        "border-color": "#111827",
-        color: "#111827",
+        "border-color": "#e9f1fb",
+        color: "#04111e",
         "font-weight": 700,
-        "font-size": "12px",
+        "font-size": "11px",
         "text-valign": "center",
         "text-halign": "center",
         "text-wrap": "wrap",
-        "text-max-width": "132px",
+        "text-max-width": "data(textMaxWidth)",
         "text-outline-width": 0
       }
     },
     {
       selector: 'node[informationClass = "generic-a-priori"]',
-      style: { "background-color": CLASS_COLORS["generic-a-priori"] }
+      style: { "background-color": CLASS_COLORS["generic-a-priori"], color: "#07111f" }
     },
     {
       selector: 'node[informationClass = "instance-specific"]',
-      style: { "background-color": CLASS_COLORS["instance-specific"], color: "#ffffff" }
+      style: { "background-color": CLASS_COLORS["instance-specific"], color: "#e9f1fb" }
     },
     {
       selector: 'node[informationClass = "a-posteriori"]',
-      style: { "background-color": CLASS_COLORS["a-posteriori"] }
+      style: { "background-color": CLASS_COLORS["a-posteriori"], color: "#07111f" }
     },
     {
       selector: "edge",
@@ -58,36 +58,36 @@ const cy = cytoscape({
         "source-label": "data(sourceCardinality)",
         "target-label": "data(targetCardinality)",
         width: 2,
-        "line-color": "#6b7280",
-        "target-arrow-color": "#6b7280",
+        "line-color": "rgba(173, 194, 217, 0.72)",
+        "target-arrow-color": "rgba(173, 194, 217, 0.72)",
         "target-arrow-shape": "vee",
         "curve-style": "bezier",
         "font-size": "10px",
         "source-text-offset": 22,
         "target-text-offset": 22,
-        color: "#111827",
+        color: "#e9f1fb",
         "source-text-margin-y": -8,
         "target-text-margin-y": -8,
-        "text-background-color": "#ffffff",
-        "text-background-opacity": 0.92,
+        "text-background-color": "#0c1727",
+        "text-background-opacity": 0.95,
         "text-background-padding": "3px",
         "text-rotation": "autorotate",
         "source-text-rotation": "autorotate",
         "target-text-rotation": "autorotate"
       }
     },
-    { selector: ".selected", style: { "border-color": "#000000", "line-color": "#000000", "target-arrow-color": "#000000", "z-index": 999 } },
-    { selector: ".neighbor", style: { "border-color": "#111827", "line-color": "#111827", "target-arrow-color": "#111827", opacity: 1 } },
+    { selector: ".selected", style: { "border-color": "#4cc9f0", "line-color": "#4cc9f0", "target-arrow-color": "#4cc9f0", "z-index": 999 } },
+    { selector: ".neighbor", style: { "border-color": "#e9f1fb", "line-color": "#e9f1fb", "target-arrow-color": "#e9f1fb", opacity: 1 } },
     { selector: ".faded", style: { opacity: 0.13 } },
     { selector: ".hidden", style: { display: "none" } }
   ],
 
-  layout: { name: "preset", fit: true, padding: 70, animate: false }
+  layout: { name: "preset", fit: true, padding: 90, animate: false }
 });
 
 cy.ready(() => {
   cy.nodes().lock();
-  cy.fit(cy.elements(), 70);
+  cy.fit(cy.elements(), 90);
   renderEmptyDetails();
   updateStats();
 });
@@ -105,7 +105,7 @@ window.addEventListener("resize", debounce(() => {
     }
   });
 
-  cy.fit(cy.elements().not(".hidden"), 70);
+  cy.fit(cy.elements().not(".hidden"), 90);
 }, 150));
 
 cy.on("tap", "node", (event) => {
@@ -144,33 +144,41 @@ document.querySelectorAll(".submodel-filter").forEach((checkbox) => checkbox.add
 document.getElementById("search").addEventListener("input", applyFilters);
 
 document.getElementById("fitButton").addEventListener("click", () => {
-  cy.fit(cy.elements().not(".hidden"), 70);
+  cy.fit(cy.elements().not(".hidden"), 90);
 });
 
 document.getElementById("resetButton").addEventListener("click", () => {
   document.getElementById("search").value = "";
   document.querySelectorAll(".class-filter, .submodel-filter").forEach((checkbox) => { checkbox.checked = true; });
   cy.elements().removeClass("hidden selected faded neighbor");
-  cy.fit(cy.elements(), 70);
+  cy.fit(cy.elements(), 90);
   renderEmptyDetails();
   updateStats();
 });
 
 
 function applyRelativePositions(model) {
-  const graph = document.getElementById("graph");
+  const layout = model.metadata && model.metadata.drawioLayout
+    ? model.metadata.drawioLayout
+    : {
+      sourceWidth: 1600,
+      sourceHeight: 1000,
+      spacing: 1.18,
+      marginX: 160,
+      marginY: 120
+    };
 
   /*
-   * Nodes store positions as values in [0, 1], but the graph needs a
-   * sufficiently large virtual canvas to avoid overlaps. Using the visible
-   * container size directly compresses the metamodel when the browser window
-   * is small. These minimum dimensions preserve the relative layout while
-   * leaving enough model-space distance between entities.
+   * The layout is based on the Draw.io coordinate system, not on the visible
+   * browser canvas. This preserves the relative distances of the original
+   * schema and prevents the graph from being compressed when the viewport is
+   * small. Cytoscape then fits this larger virtual model-space into view.
    */
-  const virtualWidth = Math.max(graph.clientWidth || 0, 2600);
-  const virtualHeight = Math.max(graph.clientHeight || 0, 1800);
-  const marginX = 140;
-  const marginY = 100;
+  const sourceWidth = Number(layout.sourceWidth || 1600);
+  const sourceHeight = Number(layout.sourceHeight || 1000);
+  const spacing = Number(layout.spacing || 1);
+  const marginX = Number(layout.marginX || 120);
+  const marginY = Number(layout.marginY || 90);
 
   model.nodes.forEach((node) => {
     const relative = node.data && node.data.relativePosition;
@@ -178,8 +186,8 @@ function applyRelativePositions(model) {
     if (!relative) return;
 
     node.position = {
-      x: marginX + relative.x * (virtualWidth - marginX * 2),
-      y: marginY + relative.y * (virtualHeight - marginY * 2)
+      x: marginX + relative.x * sourceWidth * spacing,
+      y: marginY + relative.y * sourceHeight * spacing
     };
   });
 }
@@ -209,14 +217,7 @@ function applyFilters() {
   cy.nodes().forEach((node) => {
     const data = node.data();
     const searchable = [
-      data.name,
-      data.description,
-      data.informationClassLabel,
-      data.submetamodelLabel,
-      ...(data.possibleSourcesOfInformation || []),
-      ...(data.attributes || []),
-      ...(data.outgoingRelations || []).map((rel) => `${rel.label} ${rel.targetLabel}`),
-      ...(data.incomingRelations || []).map((rel) => `${rel.sourceLabel} ${rel.label}`)
+      data.name
     ].flat().join(" ").toLowerCase();
 
     const matchesClass = activeClasses.includes(data.informationClass);
@@ -385,20 +386,20 @@ function renderRelationshipList(title, relationships, direction) {
     <h3>${escapeHtml(title)}</h3>
     <ul class="relation-list">
       ${relationships.map((rel) => {
-        const text = direction === "outgoing"
-          ? `${rel.label} → ${rel.targetLabel}`
-          : `${rel.sourceLabel} → ${rel.label}`;
-        const cardinality = direction === "outgoing"
-          ? `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`
-          : `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`;
-        return `
+    const text = direction === "outgoing"
+      ? `${rel.label} → ${rel.targetLabel}`
+      : `${rel.sourceLabel} → ${rel.label}`;
+    const cardinality = direction === "outgoing"
+      ? `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`
+      : `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`;
+    return `
           <li>
             <span>${escapeHtml(text)}</span>
             <small><strong>Cardinality:</strong> ${escapeHtml(cardinality)}</small>
             <small>${escapeHtml(rel.description || "")}</small>
           </li>
         `;
-      }).join("")}
+  }).join("")}
     </ul>
   `;
 }
