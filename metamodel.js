@@ -23,7 +23,7 @@ const metamodel = {
     "submetamodels": {
       "organization": {
         "label": "Organization",
-        "description": "The organization sub-metamodel, refines the organizational context needed to scope feasibility analysis and support prioritization"
+        "description": "Organizational context, business requirements, sectors, countries, and security requirements."
       },
       "infrastructure": {
         "label": "Infrastructure",

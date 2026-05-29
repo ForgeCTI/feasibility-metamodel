@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Studies | Feasibility-Oriented Metamodel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <main class="case-page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Validation suite</p>
+        <h1>Case Studies</h1>
+        <p class="subtitle">Coverage-driven scenarios used to validate the feasibility-oriented metamodel.</p>
+      </div>
+
+      <nav class="actions" aria-label="Page navigation">
+        <a class="button-link" href="../">Metamodel</a>
+        <a class="button-link active" href="./">Case studies</a>
+      </nav>
+    </header>
+
+    <section class="page-hero compact-hero">
+      <div class="page-hero-content">
+        <span class="hero-kicker">Representational validation</span>
+        <h2>Five synthetic but threat-grounded case studies</h2>
+        <p>
+          The suite instantiates the organization, infrastructure, and cyber threat sub-metamodels
+          to check whether feasibility determinants can be represented as relational constraints over
+          concrete infrastructure instances.
+        </p>
+      </div>
+    </section>
+
+    <section class="cases-layout">
+      <aside class="case-panel">
+        <h2>Feasibility determinants</h2>
+        <ul class="compact-list">
+          <li><strong>D1</strong> Targeting context</li>
+          <li><strong>D2</strong> Exposure and reachability</li>
+          <li><strong>D3</strong> Access and human factors</li>
+          <li><strong>D4</strong> Software weaknesses</li>
+          <li><strong>D5</strong> Configuration weaknesses</li>
+          <li><strong>D6</strong> Tooling and observable evidence</li>
+          <li><strong>D7</strong> Impact alignment</li>
+        </ul>
+
+        <h2>Interaction patterns</h2>
+        <ul class="compact-list">
+          <li><strong>P1</strong> Campaign targeting alignment</li>
+          <li><strong>P2</strong> Vulnerability binding</li>
+          <li><strong>P3</strong> Exposed service</li>
+          <li><strong>P4</strong> Attack steps to protection objectives</li>
+          <li><strong>P5</strong> Evidence-to-tooling linkage</li>
+        </ul>
+      </aside>
+
+      <section class="case-grid" aria-label="Available case studies">
+        <article class="case-card">
+          <div class="case-card-head">
+            <span class="case-id">CS1</span>
+            <span class="status-pill evidence">Targeting</span>
+          </div>
+          <h3>APT espionage against a regulated sector</h3>
+          <p>
+            Stresses targeting-driven feasibility analysis through a campaign with explicit sector
+            and country focus, a public-facing vulnerable service, internal reachability, and protected information assets.
+          </p>
+          <dl class="case-meta">
+            <dt>Feasibility focus</dt>
+            <dd>Campaign targeting, exposed service feasibility, software vulnerability binding, and confidentiality impact.</dd>
+            <dt>Determinants</dt>
+            <dd><span>D1</span><span>D2</span><span>D4</span><span>D7</span></dd>
+            <dt>Patterns</dt>
+            <dd><span>P1</span><span>P2</span><span>P3</span><span>P4</span></dd>
+          </dl>
+        
+          <a class="case-open-link" href="cs1/">Open implementation</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-card-head">
+            <span class="case-id">CS2</span>
+            <span class="status-pill evidence">Evidence-rich</span>
+          </div>
+          <h3>Ransomware intrusion with rich evidence</h3>
+          <p>
+            Stresses tooling and observable evidence through initial compromise, remote access tooling,
+            lateral movement, data collection, exfiltration, encryption, and operational impact.
+          </p>
+          <dl class="case-meta">
+            <dt>Feasibility focus</dt>
+            <dd>Software weakness binding, tool instances, indicators, internal reachability, and availability/integrity impact.</dd>
+            <dt>Determinants</dt>
+            <dd><span>D2</span><span>D4</span><span>D6</span><span>D7</span></dd>
+            <dt>Patterns</dt>
+            <dd><span>P2</span><span>P3</span><span>P4</span><span>P5</span></dd>
+          </dl>
+        
+          <a class="case-open-link" href="cs2/">Open implementation</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-card-head">
+            <span class="case-id">CS3</span>
+            <span class="status-pill exposure">Cloud/SaaS</span>
+          </div>
+          <h3>Cloud/SaaS exposure and data exfiltration</h3>
+          <p>
+            Stresses exposed cloud or SaaS services and configuration-driven weakness through discovery,
+            configuration or authorization exploitation, access to hosted information, and exfiltration.
+          </p>
+          <dl class="case-meta">
+            <dt>Feasibility focus</dt>
+            <dd>Exposed service constraints, configuration vulnerabilities, access to hosted information, and confidentiality impact.</dd>
+            <dt>Determinants</dt>
+            <dd><span>D2</span><span>D5</span><span>D7</span></dd>
+            <dt>Patterns</dt>
+            <dd><span>P2</span><span>P3</span><span>P4</span></dd>
+          </dl>
+        
+          <a class="case-open-link" href="cs3/">Open implementation</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-card-head">
+            <span class="case-id">CS4</span>
+            <span class="status-pill human">Human-mediated</span>
+          </div>
+          <h3>Phishing-led compromise and access misuse</h3>
+          <p>
+            Stresses user-mediated feasibility through phishing delivery, user interaction, payload execution,
+            tooling deployment, access misuse, and access to protected information.
+          </p>
+          <dl class="case-meta">
+            <dt>Feasibility focus</dt>
+            <dd>Human vulnerability binding, user-to-node access, tool evidence, and downstream impact on protected assets.</dd>
+            <dt>Determinants</dt>
+            <dd><span>D3</span><span>D6</span><span>D7</span></dd>
+            <dt>Patterns</dt>
+            <dd><span>P2</span><span>P4</span><span>P5</span></dd>
+          </dl>
+        
+          <a class="case-open-link" href="cs4/">Open implementation</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-card-head">
+            <span class="case-id">CS5</span>
+            <span class="status-pill supply">Supply chain</span>
+          </div>
+          <h3>Supply-chain or managed-service compromise</h3>
+          <p>
+            Stresses compromise propagation through a trusted managed component, attacker-controlled tooling,
+            internal reachability, post-compromise evidence, and impact on operational assets.
+          </p>
+          <dl class="case-meta">
+            <dt>Feasibility focus</dt>
+            <dd>Trusted component compromise, software weakness binding, internal propagation, evidence-to-tooling linkage, and business impact.</dd>
+            <dt>Determinants</dt>
+            <dd><span>D2</span><span>D4</span><span>D6</span><span>D7</span></dd>
+            <dt>Patterns</dt>
+            <dd><span>P2</span><span>P4</span><span>P5</span></dd>
+          </dl>
+        
+          <a class="case-open-link" href="cs5/">Open implementation</a>
+        </article>
+      </section>
+    </section>
+
+    <section class="coverage-section">
+      <div class="coverage-card">
+        <div>
+          <p class="eyebrow">Coverage summary</p>
+          <h2>All determinants and cross-domain patterns are exercised collectively</h2>
+          <p>
+            Individual cases are intentionally selective: each stresses a specific family of feasibility
+            conditions rather than attempting to cover all possible conditions.
+          </p>
+        </div>
+        <div class="coverage-table-wrap">
+          <table class="coverage-table">
+            <thead>
+              <tr>
+                <th>Case</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th><th>D5</th><th>D6</th><th>D7</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>CS1</td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+              <tr><td>CS2</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              <tr><td>CS3</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+              <tr><td>CS4</td><td></td><td></td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td></tr>
+              <tr><td>CS5</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -161,12 +161,12 @@ function applyRelativePositions(model) {
   const layout = model.metadata && model.metadata.drawioLayout
     ? model.metadata.drawioLayout
     : {
-      sourceWidth: 1600,
-      sourceHeight: 1000,
-      spacing: 1.18,
-      marginX: 160,
-      marginY: 120
-    };
+        sourceWidth: 1600,
+        sourceHeight: 1000,
+        spacing: 1.18,
+        marginX: 160,
+        marginY: 120
+      };
 
   /*
    * The layout is based on the Draw.io coordinate system, not on the visible
@@ -217,7 +217,14 @@ function applyFilters() {
   cy.nodes().forEach((node) => {
     const data = node.data();
     const searchable = [
-      data.name
+      data.name,
+      data.description,
+      data.informationClassLabel,
+      data.submetamodelLabel,
+      ...(data.possibleSourcesOfInformation || []),
+      ...(data.attributes || []),
+      ...(data.outgoingRelations || []).map((rel) => `${rel.label} ${rel.targetLabel}`),
+      ...(data.incomingRelations || []).map((rel) => `${rel.sourceLabel} ${rel.label}`)
     ].flat().join(" ").toLowerCase();
 
     const matchesClass = activeClasses.includes(data.informationClass);
@@ -386,20 +393,20 @@ function renderRelationshipList(title, relationships, direction) {
     <h3>${escapeHtml(title)}</h3>
     <ul class="relation-list">
       ${relationships.map((rel) => {
-    const text = direction === "outgoing"
-      ? `${rel.label} → ${rel.targetLabel}`
-      : `${rel.sourceLabel} → ${rel.label}`;
-    const cardinality = direction === "outgoing"
-      ? `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`
-      : `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`;
-    return `
+        const text = direction === "outgoing"
+          ? `${rel.label} → ${rel.targetLabel}`
+          : `${rel.sourceLabel} → ${rel.label}`;
+        const cardinality = direction === "outgoing"
+          ? `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`
+          : `${rel.sourceCardinality || ""} → ${rel.targetCardinality || ""}`;
+        return `
           <li>
             <span>${escapeHtml(text)}</span>
             <small><strong>Cardinality:</strong> ${escapeHtml(cardinality)}</small>
             <small>${escapeHtml(rel.description || "")}</small>
           </li>
         `;
-  }).join("")}
+      }).join("")}
     </ul>
   `;
 }

@@ -1,33 +1,20 @@
-# A CTI Metamodel for Intelligence-driven and Infrastructure-aware Feasibility Evaluation
+# Feasibility-Oriented Metamodel Website
 
-Static GitHub Pages visualization of the feasibility-oriented metamodel.
+Static HTML/CSS/JS site for the interactive feasibility-oriented metamodel and case-study implementations.
 
-## Run locally
+## Local preview
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open:
+Open `http://localhost:8000/`.
 
-```text
-http://localhost:8000/
-```
+## Pages
 
-## Notes
+- `/` interactive metamodel
+- `/cases/` case-study suite
+- `/cases/cs1/` CS1 implementation from `metamodel_v2-case1.drawio.xml`
+- `/cases/cs2/` to `/cases/cs5/` implementation folders prepared as placeholders
 
-This version adapts the visualization to the visual identity of the main FORGE CTI website:
-
-- dark gradient background;
-- translucent card panels;
-- cyan/purple accent palette;
-- rounded cards and pill controls;
-- dark graph canvas with cyan grid;
-- entity colors preserved for the metamodel information classes.
-
-The layout uses relative node positions mapped onto a large virtual canvas to reduce overlaps.
-
-
-## Version v9 - Draw.io-like spacing
-
-This version extracts the entity coordinates from the `Leonardo's touch` page of the Draw.io source and maps them to Cytoscape using a Draw.io-like virtual canvas. The result preserves relative distances between entities much more closely than viewport-relative positioning.
+CS1 entities are draggable. Use **Save layout** to store adjusted positions in local browser storage.

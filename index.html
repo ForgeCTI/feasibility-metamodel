@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <title>Feasibility-Oriented Metamodel</title>
@@ -11,7 +10,6 @@
   <!-- Cytoscape.js graph library. The site remains plain HTML/CSS/JS. -->
   <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
 </head>
-
 <body>
   <main class="app">
     <header class="topbar">
@@ -21,10 +19,12 @@
         <p class="subtitle">Click entities and relationships to inspect their details.</p>
       </div>
 
-      <div class="actions">
+      <nav class="actions" aria-label="Page navigation">
+        <a class="button-link active" href="./">Metamodel</a>
+        <a class="button-link" href="cases/">Case studies</a>
         <button id="fitButton" type="button">Fit graph</button>
         <button id="resetButton" type="button">Reset selection</button>
-      </div>
+      </nav>
     </header>
 
     <section class="content">
@@ -71,7 +71,7 @@
         </label>
 
         <h2>Search</h2>
-        <input id="search" type="search" placeholder="Search entity name..." />
+        <input id="search" type="search" placeholder="Search name, class, source, submodel, or relationship..." />
 
         <h2>Visible content</h2>
         <p id="stats" class="stats"></p>
@@ -95,5 +95,4 @@
   <script src="metamodel.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>
