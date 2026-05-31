@@ -1,10 +1,10 @@
 const caseData = {
   "metadata": {
     "id": "cs1",
-    "title": "CS1 \u2014 APT espionage against a regulated sector",
+    "title": "CS1 — APT espionage against a regulated sector",
     "shortTitle": "APT espionage against a regulated sector",
     "description": "This case implementation instantiates targeting context, an exposed vulnerable public-facing service, tool-supported exploitation, attack-step progression, and confidentiality impact on protected client data.",
-    "source": "metamodel_v2-case1.drawio.xml",
+    "source": "metamodel_v2-case1.drawio (1).xml",
     "determinants": [
       "D1",
       "D2",
@@ -40,9 +40,10 @@ const caseData = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "drawio": {
           "x": 240.0,
@@ -80,8 +81,8 @@ const caseData = {
             "name": "hasBusinessRequirment",
             "label": "hasBusinessRequirment",
             "sourceLabel": "FinOrg",
-            "targetLabel": "Sensitive data must remain confidential",
-            "description": "FinOrg hasBusinessRequirment Sensitive data must remain confidential.",
+            "targetLabel": "BR1: Sensitive data must remain confidential",
+            "description": "FinOrg hasBusinessRequirment BR1: Sensitive data must remain confidential.",
             "kind": "relationship"
           },
           {
@@ -99,8 +100,8 @@ const caseData = {
         "incomingRelations": []
       },
       "position": {
-        "x": 460.0,
-        "y": 230.0
+        "x": 520.0,
+        "y": 250.0
       }
     },
     {
@@ -115,9 +116,10 @@ const caseData = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 40.0,
@@ -175,8 +177,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 260.0,
-        "y": 230.0
+        "x": 320.0,
+        "y": 250.0
       }
     },
     {
@@ -191,9 +193,10 @@ const caseData = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 480.0,
@@ -228,8 +231,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 700.0,
-        "y": 230.0
+        "x": 760.0,
+        "y": 250.0
       }
     },
     {
@@ -237,16 +240,17 @@ const caseData = {
         "id": "qnMAzMPU2UIx0dhE2o8o-2",
         "name": "European Union",
         "label": "European Union",
-        "metamodelEntity": "International Body",
-        "description": "European Union is a case-study instance of the International Body entity in the feasibility-oriented metamodel. It specializes the metamodel concept: International Body is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "metamodelEntity": "InternationalBody",
+        "description": "European Union is a case-study instance of the InternationalBody entity in the feasibility-oriented metamodel. It specializes the metamodel concept: International Body is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": -40.0,
@@ -270,8 +274,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 180.0,
-        "y": 350.0
+        "x": 240.0,
+        "y": 370.0
       }
     },
     {
@@ -279,16 +283,17 @@ const caseData = {
         "id": "qnMAzMPU2UIx0dhE2o8o-4",
         "name": "NATO",
         "label": "NATO",
-        "metamodelEntity": "International Body",
-        "description": "NATO is a case-study instance of the International Body entity in the feasibility-oriented metamodel. It specializes the metamodel concept: International Body is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "metamodelEntity": "InternationalBody",
+        "description": "NATO is a case-study instance of the InternationalBody entity in the feasibility-oriented metamodel. It specializes the metamodel concept: International Body is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 120.0,
@@ -312,8 +317,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 340.0,
-        "y": 350.0
+        "x": 400.0,
+        "y": 370.0
       }
     },
     {
@@ -328,9 +333,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 730.0,
@@ -376,8 +380,8 @@ const caseData = {
         "incomingRelations": []
       },
       "position": {
-        "x": 950.0,
-        "y": 230.0
+        "x": 1010.0,
+        "y": 250.0
       }
     },
     {
@@ -392,9 +396,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 930.0,
@@ -430,8 +433,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1155.0,
-        "y": 230.0
+        "x": 1215.0,
+        "y": 250.0
       }
     },
     {
@@ -446,9 +449,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 930.0,
@@ -472,8 +476,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1155.0,
-        "y": 310.0
+        "x": 1215.0,
+        "y": 330.0
       }
     },
     {
@@ -488,9 +492,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 730.0,
@@ -514,8 +517,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 950.0,
-        "y": 140.0
+        "x": 1010.0,
+        "y": 160.0
       }
     },
     {
@@ -530,9 +533,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 730.0,
@@ -579,8 +581,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 950.0,
-        "y": 310.0
+        "x": 1010.0,
+        "y": 330.0
       }
     },
     {
@@ -595,9 +597,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 695.0,
@@ -655,8 +656,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 950.0,
-        "y": 410.0
+        "x": 1010.0,
+        "y": 430.0
       }
     },
     {
@@ -671,9 +672,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 540.0,
@@ -697,8 +699,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 770.0,
-        "y": 290.0
+        "x": 830.0,
+        "y": 310.0
       }
     },
     {
@@ -713,8 +715,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "MITRE ATT&CK technique mapping",
-          "Threat report abstraction"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 995.0,
@@ -738,8 +742,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1187.5,
-        "y": 410.0
+        "x": 1247.5,
+        "y": 430.0
       }
     },
     {
@@ -754,9 +758,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 695.0,
@@ -847,8 +850,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 950.0,
-        "y": 490.0
+        "x": 1010.0,
+        "y": 510.0
       }
     },
     {
@@ -863,9 +866,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 490.0,
@@ -901,8 +905,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 720.0,
-        "y": 620.0
+        "x": 780.0,
+        "y": 640.0
       }
     },
     {
@@ -917,8 +921,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "MITRE ATT&CK technique mapping",
-          "Threat report abstraction"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 995.0,
@@ -942,8 +948,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1187.5,
-        "y": 490.0
+        "x": 1247.5,
+        "y": 510.0
       }
     },
     {
@@ -958,9 +964,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 830.0,
@@ -1018,8 +1023,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1085.0,
-        "y": 690.0
+        "x": 1145.0,
+        "y": 710.0
       }
     },
     {
@@ -1034,9 +1039,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 670.0,
@@ -1060,8 +1066,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 900.0,
-        "y": 800.0
+        "x": 960.0,
+        "y": 820.0
       }
     },
     {
@@ -1076,8 +1082,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "MITRE ATT&CK technique mapping",
-          "Threat report abstraction"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 1040.0,
@@ -1101,8 +1109,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1232.5,
-        "y": 750.0
+        "x": 1292.5,
+        "y": 770.0
       }
     },
     {
@@ -1117,9 +1125,10 @@ const caseData = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Infrastructure inventory",
-          "Configuration baseline",
-          "Case-study implementation model"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "drawio": {
           "x": 150.0,
@@ -1177,8 +1186,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 380.0,
-        "y": 620.0
+        "x": 440.0,
+        "y": 640.0
       }
     },
     {
@@ -1193,9 +1202,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Vulnerability knowledge base",
-          "Scanner output or vulnerability assessment",
-          "Case-study implementation model"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 240.0,
@@ -1242,8 +1250,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 475.0,
-        "y": 510.0
+        "x": 535.0,
+        "y": 530.0
       }
     },
     {
@@ -1258,9 +1266,10 @@ const caseData = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Infrastructure inventory",
-          "Configuration baseline",
-          "Case-study implementation model"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 150.0,
@@ -1284,8 +1293,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 380.0,
-        "y": 700.0
+        "x": 440.0,
+        "y": 720.0
       }
     },
     {
@@ -1300,9 +1309,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 1070.0,
@@ -1349,8 +1357,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1290.0,
-        "y": 370.0
+        "x": 1350.0,
+        "y": 390.0
       }
     },
     {
@@ -1365,9 +1373,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report tooling description",
-          "Malware/tool intelligence",
-          "Case-study implementation model"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 600.0,
@@ -1403,8 +1410,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 830.0,
-        "y": 690.0
+        "x": 890.0,
+        "y": 710.0
       }
     },
     {
@@ -1419,9 +1426,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report tooling description",
-          "Malware/tool intelligence",
-          "Case-study implementation model"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 480.0,
@@ -1445,8 +1453,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 710.0,
-        "y": 780.0
+        "x": 770.0,
+        "y": 800.0
       }
     },
     {
@@ -1461,9 +1469,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 830.0,
@@ -1523,8 +1530,8 @@ const caseData = {
             "name": "compromises",
             "label": "compromises",
             "sourceLabel": "AS5: Exfiltration using Backdoor",
-            "targetLabel": "Client Data",
-            "description": "AS5: Exfiltration using Backdoor compromises Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "AS5: Exfiltration using Backdoor compromises ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           }
         ],
@@ -1543,8 +1550,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1085.0,
-        "y": 980.0
+        "x": 1145.0,
+        "y": 1000.0
       }
     },
     {
@@ -1559,9 +1566,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 830.0,
@@ -1630,8 +1636,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1085.0,
-        "y": 880.0
+        "x": 1145.0,
+        "y": 900.0
       }
     },
     {
@@ -1646,9 +1652,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 540.0,
@@ -1672,8 +1679,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 785.0,
-        "y": 880.0
+        "x": 845.0,
+        "y": 900.0
       }
     },
     {
@@ -1688,8 +1695,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "MITRE ATT&CK technique mapping",
-          "Threat report abstraction"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 1040.0,
@@ -1713,8 +1722,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1232.5,
-        "y": 820.0
+        "x": 1292.5,
+        "y": 840.0
       }
     },
     {
@@ -1729,9 +1738,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report tooling description",
-          "Malware/tool intelligence",
-          "Case-study implementation model"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 555.0,
@@ -1778,8 +1786,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 785.0,
-        "y": 970.0
+        "x": 845.0,
+        "y": 990.0
       }
     },
     {
@@ -1794,9 +1802,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report tooling description",
-          "Malware/tool intelligence",
-          "Case-study implementation model"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 555.0,
@@ -1820,8 +1829,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 785.0,
-        "y": 1060.0
+        "x": 845.0,
+        "y": 1080.0
       }
     },
     {
@@ -1836,9 +1845,8 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report tooling description",
-          "Malware/tool intelligence",
-          "Case-study implementation model"
+          "Case-study diagram",
+          "Case-study assumptions"
         ],
         "drawio": {
           "x": 350.0,
@@ -1874,8 +1882,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 580.0,
-        "y": 1170.0
+        "x": 640.0,
+        "y": 1190.0
       }
     },
     {
@@ -1890,9 +1898,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report tooling description",
-          "Malware/tool intelligence",
-          "Case-study implementation model"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 350.0,
@@ -1927,8 +1936,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 580.0,
-        "y": 1271.0
+        "x": 640.0,
+        "y": 1291.0
       }
     },
     {
@@ -1943,8 +1952,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "MITRE ATT&CK technique mapping",
-          "Threat report abstraction"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 1040.0,
@@ -1960,8 +1971,8 @@ const caseData = {
             "name": "impacts",
             "label": "impacts",
             "sourceLabel": "T1005",
-            "targetLabel": "Client Data",
-            "description": "T1005 impacts Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "T1005 impacts ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           }
         ],
@@ -1980,8 +1991,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1232.5,
-        "y": 1050.0
+        "x": 1292.5,
+        "y": 1070.0
       }
     },
     {
@@ -1996,9 +2007,10 @@ const caseData = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat report abstraction",
-          "ATT&CK mapping",
-          "Case-study CTI assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 840.0,
@@ -2034,8 +2046,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 1085.0,
-        "y": 1110.0
+        "x": 1145.0,
+        "y": 1130.0
       }
     },
     {
@@ -2050,9 +2062,10 @@ const caseData = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": -30.0,
@@ -2079,16 +2092,16 @@ const caseData = {
             "target": "R0iVRIHVncbUqXWk4Rdu-1",
             "name": "implementationOf",
             "label": "implementationOf",
-            "sourceLabel": "Client Data",
+            "sourceLabel": "ASR1: Client Data must remain confidential",
             "targetLabel": "Confidentiality",
-            "description": "Client Data implementationOf Confidentiality.",
+            "description": "ASR1: Client Data must remain confidential implementationOf Confidentiality.",
             "kind": "relationship"
           }
         ]
       },
       "position": {
-        "x": 200.0,
-        "y": 950.0
+        "x": 260.0,
+        "y": 970.0
       }
     },
     {
@@ -2103,9 +2116,10 @@ const caseData = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Infrastructure inventory",
-          "Configuration baseline",
-          "Case-study implementation model"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "drawio": {
           "x": 160.0,
@@ -2121,8 +2135,8 @@ const caseData = {
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
             "sourceLabel": "Client Data",
-            "targetLabel": "Client Data",
-            "description": "Client Data hasSecurityRequirement Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "Client Data hasSecurityRequirement ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           }
         ],
@@ -2141,31 +2155,32 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 390.0,
-        "y": 1000.0
+        "x": 450.0,
+        "y": 1020.0
       }
     },
     {
       "data": {
         "id": "nlouQvjGSw6mbKcphsgJ-1",
-        "name": "Client Data",
-        "label": "Client Data",
+        "name": "ASR1: Client Data must remain confidential",
+        "label": "ASR1: Client Data must remain confidential",
         "metamodelEntity": "AssetSecurityRequirement",
-        "description": "Client Data is a case-study instance of the AssetSecurityRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AssetSecurityRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "ASR1: Client Data must remain confidential is a case-study instance of the AssetSecurityRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AssetSecurityRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "drawio": {
           "x": 160.0,
           "y": 800.0,
           "width": 140.0,
-          "height": 40.0
+          "height": 60.0
         },
         "outgoingRelations": [
           {
@@ -2174,9 +2189,9 @@ const caseData = {
             "target": "R0iVRIHVncbUqXWk4Rdu-1",
             "name": "implementationOf",
             "label": "implementationOf",
-            "sourceLabel": "Client Data",
+            "sourceLabel": "ASR1: Client Data must remain confidential",
             "targetLabel": "Confidentiality",
-            "description": "Client Data implementationOf Confidentiality.",
+            "description": "ASR1: Client Data must remain confidential implementationOf Confidentiality.",
             "kind": "relationship"
           }
         ],
@@ -2188,8 +2203,8 @@ const caseData = {
             "name": "compromises",
             "label": "compromises",
             "sourceLabel": "AS5: Exfiltration using Backdoor",
-            "targetLabel": "Client Data",
-            "description": "AS5: Exfiltration using Backdoor compromises Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "AS5: Exfiltration using Backdoor compromises ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           },
           {
@@ -2199,8 +2214,8 @@ const caseData = {
             "name": "impacts",
             "label": "impacts",
             "sourceLabel": "T1005",
-            "targetLabel": "Client Data",
-            "description": "T1005 impacts Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "T1005 impacts ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           },
           {
@@ -2210,8 +2225,8 @@ const caseData = {
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
             "sourceLabel": "Client Data",
-            "targetLabel": "Client Data",
-            "description": "Client Data hasSecurityRequirement Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "Client Data hasSecurityRequirement ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           },
           {
@@ -2220,9 +2235,9 @@ const caseData = {
             "target": "nlouQvjGSw6mbKcphsgJ-1",
             "name": "drivesSecurityRequirement",
             "label": "drivesSecurityRequirement",
-            "sourceLabel": "Sensitive data must remain confidential",
-            "targetLabel": "Client Data",
-            "description": "Sensitive data must remain confidential drivesSecurityRequirement Client Data.",
+            "sourceLabel": "BR1: Sensitive data must remain confidential",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "BR1: Sensitive data must remain confidential drivesSecurityRequirement ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           },
           {
@@ -2232,32 +2247,33 @@ const caseData = {
             "name": "hostsResource",
             "label": "hostsResource",
             "sourceLabel": "N1: Web Server",
-            "targetLabel": "Client Data",
-            "description": "N1: Web Server hostsResource Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "N1: Web Server hostsResource ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           }
         ]
       },
       "position": {
-        "x": 390.0,
-        "y": 870.0
+        "x": 450.0,
+        "y": 900.0
       }
     },
     {
       "data": {
         "id": "6eOacnnfol6akpcFKc8O-3",
-        "name": "Sensitive data must remain confidential",
-        "label": "Sensitive data must remain confidential",
+        "name": "BR1: Sensitive data must remain confidential",
+        "label": "BR1: Sensitive data must remain confidential",
         "metamodelEntity": "BusinessRequirement",
-        "description": "Sensitive data must remain confidential is a case-study instance of the BusinessRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: BusinessRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "BR1: Sensitive data must remain confidential is a case-study instance of the BusinessRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: BusinessRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational profile",
-          "Risk management documentation",
-          "Case-study assumptions"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "drawio": {
           "x": -40.0,
@@ -2272,9 +2288,9 @@ const caseData = {
             "target": "nlouQvjGSw6mbKcphsgJ-1",
             "name": "drivesSecurityRequirement",
             "label": "drivesSecurityRequirement",
-            "sourceLabel": "Sensitive data must remain confidential",
-            "targetLabel": "Client Data",
-            "description": "Sensitive data must remain confidential drivesSecurityRequirement Client Data.",
+            "sourceLabel": "BR1: Sensitive data must remain confidential",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "BR1: Sensitive data must remain confidential drivesSecurityRequirement ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           }
         ],
@@ -2286,15 +2302,15 @@ const caseData = {
             "name": "hasBusinessRequirment",
             "label": "hasBusinessRequirment",
             "sourceLabel": "FinOrg",
-            "targetLabel": "Sensitive data must remain confidential",
-            "description": "FinOrg hasBusinessRequirment Sensitive data must remain confidential.",
+            "targetLabel": "BR1: Sensitive data must remain confidential",
+            "description": "FinOrg hasBusinessRequirment BR1: Sensitive data must remain confidential.",
             "kind": "relationship"
           }
         ]
       },
       "position": {
-        "x": 190.0,
-        "y": 650.0
+        "x": 250.0,
+        "y": 670.0
       }
     },
     {
@@ -2309,9 +2325,10 @@ const caseData = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Infrastructure inventory",
-          "Configuration baseline",
-          "Case-study implementation model"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "drawio": {
           "x": 360.0,
@@ -2347,8 +2364,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 580.0,
-        "y": 350.0
+        "x": 640.0,
+        "y": 370.0
       }
     },
     {
@@ -2363,9 +2380,10 @@ const caseData = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Infrastructure inventory",
-          "Configuration baseline",
-          "Case-study implementation model"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "drawio": {
           "x": 450.0,
@@ -2403,8 +2421,8 @@ const caseData = {
             "name": "hostsResource",
             "label": "hostsResource",
             "sourceLabel": "N1: Web Server",
-            "targetLabel": "Client Data",
-            "description": "N1: Web Server hostsResource Client Data.",
+            "targetLabel": "ASR1: Client Data must remain confidential",
+            "description": "N1: Web Server hostsResource ASR1: Client Data must remain confidential.",
             "kind": "relationship"
           }
         ],
@@ -2423,8 +2441,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 670.0,
-        "y": 440.0
+        "x": 730.0,
+        "y": 460.0
       }
     },
     {
@@ -2439,9 +2457,10 @@ const caseData = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Infrastructure inventory",
-          "Configuration baseline",
-          "Case-study implementation model"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "drawio": {
           "x": 520.0,
@@ -2465,8 +2484,8 @@ const caseData = {
         ]
       },
       "position": {
-        "x": 755.0,
-        "y": 350.0
+        "x": 815.0,
+        "y": 370.0
       }
     }
   ],
@@ -2505,8 +2524,8 @@ const caseData = {
         "name": "hasBusinessRequirment",
         "label": "hasBusinessRequirment",
         "sourceLabel": "FinOrg",
-        "targetLabel": "Sensitive data must remain confidential",
-        "description": "FinOrg hasBusinessRequirment Sensitive data must remain confidential.",
+        "targetLabel": "BR1: Sensitive data must remain confidential",
+        "description": "FinOrg hasBusinessRequirment BR1: Sensitive data must remain confidential.",
         "kind": "relationship"
       }
     },
@@ -2908,8 +2927,8 @@ const caseData = {
         "name": "compromises",
         "label": "compromises",
         "sourceLabel": "AS5: Exfiltration using Backdoor",
-        "targetLabel": "Client Data",
-        "description": "AS5: Exfiltration using Backdoor compromises Client Data.",
+        "targetLabel": "ASR1: Client Data must remain confidential",
+        "description": "AS5: Exfiltration using Backdoor compromises ASR1: Client Data must remain confidential.",
         "kind": "relationship"
       }
     },
@@ -3025,8 +3044,8 @@ const caseData = {
         "name": "impacts",
         "label": "impacts",
         "sourceLabel": "T1005",
-        "targetLabel": "Client Data",
-        "description": "T1005 impacts Client Data.",
+        "targetLabel": "ASR1: Client Data must remain confidential",
+        "description": "T1005 impacts ASR1: Client Data must remain confidential.",
         "kind": "relationship"
       }
     },
@@ -3051,8 +3070,8 @@ const caseData = {
         "name": "hasSecurityRequirement",
         "label": "hasSecurityRequirement",
         "sourceLabel": "Client Data",
-        "targetLabel": "Client Data",
-        "description": "Client Data hasSecurityRequirement Client Data.",
+        "targetLabel": "ASR1: Client Data must remain confidential",
+        "description": "Client Data hasSecurityRequirement ASR1: Client Data must remain confidential.",
         "kind": "relationship"
       }
     },
@@ -3063,9 +3082,9 @@ const caseData = {
         "target": "R0iVRIHVncbUqXWk4Rdu-1",
         "name": "implementationOf",
         "label": "implementationOf",
-        "sourceLabel": "Client Data",
+        "sourceLabel": "ASR1: Client Data must remain confidential",
         "targetLabel": "Confidentiality",
-        "description": "Client Data implementationOf Confidentiality.",
+        "description": "ASR1: Client Data must remain confidential implementationOf Confidentiality.",
         "kind": "relationship"
       }
     },
@@ -3076,9 +3095,9 @@ const caseData = {
         "target": "nlouQvjGSw6mbKcphsgJ-1",
         "name": "drivesSecurityRequirement",
         "label": "drivesSecurityRequirement",
-        "sourceLabel": "Sensitive data must remain confidential",
-        "targetLabel": "Client Data",
-        "description": "Sensitive data must remain confidential drivesSecurityRequirement Client Data.",
+        "sourceLabel": "BR1: Sensitive data must remain confidential",
+        "targetLabel": "ASR1: Client Data must remain confidential",
+        "description": "BR1: Sensitive data must remain confidential drivesSecurityRequirement ASR1: Client Data must remain confidential.",
         "kind": "relationship"
       }
     },
@@ -3129,8 +3148,8 @@ const caseData = {
         "name": "hostsResource",
         "label": "hostsResource",
         "sourceLabel": "N1: Web Server",
-        "targetLabel": "Client Data",
-        "description": "N1: Web Server hostsResource Client Data.",
+        "targetLabel": "ASR1: Client Data must remain confidential",
+        "description": "N1: Web Server hostsResource ASR1: Client Data must remain confidential.",
         "kind": "relationship"
       }
     }
