@@ -1,96 +1,94 @@
 const caseData = {
   "metadata": {
     "id": "cs2",
-    "title": "CS2 \u2014 Ransomware intrusion with rich evidence",
-    "shortTitle": "Ransomware intrusion with rich evidence",
-    "description": "This case implementation instantiates a ransomware intrusion with initial phishing, loader execution, infrastructure discovery, lateral movement, ransomware execution, observable tooling, and impacts on protected organizational data.",
-    "source": "metamodel_v2-case2.drawio.xml",
-    "determinants": [
-      "D2",
-      "D4",
-      "D6",
-      "D7"
-    ],
-    "patterns": [
-      "P2",
-      "P3",
-      "P4",
-      "P5"
-    ],
+    "title": "CS2 — Case study 2 implementation",
+    "shortTitle": "Case study 2 implementation",
+    "description": "Interactive case-study implementation generated from the updated Draw.io model.",
+    "source": "metamodel_v2-case2.drawio (1).xml",
     "layout": {
       "minX": -1030.0,
       "minY": 240.0,
-      "maxX": 1560.0,
+      "maxX": 1535.0,
       "maxY": 1180.0,
-      "width": 2870.0,
-      "height": 1220.0,
-      "padding": 140
+      "width": 2805.0,
+      "height": 1180.0,
+      "padding": 120
     }
   },
   "nodes": [
     {
       "data": {
         "id": "DXn6xaRNV8009_fZBqU1-7",
-        "name": "CS2OrgOrganization",
-        "label": "CS2OrgOrganization",
-        "instanceName": "CS2Org",
+        "name": "CS2Org",
+        "label": "CS2Org",
         "metamodelEntity": "Organization",
-        "description": "CS2OrgOrganization is a case-study instance of the Organization entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Organization is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "CS2Org is a case-study instance of the Organization entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational documentation, policies, and business requirement catalogues",
-          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
-          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
-          "Interviews, questionnaires, and manual assessment of the target organization"
+          "Organization registry and official website",
+          "Internal governance documents and organizational charts",
+          "CMDB or asset ownership records",
+          "Security interviews with business and IT owners"
         ],
-        "drawio": {
+        "drawioId": "DXn6xaRNV8009_fZBqU1-7",
+        "drawioPosition": {
+          "x": 380.0,
+          "y": 295.0
+        },
+        "drawioGeometry": {
           "x": 320.0,
           "y": 275.0,
           "width": 120.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 108.0,
         "outgoingRelations": [
           {
             "id": "DXn6xaRNV8009_fZBqU1-5",
             "name": "manages",
             "label": "manages",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-7",
+            "sourceLabel": "CS2Org",
+            "sourceCardinality": "1",
             "target": "DXn6xaRNV8009_fZBqU1-10",
-            "sourceLabel": "CS2OrgOrganization",
-            "targetLabel": "Main-InfraInfrastructure",
-            "description": "CS2OrgOrganization manages Main-InfraInfrastructure."
+            "targetLabel": "Main-Infra",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* Infrastructure",
+            "description": "CS2Org manages Main-Infra."
           },
           {
             "id": "t9Zseuc7trHZRqGckOzh-4",
             "name": "hasBusinessRequirement",
             "label": "hasBusinessRequirement",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-7",
+            "sourceLabel": "CS2Org",
+            "sourceCardinality": "1",
             "target": "t9Zseuc7trHZRqGckOzh-3",
-            "sourceLabel": "CS2OrgOrganization",
-            "targetLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-            "description": "CS2OrgOrganization hasBusinessRequirement BR1: Organization Data must be ProtectedBusinessRequirement."
+            "targetLabel": "BR1: Organization Data must be Protected",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* BusinessRequirement",
+            "description": "CS2Org hasBusinessRequirement BR1: Organization Data must be Protected."
           }
         ],
         "incomingRelations": []
       },
       "position": {
-        "x": 1490.0,
+        "x": 1530.0,
         "y": 175.0
       }
     },
     {
       "data": {
         "id": "DXn6xaRNV8009_fZBqU1-10",
-        "name": "Main-InfraInfrastructure",
-        "label": "Main-InfraInfrastructure",
-        "instanceName": "Main-Infra",
+        "name": "Main-Infra",
+        "label": "Main-Infra",
         "metamodelEntity": "Infrastructure",
-        "description": "Main-InfraInfrastructure is a case-study instance of the Infrastructure entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Infrastructure is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "Main-Infra is a case-study instance of the Infrastructure entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
@@ -101,45 +99,59 @@ const caseData = {
           "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
           "Interviews, questionnaires, and manual assessment of the target organization"
         ],
-        "drawio": {
+        "drawioId": "DXn6xaRNV8009_fZBqU1-10",
+        "drawioPosition": {
+          "x": 380.0,
+          "y": 385.0
+        },
+        "drawioGeometry": {
           "x": 320.0,
           "y": 365.0,
           "width": 120.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 108.0,
         "outgoingRelations": [
           {
             "id": "mOJ0zVzwKr9MfSjEqvfX-1",
             "name": "usedBy",
             "label": "usedBy",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-10",
+            "sourceLabel": "Main-Infra",
+            "sourceCardinality": "1",
             "target": "nj5hpQ6kMEfSOXQIEmYd-1",
-            "sourceLabel": "Main-InfraInfrastructure",
-            "targetLabel": "U1: Employee 1User",
-            "description": "Main-InfraInfrastructure usedBy U1: Employee 1User."
+            "targetLabel": "U1: Employee 1",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* User",
+            "description": "Main-Infra usedBy U1: Employee 1."
           },
           {
             "id": "Zcl4WLPny9slI91kZ9_o-2",
             "name": "madeBy",
             "label": "madeBy",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-10",
+            "sourceLabel": "Main-Infra",
+            "sourceCardinality": "1",
             "target": "Zcl4WLPny9slI91kZ9_o-1",
-            "sourceLabel": "Main-InfraInfrastructure",
-            "targetLabel": "N1: WorkstationNode",
-            "description": "Main-InfraInfrastructure madeBy N1: WorkstationNode."
+            "targetLabel": "N1: Workstation",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* Node",
+            "description": "Main-Infra madeBy N1: Workstation."
           },
           {
             "id": "flr8XU77myX9OvzYn5zU-7",
             "name": "madeBy",
             "label": "madeBy",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-10",
+            "sourceLabel": "Main-Infra",
+            "sourceCardinality": "1",
             "target": "fOiOA0MLRFIGU3IK7tZ9-1",
-            "sourceLabel": "Main-InfraInfrastructure",
-            "targetLabel": "N2: Database ServerNode",
-            "description": "Main-InfraInfrastructure madeBy N2: Database ServerNode."
+            "targetLabel": "N2: Database Server",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* Node",
+            "description": "Main-Infra madeBy N2: Database Server."
           }
         ],
         "incomingRelations": [
@@ -147,89 +159,119 @@ const caseData = {
             "id": "DXn6xaRNV8009_fZBqU1-5",
             "name": "manages",
             "label": "manages",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-7",
+            "sourceLabel": "CS2Org",
+            "sourceCardinality": "1",
             "target": "DXn6xaRNV8009_fZBqU1-10",
-            "sourceLabel": "CS2OrgOrganization",
-            "targetLabel": "Main-InfraInfrastructure",
-            "description": "CS2OrgOrganization manages Main-InfraInfrastructure."
+            "targetLabel": "Main-Infra",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* Infrastructure",
+            "description": "CS2Org manages Main-Infra."
           }
         ]
       },
       "position": {
-        "x": 1490.0,
+        "x": 1530.0,
         "y": 265.0
       }
     },
     {
       "data": {
         "id": "DXTTVG0T_Y0voirAc8tk-7",
-        "name": "UnknownThreatSource",
-        "label": "UnknownThreatSource",
-        "instanceName": "Unknown",
-        "metamodelEntity": "ThreatSource",
-        "description": "UnknownThreatSource is a case-study instance of the ThreatSource entity in the feasibility-oriented metamodel. It specializes the metamodel concept: ThreatSource is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "name": "Unknown",
+        "label": "Unknown",
+        "metamodelEntity": "ThreatActor",
+        "description": "Unknown is a case-study instance of the ThreatActor entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "DXTTVG0T_Y0voirAc8tk-7",
+        "drawioPosition": {
+          "x": 1229.0,
+          "y": 260.0
+        },
+        "drawioGeometry": {
           "x": 1169.0,
           "y": 240.0,
           "width": 120.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 108.0,
         "outgoingRelations": [
           {
             "id": "DXTTVG0T_Y0voirAc8tk-5",
             "name": "initiates",
             "label": "initiates",
-            "kind": "relationship",
             "source": "DXTTVG0T_Y0voirAc8tk-7",
+            "sourceLabel": "Unknown",
+            "sourceCardinality": "1",
             "target": "DXTTVG0T_Y0voirAc8tk-13",
-            "sourceLabel": "UnknownThreatSource",
-            "targetLabel": "Ransomware AttackThreatEvent",
-            "description": "UnknownThreatSource initiates Ransomware AttackThreatEvent."
+            "targetLabel": "Ransomware Attack",
+            "targetCardinality": "1",
+            "cardinality": "ThreatActor 1 — 1 Threat",
+            "description": "Unknown initiates Ransomware Attack."
           }
         ],
         "incomingRelations": []
       },
       "position": {
-        "x": 2339.0,
+        "x": 2379.0,
         "y": 140.0
       }
     },
     {
       "data": {
         "id": "DXTTVG0T_Y0voirAc8tk-13",
-        "name": "Ransomware AttackThreatEvent",
-        "label": "Ransomware AttackThreatEvent",
-        "instanceName": "Ransomware Attack",
-        "metamodelEntity": "ThreatEvent",
-        "description": "Ransomware AttackThreatEvent is a case-study instance of the ThreatEvent entity in the feasibility-oriented metamodel. It specializes the metamodel concept: ThreatEvent is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "name": "Ransomware Attack",
+        "label": "Ransomware Attack",
+        "metamodelEntity": "Threat",
+        "description": "Ransomware Attack is a case-study instance of the Threat entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Incident timelines and case-management systems",
+          "SIEM and EDR event records",
+          "CTI reports describing observed activity",
+          "Forensic investigation notes"
+        ],
+        "drawioId": "DXTTVG0T_Y0voirAc8tk-13",
+        "drawioPosition": {
+          "x": 1229.0,
+          "y": 340.0
+        },
+        "drawioGeometry": {
           "x": 1169.0,
           "y": 320.0,
           "width": 120.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 108.0,
         "outgoingRelations": [
           {
-            "id": "isKCdTBRIcX7ZzF2_SF_-7",
-            "name": "relatedTo",
-            "label": "relatedTo",
-            "kind": "relationship",
+            "id": "isKCdTBRIcX7ZzF2_SF_-1",
+            "name": "startsWith",
+            "label": "startsWith",
             "source": "DXTTVG0T_Y0voirAc8tk-13",
+            "sourceLabel": "Ransomware Attack",
+            "sourceCardinality": "",
             "target": "isKCdTBRIcX7ZzF2_SF_-5",
-            "sourceLabel": "Ransomware AttackThreatEvent",
-            "targetLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "description": "Ransomware AttackThreatEvent relatedTo AS1: Phishing Attack with Weaponized DocumentAttackStepItem."
+            "targetLabel": "AS1: Phishing Attack with Weaponized Document",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "Ransomware Attack startsWith AS1: Phishing Attack with Weaponized Document."
           }
         ],
         "incomingRelations": [
@@ -237,178 +279,198 @@ const caseData = {
             "id": "DXTTVG0T_Y0voirAc8tk-5",
             "name": "initiates",
             "label": "initiates",
-            "kind": "relationship",
             "source": "DXTTVG0T_Y0voirAc8tk-7",
+            "sourceLabel": "Unknown",
+            "sourceCardinality": "1",
             "target": "DXTTVG0T_Y0voirAc8tk-13",
-            "sourceLabel": "UnknownThreatSource",
-            "targetLabel": "Ransomware AttackThreatEvent",
-            "description": "UnknownThreatSource initiates Ransomware AttackThreatEvent."
+            "targetLabel": "Ransomware Attack",
+            "targetCardinality": "1",
+            "cardinality": "ThreatActor 1 — 1 Threat",
+            "description": "Unknown initiates Ransomware Attack."
           }
         ]
       },
       "position": {
-        "x": 2339.0,
+        "x": 2379.0,
         "y": 220.0
       }
     },
     {
       "data": {
         "id": "isKCdTBRIcX7ZzF2_SF_-5",
-        "name": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "label": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "instanceName": "AS1: Phishing Attack with Weaponized Document",
-        "metamodelEntity": "AttackStepItem",
-        "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem is a case-study instance of the AttackStepItem entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStepItem is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "name": "AS1: Phishing Attack with Weaponized Document",
+        "label": "AS1: Phishing Attack with Weaponized Document",
+        "metamodelEntity": "ThreatStep",
+        "description": "AS1: Phishing Attack with Weaponized Document is a case-study instance of the ThreatStep entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "isKCdTBRIcX7ZzF2_SF_-5",
+        "drawioPosition": {
+          "x": 1229.0,
+          "y": 445.0
+        },
+        "drawioGeometry": {
           "x": 1134.0,
           "y": 420.0,
           "width": 190.0,
           "height": 50.0
         },
+        "layoutWidth": 190.0,
+        "layoutHeight": 50.0,
+        "textMaxWidth": 178.0,
         "outgoingRelations": [
           {
             "id": "isKCdTBRIcX7ZzF2_SF_-3",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "0..*",
             "target": "isKCdTBRIcX7ZzF2_SF_-6",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem followedBy AS2: BazarLoader ExecutionAttackStepItem."
+            "targetLabel": "AS2: BazarLoader Execution",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS1: Phishing Attack with Weaponized Document followedBy AS2: BazarLoader Execution."
           },
           {
             "id": "5_uvdN_fO5OIq28JDHqv-1",
             "name": "exploits",
             "label": "exploits",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "",
             "target": "1zz9dUDx6NtFQG9qIyYO-1",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "Prone to PhishingHumanVulnerability",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem exploits Prone to PhishingHumanVulnerability."
-          },
-          {
-            "id": "nuMpVuPP5FOWfUhDepc9-1",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "isKCdTBRIcX7ZzF2_SF_-5",
-            "target": "nuMpVuPP5FOWfUhDepc9-3",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "Phishing with AttachmentAttackStep",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem refersTo Phishing with AttachmentAttackStep."
+            "targetLabel": "Prone to Phishing",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "AS1: Phishing Attack with Weaponized Document exploits Prone to Phishing."
           },
           {
             "id": "7615FOlYJKEI97l76xLW-1",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "1..*",
             "target": "9aJOADVmqYrCJmHLZuZJ-1",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "T1566.001TTP",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem implements T1566.001TTP."
+            "targetLabel": "T1566.001",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS1: Phishing Attack with Weaponized Document implements T1566.001."
           },
           {
             "id": "niolT3tTzyHpKWggiv-i-1",
             "name": "employs",
             "label": "employs",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "1..*",
             "target": "niolT3tTzyHpKWggiv-i-3",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "Weaponized DocumentAttackToolInstance",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem employs Weaponized DocumentAttackToolInstance."
+            "targetLabel": "Weaponized Document",
+            "targetCardinality": "0..*",
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "AS1: Phishing Attack with Weaponized Document employs Weaponized Document."
           }
         ],
         "incomingRelations": [
           {
-            "id": "isKCdTBRIcX7ZzF2_SF_-7",
-            "name": "relatedTo",
-            "label": "relatedTo",
-            "kind": "relationship",
+            "id": "isKCdTBRIcX7ZzF2_SF_-1",
+            "name": "startsWith",
+            "label": "startsWith",
             "source": "DXTTVG0T_Y0voirAc8tk-13",
+            "sourceLabel": "Ransomware Attack",
+            "sourceCardinality": "",
             "target": "isKCdTBRIcX7ZzF2_SF_-5",
-            "sourceLabel": "Ransomware AttackThreatEvent",
-            "targetLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "description": "Ransomware AttackThreatEvent relatedTo AS1: Phishing Attack with Weaponized DocumentAttackStepItem."
+            "targetLabel": "AS1: Phishing Attack with Weaponized Document",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "Ransomware Attack startsWith AS1: Phishing Attack with Weaponized Document."
           }
         ]
       },
       "position": {
-        "x": 2304.0,
-        "y": 320.0
+        "x": 2379.0,
+        "y": 325.0
       }
     },
     {
       "data": {
         "id": "isKCdTBRIcX7ZzF2_SF_-6",
-        "name": "AS2: BazarLoader ExecutionAttackStepItem",
-        "label": "AS2: BazarLoader ExecutionAttackStepItem",
-        "instanceName": "AS2: BazarLoader Execution",
-        "metamodelEntity": "AttackStepItem",
-        "description": "AS2: BazarLoader ExecutionAttackStepItem is a case-study instance of the AttackStepItem entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStepItem is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "name": "AS2: BazarLoader Execution",
+        "label": "AS2: BazarLoader Execution",
+        "metamodelEntity": "ThreatStep",
+        "description": "AS2: BazarLoader Execution is a case-study instance of the ThreatStep entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "isKCdTBRIcX7ZzF2_SF_-6",
+        "drawioPosition": {
+          "x": 1229.0,
+          "y": 550.0
+        },
+        "drawioGeometry": {
           "x": 1134.0,
           "y": 530.0,
           "width": 190.0,
           "height": 40.0
         },
+        "layoutWidth": 190.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 178.0,
         "outgoingRelations": [
           {
             "id": "G_SW_Vu1ddHmdaGLCPAa-1",
             "name": "employs",
             "label": "employs",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-6",
+            "sourceLabel": "AS2: BazarLoader Execution",
+            "sourceCardinality": "1..*",
             "target": "ImEBZV-vzcU5x6acnLZ7-3",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "BazarLoaderAttackToolInstance",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem employs BazarLoaderAttackToolInstance."
-          },
-          {
-            "id": "ImEBZV-vzcU5x6acnLZ7-10",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "isKCdTBRIcX7ZzF2_SF_-6",
-            "target": "ImEBZV-vzcU5x6acnLZ7-12",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "Install Malicious SoftwareAttackStep",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem refersTo Install Malicious SoftwareAttackStep."
+            "targetLabel": "BazarLoader",
+            "targetCardinality": "0..*",
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "AS2: BazarLoader Execution employs BazarLoader."
           },
           {
             "id": "ImEBZV-vzcU5x6acnLZ7-13",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-6",
+            "sourceLabel": "AS2: BazarLoader Execution",
+            "sourceCardinality": "1..*",
             "target": "ImEBZV-vzcU5x6acnLZ7-15",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "T1105TTP",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem implements T1105TTP."
+            "targetLabel": "T1105",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS2: BazarLoader Execution implements T1105."
           },
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-4",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-6",
+            "sourceLabel": "AS2: BazarLoader Execution",
+            "sourceCardinality": "0..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-3",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem followedBy AS3: Infrastructure DiscoveryAttackStepItem."
+            "targetLabel": "AS3: Infrastructure Discovery",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS2: BazarLoader Execution followedBy AS3: Infrastructure Discovery."
           }
         ],
         "incomingRelations": [
@@ -416,72 +478,29 @@ const caseData = {
             "id": "isKCdTBRIcX7ZzF2_SF_-3",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "0..*",
             "target": "isKCdTBRIcX7ZzF2_SF_-6",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem followedBy AS2: BazarLoader ExecutionAttackStepItem."
+            "targetLabel": "AS2: BazarLoader Execution",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS1: Phishing Attack with Weaponized Document followedBy AS2: BazarLoader Execution."
           }
         ]
       },
       "position": {
-        "x": 2304.0,
+        "x": 2379.0,
         "y": 430.0
       }
     },
     {
       "data": {
-        "id": "nuMpVuPP5FOWfUhDepc9-3",
-        "name": "Phishing with AttachmentAttackStep",
-        "label": "Phishing with AttachmentAttackStep",
-        "instanceName": "Phishing with Attachment",
-        "metamodelEntity": "AttackStep",
-        "description": "Phishing with AttachmentAttackStep is a case-study instance of the AttackStep entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStep is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
-        "informationClass": "generic-a-priori",
-        "informationClassLabel": "Generic a priori",
-        "submetamodel": "cyber-threat",
-        "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [
-          "Cyber Threat Intelligence reports and knowledge bases",
-          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
-          "Public standards, taxonomies, catalogues, and domain ontologies",
-          "Sector-level or technology-level documentation independent of a specific organization"
-        ],
-        "drawio": {
-          "x": 930.0,
-          "y": 422.5,
-          "width": 140.0,
-          "height": 45.0
-        },
-        "outgoingRelations": [],
-        "incomingRelations": [
-          {
-            "id": "nuMpVuPP5FOWfUhDepc9-1",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "isKCdTBRIcX7ZzF2_SF_-5",
-            "target": "nuMpVuPP5FOWfUhDepc9-3",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "Phishing with AttachmentAttackStep",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem refersTo Phishing with AttachmentAttackStep."
-          }
-        ]
-      },
-      "position": {
-        "x": 2100.0,
-        "y": 322.5
-      }
-    },
-    {
-      "data": {
         "id": "9aJOADVmqYrCJmHLZuZJ-1",
-        "name": "T1566.001TTP",
-        "label": "T1566.001TTP",
-        "instanceName": "T1566.001",
+        "name": "T1566.001",
+        "label": "T1566.001",
         "metamodelEntity": "TTP",
-        "description": "T1566.001TTP is a case-study instance of the TTP entity in the feasibility-oriented metamodel. It specializes the metamodel concept: TTP is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "T1566.001 is a case-study instance of the TTP entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -492,23 +511,33 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "9aJOADVmqYrCJmHLZuZJ-1",
+        "drawioPosition": {
+          "x": 1462.5,
+          "y": 445.0
+        },
+        "drawioGeometry": {
           "x": 1430.0,
           "y": 425.0,
           "width": 65.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 90,
         "outgoingRelations": [
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-1",
             "name": "exploitsVulnerability",
             "label": "exploitsVulnerability",
-            "kind": "relationship",
             "source": "9aJOADVmqYrCJmHLZuZJ-1",
+            "sourceLabel": "T1566.001",
+            "sourceCardinality": "1..*",
             "target": "1zz9dUDx6NtFQG9qIyYO-1",
-            "sourceLabel": "T1566.001TTP",
-            "targetLabel": "Prone to PhishingHumanVulnerability",
-            "description": "T1566.001TTP exploitsVulnerability Prone to PhishingHumanVulnerability."
+            "targetLabel": "Prone to Phishing",
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 Vulnerability",
+            "description": "T1566.001 exploitsVulnerability Prone to Phishing."
           }
         ],
         "incomingRelations": [
@@ -516,61 +545,79 @@ const caseData = {
             "id": "7615FOlYJKEI97l76xLW-1",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "1..*",
             "target": "9aJOADVmqYrCJmHLZuZJ-1",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "T1566.001TTP",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem implements T1566.001TTP."
+            "targetLabel": "T1566.001",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS1: Phishing Attack with Weaponized Document implements T1566.001."
           }
         ]
       },
       "position": {
-        "x": 2600.0,
+        "x": 2612.5,
         "y": 325.0
       }
     },
     {
       "data": {
         "id": "niolT3tTzyHpKWggiv-i-3",
-        "name": "Weaponized DocumentAttackToolInstance",
-        "label": "Weaponized DocumentAttackToolInstance",
-        "instanceName": "Weaponized Document",
+        "name": "Weaponized Document",
+        "label": "Weaponized Document",
         "metamodelEntity": "AttackToolInstance",
-        "description": "Weaponized DocumentAttackToolInstance is a case-study instance of the AttackToolInstance entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackToolInstance is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "description": "Weaponized Document is a case-study instance of the AttackToolInstance entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "niolT3tTzyHpKWggiv-i-3",
+        "drawioPosition": {
+          "x": 990.0,
+          "y": 540.0
+        },
+        "drawioGeometry": {
           "x": 920.0,
           "y": 520.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "S2bj8Yupr1EtsPe4_ZwJ-1",
             "name": "instanceOf",
             "label": "instanceOf",
-            "kind": "relationship",
             "source": "niolT3tTzyHpKWggiv-i-3",
+            "sourceLabel": "Weaponized Document",
+            "sourceCardinality": "1..*",
             "target": "S2bj8Yupr1EtsPe4_ZwJ-3",
-            "sourceLabel": "Weaponized DocumentAttackToolInstance",
-            "targetLabel": "Office DocumentAttackTool",
-            "description": "Weaponized DocumentAttackToolInstance instanceOf Office DocumentAttackTool."
+            "targetLabel": "Office Document",
+            "targetCardinality": "1",
+            "cardinality": "AttackToolInstance 1..* — 1 AttackTool",
+            "description": "Weaponized Document instanceOf Office Document."
           },
           {
             "id": "ImEBZV-vzcU5x6acnLZ7-1",
             "name": "deploys",
             "label": "deploys",
-            "kind": "relationship",
             "source": "niolT3tTzyHpKWggiv-i-3",
+            "sourceLabel": "Weaponized Document",
+            "sourceCardinality": "0..*",
             "target": "ImEBZV-vzcU5x6acnLZ7-3",
-            "sourceLabel": "Weaponized DocumentAttackToolInstance",
-            "targetLabel": "BazarLoaderAttackToolInstance",
-            "description": "Weaponized DocumentAttackToolInstance deploys BazarLoaderAttackToolInstance."
+            "targetLabel": "BazarLoader",
+            "targetCardinality": "",
+            "cardinality": "AttackToolInstance 0..* —  AttackToolInstance",
+            "description": "Weaponized Document deploys BazarLoader."
           }
         ],
         "incomingRelations": [
@@ -578,28 +625,29 @@ const caseData = {
             "id": "niolT3tTzyHpKWggiv-i-1",
             "name": "employs",
             "label": "employs",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "1..*",
             "target": "niolT3tTzyHpKWggiv-i-3",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "Weaponized DocumentAttackToolInstance",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem employs Weaponized DocumentAttackToolInstance."
+            "targetLabel": "Weaponized Document",
+            "targetCardinality": "0..*",
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "AS1: Phishing Attack with Weaponized Document employs Weaponized Document."
           }
         ]
       },
       "position": {
-        "x": 2090.0,
+        "x": 2140.0,
         "y": 420.0
       }
     },
     {
       "data": {
         "id": "S2bj8Yupr1EtsPe4_ZwJ-3",
-        "name": "Office DocumentAttackTool",
-        "label": "Office DocumentAttackTool",
-        "instanceName": "Office Document",
+        "name": "Office Document",
+        "label": "Office Document",
         "metamodelEntity": "AttackTool",
-        "description": "Office DocumentAttackTool is a case-study instance of the AttackTool entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackTool is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "Office Document is a case-study instance of the AttackTool entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -610,90 +658,115 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "S2bj8Yupr1EtsPe4_ZwJ-3",
+        "drawioPosition": {
+          "x": 990.0,
+          "y": 620.0
+        },
+        "drawioGeometry": {
           "x": 920.0,
           "y": 600.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "S2bj8Yupr1EtsPe4_ZwJ-1",
             "name": "instanceOf",
             "label": "instanceOf",
-            "kind": "relationship",
             "source": "niolT3tTzyHpKWggiv-i-3",
+            "sourceLabel": "Weaponized Document",
+            "sourceCardinality": "1..*",
             "target": "S2bj8Yupr1EtsPe4_ZwJ-3",
-            "sourceLabel": "Weaponized DocumentAttackToolInstance",
-            "targetLabel": "Office DocumentAttackTool",
-            "description": "Weaponized DocumentAttackToolInstance instanceOf Office DocumentAttackTool."
+            "targetLabel": "Office Document",
+            "targetCardinality": "1",
+            "cardinality": "AttackToolInstance 1..* — 1 AttackTool",
+            "description": "Weaponized Document instanceOf Office Document."
           }
         ]
       },
       "position": {
-        "x": 2090.0,
+        "x": 2140.0,
         "y": 500.0
       }
     },
     {
       "data": {
         "id": "ImEBZV-vzcU5x6acnLZ7-3",
-        "name": "BazarLoaderAttackToolInstance",
-        "label": "BazarLoaderAttackToolInstance",
-        "instanceName": "BazarLoader",
+        "name": "BazarLoader",
+        "label": "BazarLoader",
         "metamodelEntity": "AttackToolInstance",
-        "description": "BazarLoaderAttackToolInstance is a case-study instance of the AttackToolInstance entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackToolInstance is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "description": "BazarLoader is a case-study instance of the AttackToolInstance entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "ImEBZV-vzcU5x6acnLZ7-3",
+        "drawioPosition": {
+          "x": 800.0,
+          "y": 590.0
+        },
+        "drawioGeometry": {
           "x": 730.0,
           "y": 570.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "G_SW_Vu1ddHmdaGLCPAa-1",
             "name": "employs",
             "label": "employs",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-6",
+            "sourceLabel": "AS2: BazarLoader Execution",
+            "sourceCardinality": "1..*",
             "target": "ImEBZV-vzcU5x6acnLZ7-3",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "BazarLoaderAttackToolInstance",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem employs BazarLoaderAttackToolInstance."
+            "targetLabel": "BazarLoader",
+            "targetCardinality": "0..*",
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "AS2: BazarLoader Execution employs BazarLoader."
           },
           {
             "id": "ImEBZV-vzcU5x6acnLZ7-1",
             "name": "deploys",
             "label": "deploys",
-            "kind": "relationship",
             "source": "niolT3tTzyHpKWggiv-i-3",
+            "sourceLabel": "Weaponized Document",
+            "sourceCardinality": "0..*",
             "target": "ImEBZV-vzcU5x6acnLZ7-3",
-            "sourceLabel": "Weaponized DocumentAttackToolInstance",
-            "targetLabel": "BazarLoaderAttackToolInstance",
-            "description": "Weaponized DocumentAttackToolInstance deploys BazarLoaderAttackToolInstance."
+            "targetLabel": "BazarLoader",
+            "targetCardinality": "",
+            "cardinality": "AttackToolInstance 0..* —  AttackToolInstance",
+            "description": "Weaponized Document deploys BazarLoader."
           }
         ]
       },
       "position": {
-        "x": 1900.0,
+        "x": 1950.0,
         "y": 470.0
       }
     },
     {
       "data": {
         "id": "ImEBZV-vzcU5x6acnLZ7-8",
-        "name": "BazarLoaderAttackTool",
-        "label": "BazarLoaderAttackTool",
-        "instanceName": "BazarLoader",
+        "name": "BazarLoader",
+        "label": "BazarLoader",
         "metamodelEntity": "AttackTool",
-        "description": "BazarLoaderAttackTool is a case-study instance of the AttackTool entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackTool is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "BazarLoader is a case-study instance of the AttackTool entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -704,72 +777,35 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "ImEBZV-vzcU5x6acnLZ7-8",
+        "drawioPosition": {
+          "x": 800.0,
+          "y": 690.0
+        },
+        "drawioGeometry": {
           "x": 730.0,
-          "y": 680.0,
+          "y": 670.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [],
         "incomingRelations": []
       },
       "position": {
-        "x": 1900.0,
-        "y": 580.0
-      }
-    },
-    {
-      "data": {
-        "id": "ImEBZV-vzcU5x6acnLZ7-12",
-        "name": "Install Malicious SoftwareAttackStep",
-        "label": "Install Malicious SoftwareAttackStep",
-        "instanceName": "Install Malicious Software",
-        "metamodelEntity": "AttackStep",
-        "description": "Install Malicious SoftwareAttackStep is a case-study instance of the AttackStep entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStep is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
-        "informationClass": "generic-a-priori",
-        "informationClassLabel": "Generic a priori",
-        "submetamodel": "cyber-threat",
-        "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [
-          "Cyber Threat Intelligence reports and knowledge bases",
-          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
-          "Public standards, taxonomies, catalogues, and domain ontologies",
-          "Sector-level or technology-level documentation independent of a specific organization"
-        ],
-        "drawio": {
-          "x": 1420.0,
-          "y": 600.0,
-          "width": 140.0,
-          "height": 45.0
-        },
-        "outgoingRelations": [],
-        "incomingRelations": [
-          {
-            "id": "ImEBZV-vzcU5x6acnLZ7-10",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "isKCdTBRIcX7ZzF2_SF_-6",
-            "target": "ImEBZV-vzcU5x6acnLZ7-12",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "Install Malicious SoftwareAttackStep",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem refersTo Install Malicious SoftwareAttackStep."
-          }
-        ]
-      },
-      "position": {
-        "x": 2590.0,
-        "y": 500.0
+        "x": 1950.0,
+        "y": 570.0
       }
     },
     {
       "data": {
         "id": "ImEBZV-vzcU5x6acnLZ7-15",
-        "name": "T1105TTP",
-        "label": "T1105TTP",
-        "instanceName": "T1105",
+        "name": "T1105",
+        "label": "T1105",
         "metamodelEntity": "TTP",
-        "description": "T1105TTP is a case-study instance of the TTP entity in the feasibility-oriented metamodel. It specializes the metamodel concept: TTP is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "T1105 is a case-study instance of the TTP entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -780,62 +816,86 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "ImEBZV-vzcU5x6acnLZ7-15",
+        "drawioPosition": {
+          "x": 1462.5,
+          "y": 540.0
+        },
+        "drawioGeometry": {
           "x": 1430.0,
           "y": 520.0,
           "width": 65.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 90,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "ImEBZV-vzcU5x6acnLZ7-13",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-6",
+            "sourceLabel": "AS2: BazarLoader Execution",
+            "sourceCardinality": "1..*",
             "target": "ImEBZV-vzcU5x6acnLZ7-15",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "T1105TTP",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem implements T1105TTP."
+            "targetLabel": "T1105",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS2: BazarLoader Execution implements T1105."
           }
         ]
       },
       "position": {
-        "x": 2600.0,
+        "x": 2612.5,
         "y": 420.0
       }
     },
     {
       "data": {
         "id": "1zz9dUDx6NtFQG9qIyYO-1",
-        "name": "Prone to PhishingHumanVulnerability",
-        "label": "Prone to PhishingHumanVulnerability",
-        "instanceName": "Prone to Phishing",
+        "name": "Prone to Phishing",
+        "label": "Prone to Phishing",
         "metamodelEntity": "HumanVulnerability",
-        "description": "Prone to PhishingHumanVulnerability is a case-study instance of the HumanVulnerability entity in the feasibility-oriented metamodel. It specializes the metamodel concept: HumanVulnerability is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "description": "Prone to Phishing is a case-study instance of the HumanVulnerability entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "1zz9dUDx6NtFQG9qIyYO-1",
+        "drawioPosition": {
+          "x": 910.0,
+          "y": 352.5
+        },
+        "drawioGeometry": {
           "x": 840.0,
           "y": 330.0,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "nj5hpQ6kMEfSOXQIEmYd-2",
             "name": "affectsUser",
             "label": "affectsUser",
-            "kind": "relationship",
             "source": "1zz9dUDx6NtFQG9qIyYO-1",
+            "sourceLabel": "Prone to Phishing",
+            "sourceCardinality": "0..*",
             "target": "nj5hpQ6kMEfSOXQIEmYd-1",
-            "sourceLabel": "Prone to PhishingHumanVulnerability",
-            "targetLabel": "U1: Employee 1User",
-            "description": "Prone to PhishingHumanVulnerability affectsUser U1: Employee 1User."
+            "targetLabel": "U1: Employee 1",
+            "targetCardinality": "0..*",
+            "cardinality": "HumanVulnerability 0..* — 0..* User",
+            "description": "Prone to Phishing affectsUser U1: Employee 1."
           }
         ],
         "incomingRelations": [
@@ -843,39 +903,42 @@ const caseData = {
             "id": "5_uvdN_fO5OIq28JDHqv-1",
             "name": "exploits",
             "label": "exploits",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-5",
+            "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+            "sourceCardinality": "",
             "target": "1zz9dUDx6NtFQG9qIyYO-1",
-            "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-            "targetLabel": "Prone to PhishingHumanVulnerability",
-            "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem exploits Prone to PhishingHumanVulnerability."
+            "targetLabel": "Prone to Phishing",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "AS1: Phishing Attack with Weaponized Document exploits Prone to Phishing."
           },
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-1",
             "name": "exploitsVulnerability",
             "label": "exploitsVulnerability",
-            "kind": "relationship",
             "source": "9aJOADVmqYrCJmHLZuZJ-1",
+            "sourceLabel": "T1566.001",
+            "sourceCardinality": "1..*",
             "target": "1zz9dUDx6NtFQG9qIyYO-1",
-            "sourceLabel": "T1566.001TTP",
-            "targetLabel": "Prone to PhishingHumanVulnerability",
-            "description": "T1566.001TTP exploitsVulnerability Prone to PhishingHumanVulnerability."
+            "targetLabel": "Prone to Phishing",
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 Vulnerability",
+            "description": "T1566.001 exploitsVulnerability Prone to Phishing."
           }
         ]
       },
       "position": {
-        "x": 2010.0,
-        "y": 230.0
+        "x": 2060.0,
+        "y": 232.5
       }
     },
     {
       "data": {
         "id": "nj5hpQ6kMEfSOXQIEmYd-1",
-        "name": "U1: Employee 1User",
-        "label": "U1: Employee 1User",
-        "instanceName": "U1: Employee 1",
+        "name": "U1: Employee 1",
+        "label": "U1: Employee 1",
         "metamodelEntity": "User",
-        "description": "U1: Employee 1User is a case-study instance of the User entity in the feasibility-oriented metamodel. It specializes the metamodel concept: User is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "U1: Employee 1 is a case-study instance of the User entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
@@ -886,23 +949,33 @@ const caseData = {
           "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
           "Interviews, questionnaires, and manual assessment of the target organization"
         ],
-        "drawio": {
+        "drawioId": "nj5hpQ6kMEfSOXQIEmYd-1",
+        "drawioPosition": {
+          "x": 630.0,
+          "y": 497.5
+        },
+        "drawioGeometry": {
           "x": 560.0,
           "y": 475.0,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "2yveyayf0f4Zed5tB9-e-1",
             "name": "hasAccessTo",
             "label": "hasAccessTo",
-            "kind": "relationship",
             "source": "nj5hpQ6kMEfSOXQIEmYd-1",
+            "sourceLabel": "U1: Employee 1",
+            "sourceCardinality": "",
             "target": "Zcl4WLPny9slI91kZ9_o-1",
-            "sourceLabel": "U1: Employee 1User",
-            "targetLabel": "N1: WorkstationNode",
-            "description": "U1: Employee 1User hasAccessTo N1: WorkstationNode."
+            "targetLabel": "N1: Workstation",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "U1: Employee 1 hasAccessTo N1: Workstation."
           }
         ],
         "incomingRelations": [
@@ -910,83 +983,92 @@ const caseData = {
             "id": "mOJ0zVzwKr9MfSjEqvfX-1",
             "name": "usedBy",
             "label": "usedBy",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-10",
+            "sourceLabel": "Main-Infra",
+            "sourceCardinality": "1",
             "target": "nj5hpQ6kMEfSOXQIEmYd-1",
-            "sourceLabel": "Main-InfraInfrastructure",
-            "targetLabel": "U1: Employee 1User",
-            "description": "Main-InfraInfrastructure usedBy U1: Employee 1User."
+            "targetLabel": "U1: Employee 1",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* User",
+            "description": "Main-Infra usedBy U1: Employee 1."
           },
           {
             "id": "nj5hpQ6kMEfSOXQIEmYd-2",
             "name": "affectsUser",
             "label": "affectsUser",
-            "kind": "relationship",
             "source": "1zz9dUDx6NtFQG9qIyYO-1",
+            "sourceLabel": "Prone to Phishing",
+            "sourceCardinality": "0..*",
             "target": "nj5hpQ6kMEfSOXQIEmYd-1",
-            "sourceLabel": "Prone to PhishingHumanVulnerability",
-            "targetLabel": "U1: Employee 1User",
-            "description": "Prone to PhishingHumanVulnerability affectsUser U1: Employee 1User."
+            "targetLabel": "U1: Employee 1",
+            "targetCardinality": "0..*",
+            "cardinality": "HumanVulnerability 0..* — 0..* User",
+            "description": "Prone to Phishing affectsUser U1: Employee 1."
           }
         ]
       },
       "position": {
-        "x": 1730.0,
-        "y": 375.0
+        "x": 1780.0,
+        "y": 377.5
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-3",
-        "name": "AS3: Infrastructure DiscoveryAttackStepItem",
-        "label": "AS3: Infrastructure DiscoveryAttackStepItem",
-        "instanceName": "AS3: Infrastructure Discovery",
-        "metamodelEntity": "AttackStepItem",
-        "description": "AS3: Infrastructure DiscoveryAttackStepItem is a case-study instance of the AttackStepItem entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStepItem is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "name": "AS3: Infrastructure Discovery",
+        "label": "AS3: Infrastructure Discovery",
+        "metamodelEntity": "ThreatStep",
+        "description": "AS3: Infrastructure Discovery is a case-study instance of the ThreatStep entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-3",
+        "drawioPosition": {
+          "x": 1229.0,
+          "y": 740.0
+        },
+        "drawioGeometry": {
           "x": 1134.0,
           "y": 720.0,
           "width": 190.0,
           "height": 40.0
         },
+        "layoutWidth": 190.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 178.0,
         "outgoingRelations": [
-          {
-            "id": "5fuBaIPhzgW5u_tKo_7_-6",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-3",
-            "target": "5fuBaIPhzgW5u_tKo_7_-8",
-            "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "targetLabel": "Remote System DiscoveryAttackStep",
-            "description": "AS3: Infrastructure DiscoveryAttackStepItem refersTo Remote System DiscoveryAttackStep."
-          },
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-10",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-3",
+            "sourceLabel": "AS3: Infrastructure Discovery",
+            "sourceCardinality": "1..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-9",
-            "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "targetLabel": "T1018TTP",
-            "description": "AS3: Infrastructure DiscoveryAttackStepItem implements T1018TTP."
+            "targetLabel": "T1018",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS3: Infrastructure Discovery implements T1018."
           },
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-13",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-3",
+            "sourceLabel": "AS3: Infrastructure Discovery",
+            "sourceCardinality": "0..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-12",
-            "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "targetLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "description": "AS3: Infrastructure DiscoveryAttackStepItem followedBy AS4: Lateral Movement to Other NodesAttackStepItem."
+            "targetLabel": "AS4: Lateral Movement to Other Nodes",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS3: Infrastructure Discovery followedBy AS4: Lateral Movement to Other Nodes."
           }
         ],
         "incomingRelations": [
@@ -994,72 +1076,29 @@ const caseData = {
             "id": "5fuBaIPhzgW5u_tKo_7_-4",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "isKCdTBRIcX7ZzF2_SF_-6",
+            "sourceLabel": "AS2: BazarLoader Execution",
+            "sourceCardinality": "0..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-3",
-            "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-            "targetLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "description": "AS2: BazarLoader ExecutionAttackStepItem followedBy AS3: Infrastructure DiscoveryAttackStepItem."
+            "targetLabel": "AS3: Infrastructure Discovery",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS2: BazarLoader Execution followedBy AS3: Infrastructure Discovery."
           }
         ]
       },
       "position": {
-        "x": 2304.0,
+        "x": 2379.0,
         "y": 620.0
       }
     },
     {
       "data": {
-        "id": "5fuBaIPhzgW5u_tKo_7_-8",
-        "name": "Remote System DiscoveryAttackStep",
-        "label": "Remote System DiscoveryAttackStep",
-        "instanceName": "Remote System Discovery",
-        "metamodelEntity": "AttackStep",
-        "description": "Remote System DiscoveryAttackStep is a case-study instance of the AttackStep entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStep is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
-        "informationClass": "generic-a-priori",
-        "informationClassLabel": "Generic a priori",
-        "submetamodel": "cyber-threat",
-        "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [
-          "Cyber Threat Intelligence reports and knowledge bases",
-          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
-          "Public standards, taxonomies, catalogues, and domain ontologies",
-          "Sector-level or technology-level documentation independent of a specific organization"
-        ],
-        "drawio": {
-          "x": 1420.0,
-          "y": 760.0,
-          "width": 140.0,
-          "height": 45.0
-        },
-        "outgoingRelations": [],
-        "incomingRelations": [
-          {
-            "id": "5fuBaIPhzgW5u_tKo_7_-6",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-3",
-            "target": "5fuBaIPhzgW5u_tKo_7_-8",
-            "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "targetLabel": "Remote System DiscoveryAttackStep",
-            "description": "AS3: Infrastructure DiscoveryAttackStepItem refersTo Remote System DiscoveryAttackStep."
-          }
-        ]
-      },
-      "position": {
-        "x": 2590.0,
-        "y": 660.0
-      }
-    },
-    {
-      "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-9",
-        "name": "T1018TTP",
-        "label": "T1018TTP",
-        "instanceName": "T1018",
+        "name": "T1018",
+        "label": "T1018",
         "metamodelEntity": "TTP",
-        "description": "T1018TTP is a case-study instance of the TTP entity in the feasibility-oriented metamodel. It specializes the metamodel concept: TTP is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "T1018 is a case-study instance of the TTP entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -1070,84 +1109,99 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-9",
+        "drawioPosition": {
+          "x": 1502.5,
+          "y": 720.0
+        },
+        "drawioGeometry": {
           "x": 1470.0,
           "y": 700.0,
           "width": 65.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 90,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-10",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-3",
+            "sourceLabel": "AS3: Infrastructure Discovery",
+            "sourceCardinality": "1..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-9",
-            "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "targetLabel": "T1018TTP",
-            "description": "AS3: Infrastructure DiscoveryAttackStepItem implements T1018TTP."
+            "targetLabel": "T1018",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS3: Infrastructure Discovery implements T1018."
           }
         ]
       },
       "position": {
-        "x": 2640.0,
+        "x": 2652.5,
         "y": 600.0
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-12",
-        "name": "AS4: Lateral Movement to Other NodesAttackStepItem",
-        "label": "AS4: Lateral Movement to Other NodesAttackStepItem",
-        "instanceName": "AS4: Lateral Movement to Other Nodes",
-        "metamodelEntity": "AttackStepItem",
-        "description": "AS4: Lateral Movement to Other NodesAttackStepItem is a case-study instance of the AttackStepItem entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStepItem is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "name": "AS4: Lateral Movement to Other Nodes",
+        "label": "AS4: Lateral Movement to Other Nodes",
+        "metamodelEntity": "ThreatStep",
+        "description": "AS4: Lateral Movement to Other Nodes is a case-study instance of the ThreatStep entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-12",
+        "drawioPosition": {
+          "x": 1229.0,
+          "y": 840.0
+        },
+        "drawioGeometry": {
           "x": 1134.0,
           "y": 810.0,
           "width": 190.0,
           "height": 60.0
         },
+        "layoutWidth": 190.0,
+        "layoutHeight": 60.0,
+        "textMaxWidth": 178.0,
         "outgoingRelations": [
-          {
-            "id": "5fuBaIPhzgW5u_tKo_7_-15",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-12",
-            "target": "5fuBaIPhzgW5u_tKo_7_-17",
-            "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "targetLabel": "Lateral MovementAttackStep",
-            "description": "AS4: Lateral Movement to Other NodesAttackStepItem refersTo Lateral MovementAttackStep."
-          },
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-18",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-12",
+            "sourceLabel": "AS4: Lateral Movement to Other Nodes",
+            "sourceCardinality": "1..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-20",
-            "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "targetLabel": "T1570TTP",
-            "description": "AS4: Lateral Movement to Other NodesAttackStepItem implements T1570TTP."
+            "targetLabel": "T1570",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS4: Lateral Movement to Other Nodes implements T1570."
           },
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-22",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-12",
+            "sourceLabel": "AS4: Lateral Movement to Other Nodes",
+            "sourceCardinality": "0..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-21",
-            "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "targetLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "description": "AS4: Lateral Movement to Other NodesAttackStepItem followedBy AS5: Ransomware ExecutionAttackStepItem."
+            "targetLabel": "AS5: Ransomware Execution",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS4: Lateral Movement to Other Nodes followedBy AS5: Ransomware Execution."
           }
         ],
         "incomingRelations": [
@@ -1155,72 +1209,29 @@ const caseData = {
             "id": "5fuBaIPhzgW5u_tKo_7_-13",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-3",
+            "sourceLabel": "AS3: Infrastructure Discovery",
+            "sourceCardinality": "0..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-12",
-            "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-            "targetLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "description": "AS3: Infrastructure DiscoveryAttackStepItem followedBy AS4: Lateral Movement to Other NodesAttackStepItem."
+            "targetLabel": "AS4: Lateral Movement to Other Nodes",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS3: Infrastructure Discovery followedBy AS4: Lateral Movement to Other Nodes."
           }
         ]
       },
       "position": {
-        "x": 2304.0,
-        "y": 710.0
-      }
-    },
-    {
-      "data": {
-        "id": "5fuBaIPhzgW5u_tKo_7_-17",
-        "name": "Lateral MovementAttackStep",
-        "label": "Lateral MovementAttackStep",
-        "instanceName": "Lateral Movement",
-        "metamodelEntity": "AttackStep",
-        "description": "Lateral MovementAttackStep is a case-study instance of the AttackStep entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStep is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
-        "informationClass": "generic-a-priori",
-        "informationClassLabel": "Generic a priori",
-        "submetamodel": "cyber-threat",
-        "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [
-          "Cyber Threat Intelligence reports and knowledge bases",
-          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
-          "Public standards, taxonomies, catalogues, and domain ontologies",
-          "Sector-level or technology-level documentation independent of a specific organization"
-        ],
-        "drawio": {
-          "x": 1420.0,
-          "y": 880.0,
-          "width": 140.0,
-          "height": 45.0
-        },
-        "outgoingRelations": [],
-        "incomingRelations": [
-          {
-            "id": "5fuBaIPhzgW5u_tKo_7_-15",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-12",
-            "target": "5fuBaIPhzgW5u_tKo_7_-17",
-            "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "targetLabel": "Lateral MovementAttackStep",
-            "description": "AS4: Lateral Movement to Other NodesAttackStepItem refersTo Lateral MovementAttackStep."
-          }
-        ]
-      },
-      "position": {
-        "x": 2590.0,
-        "y": 780.0
+        "x": 2379.0,
+        "y": 720.0
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-20",
-        "name": "T1570TTP",
-        "label": "T1570TTP",
-        "instanceName": "T1570",
+        "name": "T1570",
+        "label": "T1570",
         "metamodelEntity": "TTP",
-        "description": "T1570TTP is a case-study instance of the TTP entity in the feasibility-oriented metamodel. It specializes the metamodel concept: TTP is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "T1570 is a case-study instance of the TTP entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -1231,117 +1242,138 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-20",
+        "drawioPosition": {
+          "x": 1490.0,
+          "y": 840.0
+        },
+        "drawioGeometry": {
           "x": 1457.5,
           "y": 820.0,
           "width": 65.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 90,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-18",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-12",
+            "sourceLabel": "AS4: Lateral Movement to Other Nodes",
+            "sourceCardinality": "1..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-20",
-            "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "targetLabel": "T1570TTP",
-            "description": "AS4: Lateral Movement to Other NodesAttackStepItem implements T1570TTP."
+            "targetLabel": "T1570",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS4: Lateral Movement to Other Nodes implements T1570."
           }
         ]
       },
       "position": {
-        "x": 2627.5,
+        "x": 2640.0,
         "y": 720.0
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-21",
-        "name": "AS5: Ransomware ExecutionAttackStepItem",
-        "label": "AS5: Ransomware ExecutionAttackStepItem",
-        "instanceName": "AS5: Ransomware Execution",
-        "metamodelEntity": "AttackStepItem",
-        "description": "AS5: Ransomware ExecutionAttackStepItem is a case-study instance of the AttackStepItem entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStepItem is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "name": "AS5: Ransomware Execution",
+        "label": "AS5: Ransomware Execution",
+        "metamodelEntity": "ThreatStep",
+        "description": "AS5: Ransomware Execution is a case-study instance of the ThreatStep entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-21",
+        "drawioPosition": {
+          "x": 1229.0,
+          "y": 970.0
+        },
+        "drawioGeometry": {
           "x": 1134.0,
           "y": 940.0,
           "width": 190.0,
           "height": 60.0
         },
+        "layoutWidth": 190.0,
+        "layoutHeight": 60.0,
+        "textMaxWidth": 178.0,
         "outgoingRelations": [
           {
             "id": "W3w3qxBm9yhByrui9fDT-1",
             "name": "targetsResource",
             "label": "targetsResource",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "rVEplnxd9geB-yA5XOS9-1",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Client DataAsset",
-            "description": "AS5: Ransomware ExecutionAttackStepItem targetsResource Client DataAsset."
+            "targetLabel": "Client Data",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Resource",
+            "description": "AS5: Ransomware Execution targetsResource Client Data."
           },
           {
             "id": "W3w3qxBm9yhByrui9fDT-3",
             "name": "targetsResource",
             "label": "targetsResource",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "rVEplnxd9geB-yA5XOS9-2",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Employees DataAsset",
-            "description": "AS5: Ransomware ExecutionAttackStepItem targetsResource Employees DataAsset."
+            "targetLabel": "Employees Data",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Resource",
+            "description": "AS5: Ransomware Execution targetsResource Employees Data."
           },
           {
             "id": "mb8l3Fbao_xBAS6c-KFB-1",
             "name": "compromises",
             "label": "compromises",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "AS5: Ransomware ExecutionAttackStepItem compromises ASR2: Integrity of DataAssetSecurityRequirement."
-          },
-          {
-            "id": "5fuBaIPhzgW5u_tKo_7_-24",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-21",
-            "target": "5fuBaIPhzgW5u_tKo_7_-26",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Data EncryptionAttackStep",
-            "description": "AS5: Ransomware ExecutionAttackStepItem refersTo Data EncryptionAttackStep."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Asset\nSecurityRequirement",
+            "description": "AS5: Ransomware Execution compromises ASR2: Integrity of Data."
           },
           {
             "id": "5fuBaIPhzgW5u_tKo_7_-27",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-29",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "T1486TTP",
-            "description": "AS5: Ransomware ExecutionAttackStepItem implements T1486TTP."
+            "targetLabel": "T1486",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS5: Ransomware Execution implements T1486."
           },
           {
             "id": "3yI27mflQqRDWPVXWcn1-1",
             "name": "employs",
             "label": "employs",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "3yI27mflQqRDWPVXWcn1-3",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Conti InstanceAttackToolInstance",
-            "description": "AS5: Ransomware ExecutionAttackStepItem employs Conti InstanceAttackToolInstance."
+            "targetLabel": "Conti Instance",
+            "targetCardinality": "0..*",
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "AS5: Ransomware Execution employs Conti Instance."
           }
         ],
         "incomingRelations": [
@@ -1349,84 +1381,29 @@ const caseData = {
             "id": "5fuBaIPhzgW5u_tKo_7_-22",
             "name": "followedBy",
             "label": "followedBy",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-12",
+            "sourceLabel": "AS4: Lateral Movement to Other Nodes",
+            "sourceCardinality": "0..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-21",
-            "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-            "targetLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "description": "AS4: Lateral Movement to Other NodesAttackStepItem followedBy AS5: Ransomware ExecutionAttackStepItem."
+            "targetLabel": "AS5: Ransomware Execution",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "AS4: Lateral Movement to Other Nodes followedBy AS5: Ransomware Execution."
           }
         ]
       },
       "position": {
-        "x": 2304.0,
-        "y": 840.0
-      }
-    },
-    {
-      "data": {
-        "id": "5fuBaIPhzgW5u_tKo_7_-26",
-        "name": "Data EncryptionAttackStep",
-        "label": "Data EncryptionAttackStep",
-        "instanceName": "Data Encryption",
-        "metamodelEntity": "AttackStep",
-        "description": "Data EncryptionAttackStep is a case-study instance of the AttackStep entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackStep is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
-        "informationClass": "generic-a-priori",
-        "informationClassLabel": "Generic a priori",
-        "submetamodel": "cyber-threat",
-        "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [
-          "Cyber Threat Intelligence reports and knowledge bases",
-          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
-          "Public standards, taxonomies, catalogues, and domain ontologies",
-          "Sector-level or technology-level documentation independent of a specific organization"
-        ],
-        "drawio": {
-          "x": 1420.0,
-          "y": 1035.0,
-          "width": 140.0,
-          "height": 45.0
-        },
-        "outgoingRelations": [
-          {
-            "id": "vo9jejg2OZcYDb8uq2dd-1",
-            "name": "violates",
-            "label": "violates",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-26",
-            "target": "Ry1iGIntjKa-yCpNBPo0-8",
-            "sourceLabel": "Data EncryptionAttackStep",
-            "targetLabel": "IntegritySecurityRequirement",
-            "description": "Data EncryptionAttackStep violates IntegritySecurityRequirement."
-          }
-        ],
-        "incomingRelations": [
-          {
-            "id": "5fuBaIPhzgW5u_tKo_7_-24",
-            "name": "refersTo",
-            "label": "refersTo",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-21",
-            "target": "5fuBaIPhzgW5u_tKo_7_-26",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Data EncryptionAttackStep",
-            "description": "AS5: Ransomware ExecutionAttackStepItem refersTo Data EncryptionAttackStep."
-          }
-        ]
-      },
-      "position": {
-        "x": 2590.0,
-        "y": 935.0
+        "x": 2379.0,
+        "y": 850.0
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-29",
-        "name": "T1486TTP",
-        "label": "T1486TTP",
-        "instanceName": "T1486",
+        "name": "T1486",
+        "label": "T1486",
         "metamodelEntity": "TTP",
-        "description": "T1486TTP is a case-study instance of the TTP entity in the feasibility-oriented metamodel. It specializes the metamodel concept: TTP is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "T1486 is a case-study instance of the TTP entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -1437,23 +1414,33 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-29",
+        "drawioPosition": {
+          "x": 1482.5,
+          "y": 990.0
+        },
+        "drawioGeometry": {
           "x": 1450.0,
           "y": 970.0,
           "width": 65.0,
           "height": 40.0
         },
+        "layoutWidth": 120,
+        "layoutHeight": 40,
+        "textMaxWidth": 90,
         "outgoingRelations": [
           {
-            "id": "p9ztlIugojwwJTmJCLig-1",
-            "name": "impacts",
-            "label": "impacts",
-            "kind": "relationship",
+            "id": "vo9jejg2OZcYDb8uq2dd-1",
+            "name": "violates",
+            "label": "violates",
             "source": "5fuBaIPhzgW5u_tKo_7_-29",
-            "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "T1486TTP",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "T1486TTP impacts ASR2: Integrity of DataAssetSecurityRequirement."
+            "sourceLabel": "T1486",
+            "sourceCardinality": "1..*",
+            "target": "Ry1iGIntjKa-yCpNBPo0-8",
+            "targetLabel": "Integrity",
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 SecurityRequirement",
+            "description": "T1486 violates Integrity."
           }
         ],
         "incomingRelations": [
@@ -1461,50 +1448,66 @@ const caseData = {
             "id": "5fuBaIPhzgW5u_tKo_7_-27",
             "name": "implements",
             "label": "implements",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "5fuBaIPhzgW5u_tKo_7_-29",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "T1486TTP",
-            "description": "AS5: Ransomware ExecutionAttackStepItem implements T1486TTP."
+            "targetLabel": "T1486",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "AS5: Ransomware Execution implements T1486."
           }
         ]
       },
       "position": {
-        "x": 2620.0,
+        "x": 2632.5,
         "y": 870.0
       }
     },
     {
       "data": {
         "id": "3yI27mflQqRDWPVXWcn1-3",
-        "name": "Conti InstanceAttackToolInstance",
-        "label": "Conti InstanceAttackToolInstance",
-        "instanceName": "Conti Instance",
+        "name": "Conti Instance",
+        "label": "Conti Instance",
         "metamodelEntity": "AttackToolInstance",
-        "description": "Conti InstanceAttackToolInstance is a case-study instance of the AttackToolInstance entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackToolInstance is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
+        "description": "Conti Instance is a case-study instance of the AttackToolInstance entity in the feasibility-oriented metamodel.",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [],
-        "drawio": {
+        "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
+        ],
+        "drawioId": "3yI27mflQqRDWPVXWcn1-3",
+        "drawioPosition": {
+          "x": 910.0,
+          "y": 995.0
+        },
+        "drawioGeometry": {
           "x": 840.0,
           "y": 975.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "3yI27mflQqRDWPVXWcn1-4",
             "name": "instanceOf",
             "label": "instanceOf",
-            "kind": "relationship",
             "source": "3yI27mflQqRDWPVXWcn1-3",
+            "sourceLabel": "Conti Instance",
+            "sourceCardinality": "1..*",
             "target": "3yI27mflQqRDWPVXWcn1-6",
-            "sourceLabel": "Conti InstanceAttackToolInstance",
-            "targetLabel": "ContiAttackTool",
-            "description": "Conti InstanceAttackToolInstance instanceOf ContiAttackTool."
+            "targetLabel": "Conti",
+            "targetCardinality": "1",
+            "cardinality": "AttackToolInstance 1..* — 1 AttackTool",
+            "description": "Conti Instance instanceOf Conti."
           }
         ],
         "incomingRelations": [
@@ -1512,28 +1515,29 @@ const caseData = {
             "id": "3yI27mflQqRDWPVXWcn1-1",
             "name": "employs",
             "label": "employs",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "3yI27mflQqRDWPVXWcn1-3",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Conti InstanceAttackToolInstance",
-            "description": "AS5: Ransomware ExecutionAttackStepItem employs Conti InstanceAttackToolInstance."
+            "targetLabel": "Conti Instance",
+            "targetCardinality": "0..*",
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "AS5: Ransomware Execution employs Conti Instance."
           }
         ]
       },
       "position": {
-        "x": 2010.0,
+        "x": 2060.0,
         "y": 875.0
       }
     },
     {
       "data": {
         "id": "3yI27mflQqRDWPVXWcn1-6",
-        "name": "ContiAttackTool",
-        "label": "ContiAttackTool",
-        "instanceName": "Conti",
+        "name": "Conti",
+        "label": "Conti",
         "metamodelEntity": "AttackTool",
-        "description": "ContiAttackTool is a case-study instance of the AttackTool entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AttackTool is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "Conti is a case-study instance of the AttackTool entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
@@ -1544,40 +1548,49 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "3yI27mflQqRDWPVXWcn1-6",
+        "drawioPosition": {
+          "x": 910.0,
+          "y": 1075.0
+        },
+        "drawioGeometry": {
           "x": 840.0,
           "y": 1055.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "3yI27mflQqRDWPVXWcn1-4",
             "name": "instanceOf",
             "label": "instanceOf",
-            "kind": "relationship",
             "source": "3yI27mflQqRDWPVXWcn1-3",
+            "sourceLabel": "Conti Instance",
+            "sourceCardinality": "1..*",
             "target": "3yI27mflQqRDWPVXWcn1-6",
-            "sourceLabel": "Conti InstanceAttackToolInstance",
-            "targetLabel": "ContiAttackTool",
-            "description": "Conti InstanceAttackToolInstance instanceOf ContiAttackTool."
+            "targetLabel": "Conti",
+            "targetCardinality": "1",
+            "cardinality": "AttackToolInstance 1..* — 1 AttackTool",
+            "description": "Conti Instance instanceOf Conti."
           }
         ]
       },
       "position": {
-        "x": 2010.0,
+        "x": 2060.0,
         "y": 955.0
       }
     },
     {
       "data": {
         "id": "rVEplnxd9geB-yA5XOS9-1",
-        "name": "Client DataAsset",
-        "label": "Client DataAsset",
-        "instanceName": "Client Data",
+        "name": "Client Data",
+        "label": "Client Data",
         "metamodelEntity": "Asset",
-        "description": "Client DataAsset is a case-study instance of the Asset entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Asset is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "Client Data is a case-study instance of the Asset entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
@@ -1588,34 +1601,46 @@ const caseData = {
           "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
           "Interviews, questionnaires, and manual assessment of the target organization"
         ],
-        "drawio": {
+        "drawioId": "rVEplnxd9geB-yA5XOS9-1",
+        "drawioPosition": {
+          "x": 260.0,
+          "y": 1090.0
+        },
+        "drawioGeometry": {
           "x": 190.0,
           "y": 1070.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "XfZH5y7X7novlaDJgZcS-1",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-1",
+            "sourceLabel": "Client Data",
+            "sourceCardinality": "1",
             "target": "eZx1rzvC6ny3f7PKwibH-3",
-            "sourceLabel": "Client DataAsset",
-            "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "description": "Client DataAsset hasSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+            "targetLabel": "ASR1: Confidentiality of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Client Data hasSecurityRequirement ASR1: Confidentiality of Data."
           },
           {
             "id": "Ry1iGIntjKa-yCpNBPo0-6",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-1",
+            "sourceLabel": "Client Data",
+            "sourceCardinality": "1",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "Client DataAsset",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "Client DataAsset hasSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Client Data hasSecurityRequirement ASR2: Integrity of Data."
           }
         ],
         "incomingRelations": [
@@ -1623,39 +1648,42 @@ const caseData = {
             "id": "W3w3qxBm9yhByrui9fDT-1",
             "name": "targetsResource",
             "label": "targetsResource",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "rVEplnxd9geB-yA5XOS9-1",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Client DataAsset",
-            "description": "AS5: Ransomware ExecutionAttackStepItem targetsResource Client DataAsset."
+            "targetLabel": "Client Data",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Resource",
+            "description": "AS5: Ransomware Execution targetsResource Client Data."
           },
           {
             "id": "yAQWF--oj1ht1P_PKinq-2",
             "name": "hostsResource",
             "label": "hostsResource",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "rVEplnxd9geB-yA5XOS9-1",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Client DataAsset",
-            "description": "N2: Database ServerNode hostsResource Client DataAsset."
+            "targetLabel": "Client Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Resource",
+            "description": "N2: Database Server hostsResource Client Data."
           }
         ]
       },
       "position": {
-        "x": 1360.0,
+        "x": 1410.0,
         "y": 970.0
       }
     },
     {
       "data": {
         "id": "rVEplnxd9geB-yA5XOS9-2",
-        "name": "Employees DataAsset",
-        "label": "Employees DataAsset",
-        "instanceName": "Employees Data",
+        "name": "Employees Data",
+        "label": "Employees Data",
         "metamodelEntity": "Asset",
-        "description": "Employees DataAsset is a case-study instance of the Asset entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Asset is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "Employees Data is a case-study instance of the Asset entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
@@ -1666,34 +1694,46 @@ const caseData = {
           "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
           "Interviews, questionnaires, and manual assessment of the target organization"
         ],
-        "drawio": {
+        "drawioId": "rVEplnxd9geB-yA5XOS9-2",
+        "drawioPosition": {
+          "x": 260.0,
+          "y": 1160.0
+        },
+        "drawioGeometry": {
           "x": 190.0,
           "y": 1140.0,
           "width": 140.0,
           "height": 40.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "Ry1iGIntjKa-yCpNBPo0-2",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-2",
+            "sourceLabel": "Employees Data",
+            "sourceCardinality": "1",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "Employees DataAsset",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "Employees DataAsset hasSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Employees Data hasSecurityRequirement ASR2: Integrity of Data."
           },
           {
             "id": "Ry1iGIntjKa-yCpNBPo0-4",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-2",
+            "sourceLabel": "Employees Data",
+            "sourceCardinality": "1",
             "target": "eZx1rzvC6ny3f7PKwibH-3",
-            "sourceLabel": "Employees DataAsset",
-            "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "description": "Employees DataAsset hasSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+            "targetLabel": "ASR1: Confidentiality of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Employees Data hasSecurityRequirement ASR1: Confidentiality of Data."
           }
         ],
         "incomingRelations": [
@@ -1701,77 +1741,92 @@ const caseData = {
             "id": "W3w3qxBm9yhByrui9fDT-3",
             "name": "targetsResource",
             "label": "targetsResource",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "rVEplnxd9geB-yA5XOS9-2",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "Employees DataAsset",
-            "description": "AS5: Ransomware ExecutionAttackStepItem targetsResource Employees DataAsset."
+            "targetLabel": "Employees Data",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Resource",
+            "description": "AS5: Ransomware Execution targetsResource Employees Data."
           },
           {
             "id": "yAQWF--oj1ht1P_PKinq-4",
             "name": "hostsResource",
             "label": "hostsResource",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "rVEplnxd9geB-yA5XOS9-2",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Employees DataAsset",
-            "description": "N2: Database ServerNode hostsResource Employees DataAsset."
+            "targetLabel": "Employees Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Resource",
+            "description": "N2: Database Server hostsResource Employees Data."
           }
         ]
       },
       "position": {
-        "x": 1360.0,
+        "x": 1410.0,
         "y": 1040.0
       }
     },
     {
       "data": {
         "id": "Zcl4WLPny9slI91kZ9_o-1",
-        "name": "N1: WorkstationNode",
-        "label": "N1: WorkstationNode",
-        "instanceName": "N1: Workstation",
+        "name": "N1: Workstation",
+        "label": "N1: Workstation",
         "metamodelEntity": "Node",
-        "description": "N1: WorkstationNode is a case-study instance of the Node entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Node is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "N1: Workstation is a case-study instance of the Node entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Organizational documentation, policies, and business requirement catalogues",
-          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
-          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
-          "Interviews, questionnaires, and manual assessment of the target organization"
+          "CMDB and asset inventory",
+          "Network discovery scans",
+          "Endpoint management or EDR inventory",
+          "Infrastructure-as-code and cloud asset exports"
         ],
-        "drawio": {
+        "drawioId": "Zcl4WLPny9slI91kZ9_o-1",
+        "drawioPosition": {
+          "x": 440.0,
+          "y": 578.71
+        },
+        "drawioGeometry": {
           "x": 370.0,
           "y": 556.21,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "pADUx78GfB26Rjjpd5Rp-1",
             "name": "isSource",
             "label": "isSource",
-            "kind": "relationship",
             "source": "Zcl4WLPny9slI91kZ9_o-1",
+            "sourceLabel": "N1: Workstation",
+            "sourceCardinality": "",
             "target": "ze9FDJWhSHo_2HU-X0Ti-2",
-            "sourceLabel": "N1: WorkstationNode",
-            "targetLabel": "Interact with DBConnection",
-            "description": "N1: WorkstationNode isSource Interact with DBConnection."
+            "targetLabel": "Interact with DB",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "N1: Workstation isSource Interact with DB."
           },
           {
             "id": "flr8XU77myX9OvzYn5zU-4",
             "name": "hasNodeType",
             "label": "hasNodeType",
-            "kind": "relationship",
             "source": "Zcl4WLPny9slI91kZ9_o-1",
+            "sourceLabel": "N1: Workstation",
+            "sourceCardinality": "1..*",
             "target": "flr8XU77myX9OvzYn5zU-6",
-            "sourceLabel": "N1: WorkstationNode",
-            "targetLabel": "Desktop ComputerNodeType",
-            "description": "N1: WorkstationNode hasNodeType Desktop ComputerNodeType."
+            "targetLabel": "Desktop Computer",
+            "targetCardinality": "1",
+            "cardinality": "Node 1..* — 1 NodeType",
+            "description": "N1: Workstation hasNodeType Desktop Computer."
           }
         ],
         "incomingRelations": [
@@ -1779,110 +1834,131 @@ const caseData = {
             "id": "Zcl4WLPny9slI91kZ9_o-2",
             "name": "madeBy",
             "label": "madeBy",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-10",
+            "sourceLabel": "Main-Infra",
+            "sourceCardinality": "1",
             "target": "Zcl4WLPny9slI91kZ9_o-1",
-            "sourceLabel": "Main-InfraInfrastructure",
-            "targetLabel": "N1: WorkstationNode",
-            "description": "Main-InfraInfrastructure madeBy N1: WorkstationNode."
+            "targetLabel": "N1: Workstation",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* Node",
+            "description": "Main-Infra madeBy N1: Workstation."
           },
           {
             "id": "2yveyayf0f4Zed5tB9-e-1",
             "name": "hasAccessTo",
             "label": "hasAccessTo",
-            "kind": "relationship",
             "source": "nj5hpQ6kMEfSOXQIEmYd-1",
+            "sourceLabel": "U1: Employee 1",
+            "sourceCardinality": "",
             "target": "Zcl4WLPny9slI91kZ9_o-1",
-            "sourceLabel": "U1: Employee 1User",
-            "targetLabel": "N1: WorkstationNode",
-            "description": "U1: Employee 1User hasAccessTo N1: WorkstationNode."
+            "targetLabel": "N1: Workstation",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "U1: Employee 1 hasAccessTo N1: Workstation."
           }
         ]
       },
       "position": {
-        "x": 1540.0,
-        "y": 456.21000000000004
+        "x": 1590.0,
+        "y": 458.71
       }
     },
     {
       "data": {
         "id": "fOiOA0MLRFIGU3IK7tZ9-1",
-        "name": "N2: Database ServerNode",
-        "label": "N2: Database ServerNode",
-        "instanceName": "N2: Database Server",
+        "name": "N2: Database Server",
+        "label": "N2: Database Server",
         "metamodelEntity": "Node",
-        "description": "N2: Database ServerNode is a case-study instance of the Node entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Node is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "N2: Database Server is a case-study instance of the Node entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Organizational documentation, policies, and business requirement catalogues",
-          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
-          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
-          "Interviews, questionnaires, and manual assessment of the target organization"
+          "CMDB and asset inventory",
+          "Network discovery scans",
+          "Endpoint management or EDR inventory",
+          "Infrastructure-as-code and cloud asset exports"
         ],
-        "drawio": {
+        "drawioId": "fOiOA0MLRFIGU3IK7tZ9-1",
+        "drawioPosition": {
+          "x": 170.0,
+          "y": 550.0
+        },
+        "drawioGeometry": {
           "x": 100.0,
           "y": 527.5,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "flr8XU77myX9OvzYn5zU-2",
             "name": "hasNodeType",
             "label": "hasNodeType",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1..*",
             "target": "flr8XU77myX9OvzYn5zU-1",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Database ServerNodeType",
-            "description": "N2: Database ServerNode hasNodeType Database ServerNodeType."
+            "targetLabel": "Database Server",
+            "targetCardinality": "1",
+            "cardinality": "Node 1..* — 1 NodeType",
+            "description": "N2: Database Server hasNodeType Database Server."
           },
           {
             "id": "pADUx78GfB26Rjjpd5Rp-3",
-            "name": "isDestionation",
-            "label": "isDestionation",
-            "kind": "relationship",
+            "name": "isDestination",
+            "label": "isDestination",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "ze9FDJWhSHo_2HU-X0Ti-2",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Interact with DBConnection",
-            "description": "N2: Database ServerNode isDestionation Interact with DBConnection."
+            "targetLabel": "Interact with DB",
+            "targetCardinality": "0..*",
+            "cardinality": "Node 1 — 0..* Connection",
+            "description": "N2: Database Server isDestination Interact with DB."
           },
           {
             "id": "1qLYpMFIIv6NwulWZkVb-3",
             "name": "exposesPort",
             "label": "exposesPort",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "pADUx78GfB26Rjjpd5Rp-5",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "5432Port",
-            "description": "N2: Database ServerNode exposesPort 5432Port."
+            "targetLabel": "5432",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Port",
+            "description": "N2: Database Server exposesPort 5432."
           },
           {
             "id": "yAQWF--oj1ht1P_PKinq-2",
             "name": "hostsResource",
             "label": "hostsResource",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "rVEplnxd9geB-yA5XOS9-1",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Client DataAsset",
-            "description": "N2: Database ServerNode hostsResource Client DataAsset."
+            "targetLabel": "Client Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Resource",
+            "description": "N2: Database Server hostsResource Client Data."
           },
           {
             "id": "yAQWF--oj1ht1P_PKinq-4",
             "name": "hostsResource",
             "label": "hostsResource",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "rVEplnxd9geB-yA5XOS9-2",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Employees DataAsset",
-            "description": "N2: Database ServerNode hostsResource Employees DataAsset."
+            "targetLabel": "Employees Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Resource",
+            "description": "N2: Database Server hostsResource Employees Data."
           }
         ],
         "incomingRelations": [
@@ -1890,28 +1966,29 @@ const caseData = {
             "id": "flr8XU77myX9OvzYn5zU-7",
             "name": "madeBy",
             "label": "madeBy",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-10",
+            "sourceLabel": "Main-Infra",
+            "sourceCardinality": "1",
             "target": "fOiOA0MLRFIGU3IK7tZ9-1",
-            "sourceLabel": "Main-InfraInfrastructure",
-            "targetLabel": "N2: Database ServerNode",
-            "description": "Main-InfraInfrastructure madeBy N2: Database ServerNode."
+            "targetLabel": "N2: Database Server",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* Node",
+            "description": "Main-Infra madeBy N2: Database Server."
           }
         ]
       },
       "position": {
-        "x": 1270.0,
-        "y": 427.5
+        "x": 1320.0,
+        "y": 430.0
       }
     },
     {
       "data": {
         "id": "flr8XU77myX9OvzYn5zU-1",
-        "name": "Database ServerNodeType",
-        "label": "Database ServerNodeType",
-        "instanceName": "Database Server",
+        "name": "Database Server",
+        "label": "Database Server",
         "metamodelEntity": "NodeType",
-        "description": "Database ServerNodeType is a case-study instance of the NodeType entity in the feasibility-oriented metamodel. It specializes the metamodel concept: NodeType is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "Database Server is a case-study instance of the NodeType entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "infrastructure",
@@ -1922,40 +1999,49 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "flr8XU77myX9OvzYn5zU-1",
+        "drawioPosition": {
+          "x": 10.0,
+          "y": 677.5
+        },
+        "drawioGeometry": {
           "x": -60.0,
           "y": 655.0,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "flr8XU77myX9OvzYn5zU-2",
             "name": "hasNodeType",
             "label": "hasNodeType",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1..*",
             "target": "flr8XU77myX9OvzYn5zU-1",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Database ServerNodeType",
-            "description": "N2: Database ServerNode hasNodeType Database ServerNodeType."
+            "targetLabel": "Database Server",
+            "targetCardinality": "1",
+            "cardinality": "Node 1..* — 1 NodeType",
+            "description": "N2: Database Server hasNodeType Database Server."
           }
         ]
       },
       "position": {
-        "x": 1110.0,
-        "y": 555.0
+        "x": 1160.0,
+        "y": 557.5
       }
     },
     {
       "data": {
         "id": "flr8XU77myX9OvzYn5zU-6",
-        "name": "Desktop ComputerNodeType",
-        "label": "Desktop ComputerNodeType",
-        "instanceName": "Desktop Computer",
+        "name": "Desktop Computer",
+        "label": "Desktop Computer",
         "metamodelEntity": "NodeType",
-        "description": "Desktop ComputerNodeType is a case-study instance of the NodeType entity in the feasibility-oriented metamodel. It specializes the metamodel concept: NodeType is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "Desktop Computer is a case-study instance of the NodeType entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "infrastructure",
@@ -1966,40 +2052,49 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "flr8XU77myX9OvzYn5zU-6",
+        "drawioPosition": {
+          "x": 440.0,
+          "y": 673.71
+        },
+        "drawioGeometry": {
           "x": 370.0,
           "y": 651.21,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "flr8XU77myX9OvzYn5zU-4",
             "name": "hasNodeType",
             "label": "hasNodeType",
-            "kind": "relationship",
             "source": "Zcl4WLPny9slI91kZ9_o-1",
+            "sourceLabel": "N1: Workstation",
+            "sourceCardinality": "1..*",
             "target": "flr8XU77myX9OvzYn5zU-6",
-            "sourceLabel": "N1: WorkstationNode",
-            "targetLabel": "Desktop ComputerNodeType",
-            "description": "N1: WorkstationNode hasNodeType Desktop ComputerNodeType."
+            "targetLabel": "Desktop Computer",
+            "targetCardinality": "1",
+            "cardinality": "Node 1..* — 1 NodeType",
+            "description": "N1: Workstation hasNodeType Desktop Computer."
           }
         ]
       },
       "position": {
-        "x": 1540.0,
-        "y": 551.21
+        "x": 1590.0,
+        "y": 553.71
       }
     },
     {
       "data": {
         "id": "ze9FDJWhSHo_2HU-X0Ti-2",
-        "name": "Interact with DBConnection",
-        "label": "Interact with DBConnection",
-        "instanceName": "Interact with DB",
+        "name": "Interact with DB",
+        "label": "Interact with DB",
         "metamodelEntity": "Connection",
-        "description": "Interact with DBConnection is a case-study instance of the Connection entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Connection is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "Interact with DB is a case-study instance of the Connection entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
@@ -2010,23 +2105,33 @@ const caseData = {
           "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
           "Interviews, questionnaires, and manual assessment of the target organization"
         ],
-        "drawio": {
+        "drawioId": "ze9FDJWhSHo_2HU-X0Ti-2",
+        "drawioPosition": {
+          "x": 310.0,
+          "y": 797.5
+        },
+        "drawioGeometry": {
           "x": 240.0,
           "y": 775.0,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [
           {
             "id": "1qLYpMFIIv6NwulWZkVb-1",
             "name": "hasDestinationPort",
             "label": "hasDestinationPort",
-            "kind": "relationship",
             "source": "ze9FDJWhSHo_2HU-X0Ti-2",
+            "sourceLabel": "Interact with DB",
+            "sourceCardinality": "1..*",
             "target": "pADUx78GfB26Rjjpd5Rp-5",
-            "sourceLabel": "Interact with DBConnection",
-            "targetLabel": "5432Port",
-            "description": "Interact with DBConnection hasDestinationPort 5432Port."
+            "targetLabel": "5432",
+            "targetCardinality": "1",
+            "cardinality": "Connection 1..* — 1 Port",
+            "description": "Interact with DB hasDestinationPort 5432."
           }
         ],
         "incomingRelations": [
@@ -2034,94 +2139,108 @@ const caseData = {
             "id": "pADUx78GfB26Rjjpd5Rp-1",
             "name": "isSource",
             "label": "isSource",
-            "kind": "relationship",
             "source": "Zcl4WLPny9slI91kZ9_o-1",
+            "sourceLabel": "N1: Workstation",
+            "sourceCardinality": "",
             "target": "ze9FDJWhSHo_2HU-X0Ti-2",
-            "sourceLabel": "N1: WorkstationNode",
-            "targetLabel": "Interact with DBConnection",
-            "description": "N1: WorkstationNode isSource Interact with DBConnection."
+            "targetLabel": "Interact with DB",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "N1: Workstation isSource Interact with DB."
           },
           {
             "id": "pADUx78GfB26Rjjpd5Rp-3",
-            "name": "isDestionation",
-            "label": "isDestionation",
-            "kind": "relationship",
+            "name": "isDestination",
+            "label": "isDestination",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "ze9FDJWhSHo_2HU-X0Ti-2",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "Interact with DBConnection",
-            "description": "N2: Database ServerNode isDestionation Interact with DBConnection."
+            "targetLabel": "Interact with DB",
+            "targetCardinality": "0..*",
+            "cardinality": "Node 1 — 0..* Connection",
+            "description": "N2: Database Server isDestination Interact with DB."
           }
         ]
       },
       "position": {
-        "x": 1410.0,
-        "y": 675.0
+        "x": 1460.0,
+        "y": 677.5
       }
     },
     {
       "data": {
         "id": "pADUx78GfB26Rjjpd5Rp-5",
-        "name": "5432Port",
-        "label": "5432Port",
-        "instanceName": "5432",
+        "name": "5432",
+        "label": "5432",
         "metamodelEntity": "Port",
-        "description": "5432Port is a case-study instance of the Port entity in the feasibility-oriented metamodel. It specializes the metamodel concept: Port is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "5432 is a case-study instance of the Port entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Organizational documentation, policies, and business requirement catalogues",
-          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
-          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
-          "Interviews, questionnaires, and manual assessment of the target organization"
+          "Network scans such as Nmap or vulnerability scanner output",
+          "Firewall and security-group configurations",
+          "Service inventory and load balancer configuration",
+          "Host-level listening service inspection"
         ],
-        "drawio": {
+        "drawioId": "pADUx78GfB26Rjjpd5Rp-5",
+        "drawioPosition": {
+          "x": 160.0,
+          "y": 872.5
+        },
+        "drawioGeometry": {
           "x": 90.0,
           "y": 850.0,
           "width": 140.0,
           "height": 45.0
         },
+        "layoutWidth": 140.0,
+        "layoutHeight": 45.0,
+        "textMaxWidth": 128.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "1qLYpMFIIv6NwulWZkVb-3",
             "name": "exposesPort",
             "label": "exposesPort",
-            "kind": "relationship",
             "source": "fOiOA0MLRFIGU3IK7tZ9-1",
+            "sourceLabel": "N2: Database Server",
+            "sourceCardinality": "1",
             "target": "pADUx78GfB26Rjjpd5Rp-5",
-            "sourceLabel": "N2: Database ServerNode",
-            "targetLabel": "5432Port",
-            "description": "N2: Database ServerNode exposesPort 5432Port."
+            "targetLabel": "5432",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Port",
+            "description": "N2: Database Server exposesPort 5432."
           },
           {
             "id": "1qLYpMFIIv6NwulWZkVb-1",
             "name": "hasDestinationPort",
             "label": "hasDestinationPort",
-            "kind": "relationship",
             "source": "ze9FDJWhSHo_2HU-X0Ti-2",
+            "sourceLabel": "Interact with DB",
+            "sourceCardinality": "1..*",
             "target": "pADUx78GfB26Rjjpd5Rp-5",
-            "sourceLabel": "Interact with DBConnection",
-            "targetLabel": "5432Port",
-            "description": "Interact with DBConnection hasDestinationPort 5432Port."
+            "targetLabel": "5432",
+            "targetCardinality": "1",
+            "cardinality": "Connection 1..* — 1 Port",
+            "description": "Interact with DB hasDestinationPort 5432."
           }
         ]
       },
       "position": {
-        "x": 1260.0,
-        "y": 750.0
+        "x": 1310.0,
+        "y": 752.5
       }
     },
     {
       "data": {
         "id": "t9Zseuc7trHZRqGckOzh-3",
-        "name": "BR1: Organization Data must be ProtectedBusinessRequirement",
-        "label": "BR1: Organization Data must be ProtectedBusinessRequirement",
-        "instanceName": "BR1: Organization Data must be Protected",
+        "name": "BR1: Organization Data must be Protected",
+        "label": "BR1: Organization Data must be Protected",
         "metamodelEntity": "BusinessRequirement",
-        "description": "BR1: Organization Data must be ProtectedBusinessRequirement is a case-study instance of the BusinessRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: BusinessRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "BR1: Organization Data must be Protected is a case-study instance of the BusinessRequirement entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "organization",
@@ -2132,34 +2251,46 @@ const caseData = {
           "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
           "Interviews, questionnaires, and manual assessment of the target organization"
         ],
-        "drawio": {
+        "drawioId": "t9Zseuc7trHZRqGckOzh-3",
+        "drawioPosition": {
+          "x": 25.0,
+          "y": 310.0
+        },
+        "drawioGeometry": {
           "x": -100.0,
           "y": 290.0,
           "width": 250.0,
           "height": 40.0
         },
+        "layoutWidth": 250.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 238.0,
         "outgoingRelations": [
           {
             "id": "eZx1rzvC6ny3f7PKwibH-4",
             "name": "drivesSecurityRequirement",
             "label": "drivesSecurityRequirement",
-            "kind": "relationship",
             "source": "t9Zseuc7trHZRqGckOzh-3",
+            "sourceLabel": "BR1: Organization Data must be Protected",
+            "sourceCardinality": "1..*",
             "target": "eZx1rzvC6ny3f7PKwibH-3",
-            "sourceLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-            "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "description": "BR1: Organization Data must be ProtectedBusinessRequirement drivesSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+            "targetLabel": "ASR1: Confidentiality of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement",
+            "description": "BR1: Organization Data must be Protected drivesSecurityRequirement ASR1: Confidentiality of Data."
           },
           {
             "id": "cdA-2u69LmOZn_5sE9tN-3",
             "name": "drivesSecurityRequirement",
             "label": "drivesSecurityRequirement",
-            "kind": "relationship",
             "source": "t9Zseuc7trHZRqGckOzh-3",
+            "sourceLabel": "BR1: Organization Data must be Protected",
+            "sourceCardinality": "1..*",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "BR1: Organization Data must be ProtectedBusinessRequirement drivesSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement",
+            "description": "BR1: Organization Data must be Protected drivesSecurityRequirement ASR2: Integrity of Data."
           }
         ],
         "incomingRelations": [
@@ -2167,55 +2298,66 @@ const caseData = {
             "id": "t9Zseuc7trHZRqGckOzh-4",
             "name": "hasBusinessRequirement",
             "label": "hasBusinessRequirement",
-            "kind": "relationship",
             "source": "DXn6xaRNV8009_fZBqU1-7",
+            "sourceLabel": "CS2Org",
+            "sourceCardinality": "1",
             "target": "t9Zseuc7trHZRqGckOzh-3",
-            "sourceLabel": "CS2OrgOrganization",
-            "targetLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-            "description": "CS2OrgOrganization hasBusinessRequirement BR1: Organization Data must be ProtectedBusinessRequirement."
+            "targetLabel": "BR1: Organization Data must be Protected",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* BusinessRequirement",
+            "description": "CS2Org hasBusinessRequirement BR1: Organization Data must be Protected."
           }
         ]
       },
       "position": {
-        "x": 1070.0,
+        "x": 1175.0,
         "y": 190.0
       }
     },
     {
       "data": {
         "id": "eZx1rzvC6ny3f7PKwibH-3",
-        "name": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-        "label": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-        "instanceName": "ASR1: Confidentiality of Data",
+        "name": "ASR1: Confidentiality of Data",
+        "label": "ASR1: Confidentiality of Data",
         "metamodelEntity": "AssetSecurityRequirement",
-        "description": "ASR1: Confidentiality of DataAssetSecurityRequirement is a case-study instance of the AssetSecurityRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AssetSecurityRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "ASR1: Confidentiality of Data is a case-study instance of the AssetSecurityRequirement entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational documentation, policies, and business requirement catalogues",
-          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
-          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
-          "Interviews, questionnaires, and manual assessment of the target organization"
+          "Security requirement catalogues",
+          "Risk assessment and treatment plans",
+          "Data classification policy and asset criticality analysis",
+          "Compliance controls linked to specific assets"
         ],
-        "drawio": {
+        "drawioId": "eZx1rzvC6ny3f7PKwibH-3",
+        "drawioPosition": {
+          "x": -195.0,
+          "y": 434.0
+        },
+        "drawioGeometry": {
           "x": -330.0,
           "y": 414.0,
           "width": 270.0,
           "height": 40.0
         },
+        "layoutWidth": 270.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 258.0,
         "outgoingRelations": [
           {
             "id": "zYwYgb49FxiR_k0q7Q0m-2",
             "name": "implementationOf",
             "label": "implementationOf",
-            "kind": "relationship",
             "source": "eZx1rzvC6ny3f7PKwibH-3",
+            "sourceLabel": "ASR1: Confidentiality of Data",
+            "sourceCardinality": "1..*",
             "target": "zYwYgb49FxiR_k0q7Q0m-1",
-            "sourceLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "targetLabel": "ConfidentialitySecurityRequirement",
-            "description": "ASR1: Confidentiality of DataAssetSecurityRequirement implementationOf ConfidentialitySecurityRequirement."
+            "targetLabel": "Confidentiality",
+            "targetCardinality": "1",
+            "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement",
+            "description": "ASR1: Confidentiality of Data implementationOf Confidentiality."
           }
         ],
         "incomingRelations": [
@@ -2223,77 +2365,92 @@ const caseData = {
             "id": "XfZH5y7X7novlaDJgZcS-1",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-1",
+            "sourceLabel": "Client Data",
+            "sourceCardinality": "1",
             "target": "eZx1rzvC6ny3f7PKwibH-3",
-            "sourceLabel": "Client DataAsset",
-            "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "description": "Client DataAsset hasSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+            "targetLabel": "ASR1: Confidentiality of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Client Data hasSecurityRequirement ASR1: Confidentiality of Data."
           },
           {
             "id": "Ry1iGIntjKa-yCpNBPo0-4",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-2",
+            "sourceLabel": "Employees Data",
+            "sourceCardinality": "1",
             "target": "eZx1rzvC6ny3f7PKwibH-3",
-            "sourceLabel": "Employees DataAsset",
-            "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "description": "Employees DataAsset hasSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+            "targetLabel": "ASR1: Confidentiality of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Employees Data hasSecurityRequirement ASR1: Confidentiality of Data."
           },
           {
             "id": "eZx1rzvC6ny3f7PKwibH-4",
             "name": "drivesSecurityRequirement",
             "label": "drivesSecurityRequirement",
-            "kind": "relationship",
             "source": "t9Zseuc7trHZRqGckOzh-3",
+            "sourceLabel": "BR1: Organization Data must be Protected",
+            "sourceCardinality": "1..*",
             "target": "eZx1rzvC6ny3f7PKwibH-3",
-            "sourceLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-            "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "description": "BR1: Organization Data must be ProtectedBusinessRequirement drivesSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+            "targetLabel": "ASR1: Confidentiality of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement",
+            "description": "BR1: Organization Data must be Protected drivesSecurityRequirement ASR1: Confidentiality of Data."
           }
         ]
       },
       "position": {
-        "x": 840.0,
+        "x": 955.0,
         "y": 314.0
       }
     },
     {
       "data": {
         "id": "cdA-2u69LmOZn_5sE9tN-2",
-        "name": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "label": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "instanceName": "ASR2: Integrity of Data",
+        "name": "ASR2: Integrity of Data",
+        "label": "ASR2: Integrity of Data",
         "metamodelEntity": "AssetSecurityRequirement",
-        "description": "ASR2: Integrity of DataAssetSecurityRequirement is a case-study instance of the AssetSecurityRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: AssetSecurityRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
+        "description": "ASR2: Integrity of Data is a case-study instance of the AssetSecurityRequirement entity in the feasibility-oriented metamodel.",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Organizational documentation, policies, and business requirement catalogues",
-          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
-          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
-          "Interviews, questionnaires, and manual assessment of the target organization"
+          "Security requirement catalogues",
+          "Risk assessment and treatment plans",
+          "Data classification policy and asset criticality analysis",
+          "Compliance controls linked to specific assets"
         ],
-        "drawio": {
+        "drawioId": "cdA-2u69LmOZn_5sE9tN-2",
+        "drawioPosition": {
+          "x": -449.0,
+          "y": 380.0
+        },
+        "drawioGeometry": {
           "x": -584.0,
           "y": 360.0,
           "width": 270.0,
           "height": 40.0
         },
+        "layoutWidth": 270.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 258.0,
         "outgoingRelations": [
           {
             "id": "YudfH6V3qxk8uhn8DXTI-1",
             "name": "implementationOf",
             "label": "implementationOf",
-            "kind": "relationship",
             "source": "cdA-2u69LmOZn_5sE9tN-2",
+            "sourceLabel": "ASR2: Integrity of Data",
+            "sourceCardinality": "1..*",
             "target": "Ry1iGIntjKa-yCpNBPo0-8",
-            "sourceLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "targetLabel": "IntegritySecurityRequirement",
-            "description": "ASR2: Integrity of DataAssetSecurityRequirement implementationOf IntegritySecurityRequirement."
+            "targetLabel": "Integrity",
+            "targetCardinality": "1",
+            "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement",
+            "description": "ASR2: Integrity of Data implementationOf Integrity."
           }
         ],
         "incomingRelations": [
@@ -2301,72 +2458,68 @@ const caseData = {
             "id": "mb8l3Fbao_xBAS6c-KFB-1",
             "name": "compromises",
             "label": "compromises",
-            "kind": "relationship",
             "source": "5fuBaIPhzgW5u_tKo_7_-21",
+            "sourceLabel": "AS5: Ransomware Execution",
+            "sourceCardinality": "1..*",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "AS5: Ransomware ExecutionAttackStepItem compromises ASR2: Integrity of DataAssetSecurityRequirement."
-          },
-          {
-            "id": "p9ztlIugojwwJTmJCLig-1",
-            "name": "impacts",
-            "label": "impacts",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-29",
-            "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "T1486TTP",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "T1486TTP impacts ASR2: Integrity of DataAssetSecurityRequirement."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Asset\nSecurityRequirement",
+            "description": "AS5: Ransomware Execution compromises ASR2: Integrity of Data."
           },
           {
             "id": "Ry1iGIntjKa-yCpNBPo0-6",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-1",
+            "sourceLabel": "Client Data",
+            "sourceCardinality": "1",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "Client DataAsset",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "Client DataAsset hasSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Client Data hasSecurityRequirement ASR2: Integrity of Data."
           },
           {
             "id": "Ry1iGIntjKa-yCpNBPo0-2",
             "name": "hasSecurityRequirement",
             "label": "hasSecurityRequirement",
-            "kind": "relationship",
             "source": "rVEplnxd9geB-yA5XOS9-2",
+            "sourceLabel": "Employees Data",
+            "sourceCardinality": "1",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "Employees DataAsset",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "Employees DataAsset hasSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Employees Data hasSecurityRequirement ASR2: Integrity of Data."
           },
           {
             "id": "cdA-2u69LmOZn_5sE9tN-3",
             "name": "drivesSecurityRequirement",
             "label": "drivesSecurityRequirement",
-            "kind": "relationship",
             "source": "t9Zseuc7trHZRqGckOzh-3",
+            "sourceLabel": "BR1: Organization Data must be Protected",
+            "sourceCardinality": "1..*",
             "target": "cdA-2u69LmOZn_5sE9tN-2",
-            "sourceLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-            "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "description": "BR1: Organization Data must be ProtectedBusinessRequirement drivesSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+            "targetLabel": "ASR2: Integrity of Data",
+            "targetCardinality": "1..*",
+            "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement",
+            "description": "BR1: Organization Data must be Protected drivesSecurityRequirement ASR2: Integrity of Data."
           }
         ]
       },
       "position": {
-        "x": 586.0,
+        "x": 701.0,
         "y": 260.0
       }
     },
     {
       "data": {
         "id": "Ry1iGIntjKa-yCpNBPo0-8",
-        "name": "IntegritySecurityRequirement",
-        "label": "IntegritySecurityRequirement",
-        "instanceName": "Integrity",
+        "name": "Integrity",
+        "label": "Integrity",
         "metamodelEntity": "SecurityRequirement",
-        "description": "IntegritySecurityRequirement is a case-study instance of the SecurityRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: SecurityRequirement is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "Integrity is a case-study instance of the SecurityRequirement entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "organization",
@@ -2377,51 +2530,62 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "Ry1iGIntjKa-yCpNBPo0-8",
+        "drawioPosition": {
+          "x": -895.0,
+          "y": 425.0
+        },
+        "drawioGeometry": {
           "x": -1030.0,
           "y": 405.0,
           "width": 270.0,
           "height": 40.0
         },
+        "layoutWidth": 270.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 258.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "vo9jejg2OZcYDb8uq2dd-1",
             "name": "violates",
             "label": "violates",
-            "kind": "relationship",
-            "source": "5fuBaIPhzgW5u_tKo_7_-26",
+            "source": "5fuBaIPhzgW5u_tKo_7_-29",
+            "sourceLabel": "T1486",
+            "sourceCardinality": "1..*",
             "target": "Ry1iGIntjKa-yCpNBPo0-8",
-            "sourceLabel": "Data EncryptionAttackStep",
-            "targetLabel": "IntegritySecurityRequirement",
-            "description": "Data EncryptionAttackStep violates IntegritySecurityRequirement."
+            "targetLabel": "Integrity",
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 SecurityRequirement",
+            "description": "T1486 violates Integrity."
           },
           {
             "id": "YudfH6V3qxk8uhn8DXTI-1",
             "name": "implementationOf",
             "label": "implementationOf",
-            "kind": "relationship",
             "source": "cdA-2u69LmOZn_5sE9tN-2",
+            "sourceLabel": "ASR2: Integrity of Data",
+            "sourceCardinality": "1..*",
             "target": "Ry1iGIntjKa-yCpNBPo0-8",
-            "sourceLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-            "targetLabel": "IntegritySecurityRequirement",
-            "description": "ASR2: Integrity of DataAssetSecurityRequirement implementationOf IntegritySecurityRequirement."
+            "targetLabel": "Integrity",
+            "targetCardinality": "1",
+            "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement",
+            "description": "ASR2: Integrity of Data implementationOf Integrity."
           }
         ]
       },
       "position": {
-        "x": 140.0,
+        "x": 255.0,
         "y": 305.0
       }
     },
     {
       "data": {
         "id": "zYwYgb49FxiR_k0q7Q0m-1",
-        "name": "ConfidentialitySecurityRequirement",
-        "label": "ConfidentialitySecurityRequirement",
-        "instanceName": "Confidentiality",
+        "name": "Confidentiality",
+        "label": "Confidentiality",
         "metamodelEntity": "SecurityRequirement",
-        "description": "ConfidentialitySecurityRequirement is a case-study instance of the SecurityRequirement entity in the feasibility-oriented metamodel. It specializes the metamodel concept: SecurityRequirement is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "description": "Confidentiality is a case-study instance of the SecurityRequirement entity in the feasibility-oriented metamodel.",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "organization",
@@ -2432,29 +2596,39 @@ const caseData = {
           "Public standards, taxonomies, catalogues, and domain ontologies",
           "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "drawio": {
+        "drawioId": "zYwYgb49FxiR_k0q7Q0m-1",
+        "drawioPosition": {
+          "x": -485.0,
+          "y": 260.0
+        },
+        "drawioGeometry": {
           "x": -620.0,
           "y": 240.0,
           "width": 270.0,
           "height": 40.0
         },
+        "layoutWidth": 270.0,
+        "layoutHeight": 40,
+        "textMaxWidth": 258.0,
         "outgoingRelations": [],
         "incomingRelations": [
           {
             "id": "zYwYgb49FxiR_k0q7Q0m-2",
             "name": "implementationOf",
             "label": "implementationOf",
-            "kind": "relationship",
             "source": "eZx1rzvC6ny3f7PKwibH-3",
+            "sourceLabel": "ASR1: Confidentiality of Data",
+            "sourceCardinality": "1..*",
             "target": "zYwYgb49FxiR_k0q7Q0m-1",
-            "sourceLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-            "targetLabel": "ConfidentialitySecurityRequirement",
-            "description": "ASR1: Confidentiality of DataAssetSecurityRequirement implementationOf ConfidentialitySecurityRequirement."
+            "targetLabel": "Confidentiality",
+            "targetCardinality": "1",
+            "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement",
+            "description": "ASR1: Confidentiality of Data implementationOf Confidentiality."
           }
         ]
       },
       "position": {
-        "x": 550.0,
+        "x": 665.0,
         "y": 140.0
       }
     }
@@ -2463,677 +2637,875 @@ const caseData = {
     {
       "data": {
         "id": "DXn6xaRNV8009_fZBqU1-5",
-        "name": "manages",
         "label": "manages",
+        "name": "manages",
         "kind": "relationship",
         "source": "DXn6xaRNV8009_fZBqU1-7",
         "target": "DXn6xaRNV8009_fZBqU1-10",
-        "sourceLabel": "CS2OrgOrganization",
-        "targetLabel": "Main-InfraInfrastructure",
-        "description": "CS2OrgOrganization manages Main-InfraInfrastructure."
+        "sourceLabel": "CS2Org",
+        "targetLabel": "Main-Infra",
+        "sourceMetamodelEntity": "Organization",
+        "targetMetamodelEntity": "Infrastructure",
+        "description": "CS2Org manages Main-Infra.",
+        "drawioId": "DXn6xaRNV8009_fZBqU1-5",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Organization 1 — 1..* Infrastructure"
       }
     },
     {
       "data": {
         "id": "t9Zseuc7trHZRqGckOzh-4",
-        "name": "hasBusinessRequirement",
         "label": "hasBusinessRequirement",
+        "name": "hasBusinessRequirement",
         "kind": "relationship",
         "source": "DXn6xaRNV8009_fZBqU1-7",
         "target": "t9Zseuc7trHZRqGckOzh-3",
-        "sourceLabel": "CS2OrgOrganization",
-        "targetLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-        "description": "CS2OrgOrganization hasBusinessRequirement BR1: Organization Data must be ProtectedBusinessRequirement."
+        "sourceLabel": "CS2Org",
+        "targetLabel": "BR1: Organization Data must be Protected",
+        "sourceMetamodelEntity": "Organization",
+        "targetMetamodelEntity": "BusinessRequirement",
+        "description": "CS2Org hasBusinessRequirement BR1: Organization Data must be Protected.",
+        "drawioId": "t9Zseuc7trHZRqGckOzh-4",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Organization 1 — 1..* BusinessRequirement"
       }
     },
     {
       "data": {
         "id": "mOJ0zVzwKr9MfSjEqvfX-1",
-        "name": "usedBy",
         "label": "usedBy",
+        "name": "usedBy",
         "kind": "relationship",
         "source": "DXn6xaRNV8009_fZBqU1-10",
         "target": "nj5hpQ6kMEfSOXQIEmYd-1",
-        "sourceLabel": "Main-InfraInfrastructure",
-        "targetLabel": "U1: Employee 1User",
-        "description": "Main-InfraInfrastructure usedBy U1: Employee 1User."
+        "sourceLabel": "Main-Infra",
+        "targetLabel": "U1: Employee 1",
+        "sourceMetamodelEntity": "Infrastructure",
+        "targetMetamodelEntity": "User",
+        "description": "Main-Infra usedBy U1: Employee 1.",
+        "drawioId": "mOJ0zVzwKr9MfSjEqvfX-1",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Infrastructure 1 — 1..* User"
       }
     },
     {
       "data": {
         "id": "Zcl4WLPny9slI91kZ9_o-2",
-        "name": "madeBy",
         "label": "madeBy",
+        "name": "madeBy",
         "kind": "relationship",
         "source": "DXn6xaRNV8009_fZBqU1-10",
         "target": "Zcl4WLPny9slI91kZ9_o-1",
-        "sourceLabel": "Main-InfraInfrastructure",
-        "targetLabel": "N1: WorkstationNode",
-        "description": "Main-InfraInfrastructure madeBy N1: WorkstationNode."
+        "sourceLabel": "Main-Infra",
+        "targetLabel": "N1: Workstation",
+        "sourceMetamodelEntity": "Infrastructure",
+        "targetMetamodelEntity": "Node",
+        "description": "Main-Infra madeBy N1: Workstation.",
+        "drawioId": "Zcl4WLPny9slI91kZ9_o-2",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Infrastructure 1 — 1..* Node"
       }
     },
     {
       "data": {
         "id": "flr8XU77myX9OvzYn5zU-7",
-        "name": "madeBy",
         "label": "madeBy",
+        "name": "madeBy",
         "kind": "relationship",
         "source": "DXn6xaRNV8009_fZBqU1-10",
         "target": "fOiOA0MLRFIGU3IK7tZ9-1",
-        "sourceLabel": "Main-InfraInfrastructure",
-        "targetLabel": "N2: Database ServerNode",
-        "description": "Main-InfraInfrastructure madeBy N2: Database ServerNode."
+        "sourceLabel": "Main-Infra",
+        "targetLabel": "N2: Database Server",
+        "sourceMetamodelEntity": "Infrastructure",
+        "targetMetamodelEntity": "Node",
+        "description": "Main-Infra madeBy N2: Database Server.",
+        "drawioId": "flr8XU77myX9OvzYn5zU-7",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Infrastructure 1 — 1..* Node"
       }
     },
     {
       "data": {
         "id": "DXTTVG0T_Y0voirAc8tk-5",
-        "name": "initiates",
         "label": "initiates",
+        "name": "initiates",
         "kind": "relationship",
         "source": "DXTTVG0T_Y0voirAc8tk-7",
         "target": "DXTTVG0T_Y0voirAc8tk-13",
-        "sourceLabel": "UnknownThreatSource",
-        "targetLabel": "Ransomware AttackThreatEvent",
-        "description": "UnknownThreatSource initiates Ransomware AttackThreatEvent."
+        "sourceLabel": "Unknown",
+        "targetLabel": "Ransomware Attack",
+        "sourceMetamodelEntity": "ThreatActor",
+        "targetMetamodelEntity": "Threat",
+        "description": "Unknown initiates Ransomware Attack.",
+        "drawioId": "DXTTVG0T_Y0voirAc8tk-5",
+        "sourceCardinality": "1",
+        "targetCardinality": "1",
+        "cardinality": "ThreatActor 1 — 1 Threat"
       }
     },
     {
       "data": {
-        "id": "isKCdTBRIcX7ZzF2_SF_-7",
-        "name": "relatedTo",
-        "label": "relatedTo",
+        "id": "isKCdTBRIcX7ZzF2_SF_-1",
+        "label": "startsWith",
+        "name": "startsWith",
         "kind": "relationship",
         "source": "DXTTVG0T_Y0voirAc8tk-13",
         "target": "isKCdTBRIcX7ZzF2_SF_-5",
-        "sourceLabel": "Ransomware AttackThreatEvent",
-        "targetLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "description": "Ransomware AttackThreatEvent relatedTo AS1: Phishing Attack with Weaponized DocumentAttackStepItem."
+        "sourceLabel": "Ransomware Attack",
+        "targetLabel": "AS1: Phishing Attack with Weaponized Document",
+        "sourceMetamodelEntity": "Threat",
+        "targetMetamodelEntity": "ThreatStep",
+        "description": "Ransomware Attack startsWith AS1: Phishing Attack with Weaponized Document.",
+        "drawioId": "isKCdTBRIcX7ZzF2_SF_-1",
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
         "id": "isKCdTBRIcX7ZzF2_SF_-3",
-        "name": "followedBy",
         "label": "followedBy",
+        "name": "followedBy",
         "kind": "relationship",
         "source": "isKCdTBRIcX7ZzF2_SF_-5",
         "target": "isKCdTBRIcX7ZzF2_SF_-6",
-        "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "targetLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-        "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem followedBy AS2: BazarLoader ExecutionAttackStepItem."
+        "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+        "targetLabel": "AS2: BazarLoader Execution",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "ThreatStep",
+        "description": "AS1: Phishing Attack with Weaponized Document followedBy AS2: BazarLoader Execution.",
+        "drawioId": "isKCdTBRIcX7ZzF2_SF_-3",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "",
+        "cardinality": "ThreatStep 0..* —  ThreatStep"
       }
     },
     {
       "data": {
         "id": "5_uvdN_fO5OIq28JDHqv-1",
-        "name": "exploits",
         "label": "exploits",
+        "name": "exploits",
         "kind": "relationship",
         "source": "isKCdTBRIcX7ZzF2_SF_-5",
         "target": "1zz9dUDx6NtFQG9qIyYO-1",
-        "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "targetLabel": "Prone to PhishingHumanVulnerability",
-        "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem exploits Prone to PhishingHumanVulnerability."
+        "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+        "targetLabel": "Prone to Phishing",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "HumanVulnerability",
+        "description": "AS1: Phishing Attack with Weaponized Document exploits Prone to Phishing.",
+        "drawioId": "5_uvdN_fO5OIq28JDHqv-1",
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
         "id": "G_SW_Vu1ddHmdaGLCPAa-1",
-        "name": "employs",
         "label": "employs",
+        "name": "employs",
         "kind": "relationship",
         "source": "isKCdTBRIcX7ZzF2_SF_-6",
         "target": "ImEBZV-vzcU5x6acnLZ7-3",
-        "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-        "targetLabel": "BazarLoaderAttackToolInstance",
-        "description": "AS2: BazarLoader ExecutionAttackStepItem employs BazarLoaderAttackToolInstance."
-      }
-    },
-    {
-      "data": {
-        "id": "nuMpVuPP5FOWfUhDepc9-1",
-        "name": "refersTo",
-        "label": "refersTo",
-        "kind": "relationship",
-        "source": "isKCdTBRIcX7ZzF2_SF_-5",
-        "target": "nuMpVuPP5FOWfUhDepc9-3",
-        "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "targetLabel": "Phishing with AttachmentAttackStep",
-        "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem refersTo Phishing with AttachmentAttackStep."
+        "sourceLabel": "AS2: BazarLoader Execution",
+        "targetLabel": "BazarLoader",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "AttackToolInstance",
+        "description": "AS2: BazarLoader Execution employs BazarLoader.",
+        "drawioId": "G_SW_Vu1ddHmdaGLCPAa-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "0..*",
+        "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance"
       }
     },
     {
       "data": {
         "id": "7615FOlYJKEI97l76xLW-1",
-        "name": "implements",
         "label": "implements",
+        "name": "implements",
         "kind": "relationship",
         "source": "isKCdTBRIcX7ZzF2_SF_-5",
         "target": "9aJOADVmqYrCJmHLZuZJ-1",
-        "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "targetLabel": "T1566.001TTP",
-        "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem implements T1566.001TTP."
+        "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+        "targetLabel": "T1566.001",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "TTP",
+        "description": "AS1: Phishing Attack with Weaponized Document implements T1566.001.",
+        "drawioId": "7615FOlYJKEI97l76xLW-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 TTP"
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-1",
-        "name": "exploitsVulnerability",
         "label": "exploitsVulnerability",
+        "name": "exploitsVulnerability",
         "kind": "relationship",
         "source": "9aJOADVmqYrCJmHLZuZJ-1",
         "target": "1zz9dUDx6NtFQG9qIyYO-1",
-        "sourceLabel": "T1566.001TTP",
-        "targetLabel": "Prone to PhishingHumanVulnerability",
-        "description": "T1566.001TTP exploitsVulnerability Prone to PhishingHumanVulnerability."
+        "sourceLabel": "T1566.001",
+        "targetLabel": "Prone to Phishing",
+        "sourceMetamodelEntity": "TTP",
+        "targetMetamodelEntity": "HumanVulnerability",
+        "description": "T1566.001 exploitsVulnerability Prone to Phishing.",
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "TTP 1..* — 1 Vulnerability"
       }
     },
     {
       "data": {
         "id": "niolT3tTzyHpKWggiv-i-1",
-        "name": "employs",
         "label": "employs",
+        "name": "employs",
         "kind": "relationship",
         "source": "isKCdTBRIcX7ZzF2_SF_-5",
         "target": "niolT3tTzyHpKWggiv-i-3",
-        "sourceLabel": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem",
-        "targetLabel": "Weaponized DocumentAttackToolInstance",
-        "description": "AS1: Phishing Attack with Weaponized DocumentAttackStepItem employs Weaponized DocumentAttackToolInstance."
+        "sourceLabel": "AS1: Phishing Attack with Weaponized Document",
+        "targetLabel": "Weaponized Document",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "AttackToolInstance",
+        "description": "AS1: Phishing Attack with Weaponized Document employs Weaponized Document.",
+        "drawioId": "niolT3tTzyHpKWggiv-i-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "0..*",
+        "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance"
       }
     },
     {
       "data": {
         "id": "S2bj8Yupr1EtsPe4_ZwJ-1",
-        "name": "instanceOf",
         "label": "instanceOf",
+        "name": "instanceOf",
         "kind": "relationship",
         "source": "niolT3tTzyHpKWggiv-i-3",
         "target": "S2bj8Yupr1EtsPe4_ZwJ-3",
-        "sourceLabel": "Weaponized DocumentAttackToolInstance",
-        "targetLabel": "Office DocumentAttackTool",
-        "description": "Weaponized DocumentAttackToolInstance instanceOf Office DocumentAttackTool."
+        "sourceLabel": "Weaponized Document",
+        "targetLabel": "Office Document",
+        "sourceMetamodelEntity": "AttackToolInstance",
+        "targetMetamodelEntity": "AttackTool",
+        "description": "Weaponized Document instanceOf Office Document.",
+        "drawioId": "S2bj8Yupr1EtsPe4_ZwJ-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "AttackToolInstance 1..* — 1 AttackTool"
       }
     },
     {
       "data": {
         "id": "ImEBZV-vzcU5x6acnLZ7-1",
-        "name": "deploys",
         "label": "deploys",
+        "name": "deploys",
         "kind": "relationship",
         "source": "niolT3tTzyHpKWggiv-i-3",
         "target": "ImEBZV-vzcU5x6acnLZ7-3",
-        "sourceLabel": "Weaponized DocumentAttackToolInstance",
-        "targetLabel": "BazarLoaderAttackToolInstance",
-        "description": "Weaponized DocumentAttackToolInstance deploys BazarLoaderAttackToolInstance."
-      }
-    },
-    {
-      "data": {
-        "id": "ImEBZV-vzcU5x6acnLZ7-10",
-        "name": "refersTo",
-        "label": "refersTo",
-        "kind": "relationship",
-        "source": "isKCdTBRIcX7ZzF2_SF_-6",
-        "target": "ImEBZV-vzcU5x6acnLZ7-12",
-        "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-        "targetLabel": "Install Malicious SoftwareAttackStep",
-        "description": "AS2: BazarLoader ExecutionAttackStepItem refersTo Install Malicious SoftwareAttackStep."
+        "sourceLabel": "Weaponized Document",
+        "targetLabel": "BazarLoader",
+        "sourceMetamodelEntity": "AttackToolInstance",
+        "targetMetamodelEntity": "AttackToolInstance",
+        "description": "Weaponized Document deploys BazarLoader.",
+        "drawioId": "ImEBZV-vzcU5x6acnLZ7-1",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "",
+        "cardinality": "AttackToolInstance 0..* —  AttackToolInstance"
       }
     },
     {
       "data": {
         "id": "ImEBZV-vzcU5x6acnLZ7-13",
-        "name": "implements",
         "label": "implements",
+        "name": "implements",
         "kind": "relationship",
         "source": "isKCdTBRIcX7ZzF2_SF_-6",
         "target": "ImEBZV-vzcU5x6acnLZ7-15",
-        "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-        "targetLabel": "T1105TTP",
-        "description": "AS2: BazarLoader ExecutionAttackStepItem implements T1105TTP."
+        "sourceLabel": "AS2: BazarLoader Execution",
+        "targetLabel": "T1105",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "TTP",
+        "description": "AS2: BazarLoader Execution implements T1105.",
+        "drawioId": "ImEBZV-vzcU5x6acnLZ7-13",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 TTP"
       }
     },
     {
       "data": {
         "id": "nj5hpQ6kMEfSOXQIEmYd-2",
-        "name": "affectsUser",
         "label": "affectsUser",
+        "name": "affectsUser",
         "kind": "relationship",
         "source": "1zz9dUDx6NtFQG9qIyYO-1",
         "target": "nj5hpQ6kMEfSOXQIEmYd-1",
-        "sourceLabel": "Prone to PhishingHumanVulnerability",
-        "targetLabel": "U1: Employee 1User",
-        "description": "Prone to PhishingHumanVulnerability affectsUser U1: Employee 1User."
+        "sourceLabel": "Prone to Phishing",
+        "targetLabel": "U1: Employee 1",
+        "sourceMetamodelEntity": "HumanVulnerability",
+        "targetMetamodelEntity": "User",
+        "description": "Prone to Phishing affectsUser U1: Employee 1.",
+        "drawioId": "nj5hpQ6kMEfSOXQIEmYd-2",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "0..*",
+        "cardinality": "HumanVulnerability 0..* — 0..* User"
       }
     },
     {
       "data": {
         "id": "2yveyayf0f4Zed5tB9-e-1",
-        "name": "hasAccessTo",
         "label": "hasAccessTo",
+        "name": "hasAccessTo",
         "kind": "relationship",
         "source": "nj5hpQ6kMEfSOXQIEmYd-1",
         "target": "Zcl4WLPny9slI91kZ9_o-1",
-        "sourceLabel": "U1: Employee 1User",
-        "targetLabel": "N1: WorkstationNode",
-        "description": "U1: Employee 1User hasAccessTo N1: WorkstationNode."
+        "sourceLabel": "U1: Employee 1",
+        "targetLabel": "N1: Workstation",
+        "sourceMetamodelEntity": "User",
+        "targetMetamodelEntity": "Node",
+        "description": "U1: Employee 1 hasAccessTo N1: Workstation.",
+        "drawioId": "2yveyayf0f4Zed5tB9-e-1",
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-4",
-        "name": "followedBy",
         "label": "followedBy",
+        "name": "followedBy",
         "kind": "relationship",
         "source": "isKCdTBRIcX7ZzF2_SF_-6",
         "target": "5fuBaIPhzgW5u_tKo_7_-3",
-        "sourceLabel": "AS2: BazarLoader ExecutionAttackStepItem",
-        "targetLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-        "description": "AS2: BazarLoader ExecutionAttackStepItem followedBy AS3: Infrastructure DiscoveryAttackStepItem."
-      }
-    },
-    {
-      "data": {
-        "id": "5fuBaIPhzgW5u_tKo_7_-6",
-        "name": "refersTo",
-        "label": "refersTo",
-        "kind": "relationship",
-        "source": "5fuBaIPhzgW5u_tKo_7_-3",
-        "target": "5fuBaIPhzgW5u_tKo_7_-8",
-        "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-        "targetLabel": "Remote System DiscoveryAttackStep",
-        "description": "AS3: Infrastructure DiscoveryAttackStepItem refersTo Remote System DiscoveryAttackStep."
+        "sourceLabel": "AS2: BazarLoader Execution",
+        "targetLabel": "AS3: Infrastructure Discovery",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "ThreatStep",
+        "description": "AS2: BazarLoader Execution followedBy AS3: Infrastructure Discovery.",
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-4",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "",
+        "cardinality": "ThreatStep 0..* —  ThreatStep"
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-10",
-        "name": "implements",
         "label": "implements",
+        "name": "implements",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-3",
         "target": "5fuBaIPhzgW5u_tKo_7_-9",
-        "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-        "targetLabel": "T1018TTP",
-        "description": "AS3: Infrastructure DiscoveryAttackStepItem implements T1018TTP."
+        "sourceLabel": "AS3: Infrastructure Discovery",
+        "targetLabel": "T1018",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "TTP",
+        "description": "AS3: Infrastructure Discovery implements T1018.",
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-10",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 TTP"
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-13",
-        "name": "followedBy",
         "label": "followedBy",
+        "name": "followedBy",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-3",
         "target": "5fuBaIPhzgW5u_tKo_7_-12",
-        "sourceLabel": "AS3: Infrastructure DiscoveryAttackStepItem",
-        "targetLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-        "description": "AS3: Infrastructure DiscoveryAttackStepItem followedBy AS4: Lateral Movement to Other NodesAttackStepItem."
-      }
-    },
-    {
-      "data": {
-        "id": "5fuBaIPhzgW5u_tKo_7_-15",
-        "name": "refersTo",
-        "label": "refersTo",
-        "kind": "relationship",
-        "source": "5fuBaIPhzgW5u_tKo_7_-12",
-        "target": "5fuBaIPhzgW5u_tKo_7_-17",
-        "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-        "targetLabel": "Lateral MovementAttackStep",
-        "description": "AS4: Lateral Movement to Other NodesAttackStepItem refersTo Lateral MovementAttackStep."
+        "sourceLabel": "AS3: Infrastructure Discovery",
+        "targetLabel": "AS4: Lateral Movement to Other Nodes",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "ThreatStep",
+        "description": "AS3: Infrastructure Discovery followedBy AS4: Lateral Movement to Other Nodes.",
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-13",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "",
+        "cardinality": "ThreatStep 0..* —  ThreatStep"
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-18",
-        "name": "implements",
         "label": "implements",
+        "name": "implements",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-12",
         "target": "5fuBaIPhzgW5u_tKo_7_-20",
-        "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-        "targetLabel": "T1570TTP",
-        "description": "AS4: Lateral Movement to Other NodesAttackStepItem implements T1570TTP."
+        "sourceLabel": "AS4: Lateral Movement to Other Nodes",
+        "targetLabel": "T1570",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "TTP",
+        "description": "AS4: Lateral Movement to Other Nodes implements T1570.",
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-18",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 TTP"
       }
     },
     {
       "data": {
         "id": "W3w3qxBm9yhByrui9fDT-1",
-        "name": "targetsResource",
         "label": "targetsResource",
+        "name": "targetsResource",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-21",
         "target": "rVEplnxd9geB-yA5XOS9-1",
-        "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-        "targetLabel": "Client DataAsset",
-        "description": "AS5: Ransomware ExecutionAttackStepItem targetsResource Client DataAsset."
+        "sourceLabel": "AS5: Ransomware Execution",
+        "targetLabel": "Client Data",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "Asset",
+        "description": "AS5: Ransomware Execution targetsResource Client Data.",
+        "drawioId": "W3w3qxBm9yhByrui9fDT-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 Resource"
       }
     },
     {
       "data": {
         "id": "W3w3qxBm9yhByrui9fDT-3",
-        "name": "targetsResource",
         "label": "targetsResource",
+        "name": "targetsResource",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-21",
         "target": "rVEplnxd9geB-yA5XOS9-2",
-        "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-        "targetLabel": "Employees DataAsset",
-        "description": "AS5: Ransomware ExecutionAttackStepItem targetsResource Employees DataAsset."
+        "sourceLabel": "AS5: Ransomware Execution",
+        "targetLabel": "Employees Data",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "Asset",
+        "description": "AS5: Ransomware Execution targetsResource Employees Data.",
+        "drawioId": "W3w3qxBm9yhByrui9fDT-3",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 Resource"
       }
     },
     {
       "data": {
         "id": "mb8l3Fbao_xBAS6c-KFB-1",
-        "name": "compromises",
         "label": "compromises",
+        "name": "compromises",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-21",
         "target": "cdA-2u69LmOZn_5sE9tN-2",
-        "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-        "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "description": "AS5: Ransomware ExecutionAttackStepItem compromises ASR2: Integrity of DataAssetSecurityRequirement."
+        "sourceLabel": "AS5: Ransomware Execution",
+        "targetLabel": "ASR2: Integrity of Data",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "AssetSecurityRequirement",
+        "description": "AS5: Ransomware Execution compromises ASR2: Integrity of Data.",
+        "drawioId": "mb8l3Fbao_xBAS6c-KFB-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 Asset\nSecurityRequirement"
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-22",
-        "name": "followedBy",
         "label": "followedBy",
+        "name": "followedBy",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-12",
         "target": "5fuBaIPhzgW5u_tKo_7_-21",
-        "sourceLabel": "AS4: Lateral Movement to Other NodesAttackStepItem",
-        "targetLabel": "AS5: Ransomware ExecutionAttackStepItem",
-        "description": "AS4: Lateral Movement to Other NodesAttackStepItem followedBy AS5: Ransomware ExecutionAttackStepItem."
-      }
-    },
-    {
-      "data": {
-        "id": "5fuBaIPhzgW5u_tKo_7_-24",
-        "name": "refersTo",
-        "label": "refersTo",
-        "kind": "relationship",
-        "source": "5fuBaIPhzgW5u_tKo_7_-21",
-        "target": "5fuBaIPhzgW5u_tKo_7_-26",
-        "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-        "targetLabel": "Data EncryptionAttackStep",
-        "description": "AS5: Ransomware ExecutionAttackStepItem refersTo Data EncryptionAttackStep."
+        "sourceLabel": "AS4: Lateral Movement to Other Nodes",
+        "targetLabel": "AS5: Ransomware Execution",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "ThreatStep",
+        "description": "AS4: Lateral Movement to Other Nodes followedBy AS5: Ransomware Execution.",
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-22",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "",
+        "cardinality": "ThreatStep 0..* —  ThreatStep"
       }
     },
     {
       "data": {
         "id": "vo9jejg2OZcYDb8uq2dd-1",
-        "name": "violates",
         "label": "violates",
+        "name": "violates",
         "kind": "relationship",
-        "source": "5fuBaIPhzgW5u_tKo_7_-26",
+        "source": "5fuBaIPhzgW5u_tKo_7_-29",
         "target": "Ry1iGIntjKa-yCpNBPo0-8",
-        "sourceLabel": "Data EncryptionAttackStep",
-        "targetLabel": "IntegritySecurityRequirement",
-        "description": "Data EncryptionAttackStep violates IntegritySecurityRequirement."
+        "sourceLabel": "T1486",
+        "targetLabel": "Integrity",
+        "sourceMetamodelEntity": "TTP",
+        "targetMetamodelEntity": "SecurityRequirement",
+        "description": "T1486 violates Integrity.",
+        "drawioId": "vo9jejg2OZcYDb8uq2dd-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "TTP 1..* — 1 SecurityRequirement"
       }
     },
     {
       "data": {
         "id": "5fuBaIPhzgW5u_tKo_7_-27",
-        "name": "implements",
         "label": "implements",
+        "name": "implements",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-21",
         "target": "5fuBaIPhzgW5u_tKo_7_-29",
-        "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-        "targetLabel": "T1486TTP",
-        "description": "AS5: Ransomware ExecutionAttackStepItem implements T1486TTP."
-      }
-    },
-    {
-      "data": {
-        "id": "p9ztlIugojwwJTmJCLig-1",
-        "name": "impacts",
-        "label": "impacts",
-        "kind": "relationship",
-        "source": "5fuBaIPhzgW5u_tKo_7_-29",
-        "target": "cdA-2u69LmOZn_5sE9tN-2",
-        "sourceLabel": "T1486TTP",
-        "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "description": "T1486TTP impacts ASR2: Integrity of DataAssetSecurityRequirement."
+        "sourceLabel": "AS5: Ransomware Execution",
+        "targetLabel": "T1486",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "TTP",
+        "description": "AS5: Ransomware Execution implements T1486.",
+        "drawioId": "5fuBaIPhzgW5u_tKo_7_-27",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 TTP"
       }
     },
     {
       "data": {
         "id": "3yI27mflQqRDWPVXWcn1-1",
-        "name": "employs",
         "label": "employs",
+        "name": "employs",
         "kind": "relationship",
         "source": "5fuBaIPhzgW5u_tKo_7_-21",
         "target": "3yI27mflQqRDWPVXWcn1-3",
-        "sourceLabel": "AS5: Ransomware ExecutionAttackStepItem",
-        "targetLabel": "Conti InstanceAttackToolInstance",
-        "description": "AS5: Ransomware ExecutionAttackStepItem employs Conti InstanceAttackToolInstance."
+        "sourceLabel": "AS5: Ransomware Execution",
+        "targetLabel": "Conti Instance",
+        "sourceMetamodelEntity": "ThreatStep",
+        "targetMetamodelEntity": "AttackToolInstance",
+        "description": "AS5: Ransomware Execution employs Conti Instance.",
+        "drawioId": "3yI27mflQqRDWPVXWcn1-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "0..*",
+        "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance"
       }
     },
     {
       "data": {
         "id": "3yI27mflQqRDWPVXWcn1-4",
-        "name": "instanceOf",
         "label": "instanceOf",
+        "name": "instanceOf",
         "kind": "relationship",
         "source": "3yI27mflQqRDWPVXWcn1-3",
         "target": "3yI27mflQqRDWPVXWcn1-6",
-        "sourceLabel": "Conti InstanceAttackToolInstance",
-        "targetLabel": "ContiAttackTool",
-        "description": "Conti InstanceAttackToolInstance instanceOf ContiAttackTool."
+        "sourceLabel": "Conti Instance",
+        "targetLabel": "Conti",
+        "sourceMetamodelEntity": "AttackToolInstance",
+        "targetMetamodelEntity": "AttackTool",
+        "description": "Conti Instance instanceOf Conti.",
+        "drawioId": "3yI27mflQqRDWPVXWcn1-4",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "AttackToolInstance 1..* — 1 AttackTool"
       }
     },
     {
       "data": {
         "id": "XfZH5y7X7novlaDJgZcS-1",
-        "name": "hasSecurityRequirement",
         "label": "hasSecurityRequirement",
+        "name": "hasSecurityRequirement",
         "kind": "relationship",
         "source": "rVEplnxd9geB-yA5XOS9-1",
         "target": "eZx1rzvC6ny3f7PKwibH-3",
-        "sourceLabel": "Client DataAsset",
-        "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-        "description": "Client DataAsset hasSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+        "sourceLabel": "Client Data",
+        "targetLabel": "ASR1: Confidentiality of Data",
+        "sourceMetamodelEntity": "Asset",
+        "targetMetamodelEntity": "AssetSecurityRequirement",
+        "description": "Client Data hasSecurityRequirement ASR1: Confidentiality of Data.",
+        "drawioId": "XfZH5y7X7novlaDJgZcS-1",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement"
       }
     },
     {
       "data": {
         "id": "Ry1iGIntjKa-yCpNBPo0-6",
-        "name": "hasSecurityRequirement",
         "label": "hasSecurityRequirement",
+        "name": "hasSecurityRequirement",
         "kind": "relationship",
         "source": "rVEplnxd9geB-yA5XOS9-1",
         "target": "cdA-2u69LmOZn_5sE9tN-2",
-        "sourceLabel": "Client DataAsset",
-        "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "description": "Client DataAsset hasSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+        "sourceLabel": "Client Data",
+        "targetLabel": "ASR2: Integrity of Data",
+        "sourceMetamodelEntity": "Asset",
+        "targetMetamodelEntity": "AssetSecurityRequirement",
+        "description": "Client Data hasSecurityRequirement ASR2: Integrity of Data.",
+        "drawioId": "Ry1iGIntjKa-yCpNBPo0-6",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement"
       }
     },
     {
       "data": {
         "id": "Ry1iGIntjKa-yCpNBPo0-2",
-        "name": "hasSecurityRequirement",
         "label": "hasSecurityRequirement",
+        "name": "hasSecurityRequirement",
         "kind": "relationship",
         "source": "rVEplnxd9geB-yA5XOS9-2",
         "target": "cdA-2u69LmOZn_5sE9tN-2",
-        "sourceLabel": "Employees DataAsset",
-        "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "description": "Employees DataAsset hasSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+        "sourceLabel": "Employees Data",
+        "targetLabel": "ASR2: Integrity of Data",
+        "sourceMetamodelEntity": "Asset",
+        "targetMetamodelEntity": "AssetSecurityRequirement",
+        "description": "Employees Data hasSecurityRequirement ASR2: Integrity of Data.",
+        "drawioId": "Ry1iGIntjKa-yCpNBPo0-2",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement"
       }
     },
     {
       "data": {
         "id": "Ry1iGIntjKa-yCpNBPo0-4",
-        "name": "hasSecurityRequirement",
         "label": "hasSecurityRequirement",
+        "name": "hasSecurityRequirement",
         "kind": "relationship",
         "source": "rVEplnxd9geB-yA5XOS9-2",
         "target": "eZx1rzvC6ny3f7PKwibH-3",
-        "sourceLabel": "Employees DataAsset",
-        "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-        "description": "Employees DataAsset hasSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+        "sourceLabel": "Employees Data",
+        "targetLabel": "ASR1: Confidentiality of Data",
+        "sourceMetamodelEntity": "Asset",
+        "targetMetamodelEntity": "AssetSecurityRequirement",
+        "description": "Employees Data hasSecurityRequirement ASR1: Confidentiality of Data.",
+        "drawioId": "Ry1iGIntjKa-yCpNBPo0-4",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement"
       }
     },
     {
       "data": {
         "id": "pADUx78GfB26Rjjpd5Rp-1",
-        "name": "isSource",
         "label": "isSource",
+        "name": "isSource",
         "kind": "relationship",
         "source": "Zcl4WLPny9slI91kZ9_o-1",
         "target": "ze9FDJWhSHo_2HU-X0Ti-2",
-        "sourceLabel": "N1: WorkstationNode",
-        "targetLabel": "Interact with DBConnection",
-        "description": "N1: WorkstationNode isSource Interact with DBConnection."
+        "sourceLabel": "N1: Workstation",
+        "targetLabel": "Interact with DB",
+        "sourceMetamodelEntity": "Node",
+        "targetMetamodelEntity": "Connection",
+        "description": "N1: Workstation isSource Interact with DB.",
+        "drawioId": "pADUx78GfB26Rjjpd5Rp-1",
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
         "id": "flr8XU77myX9OvzYn5zU-2",
-        "name": "hasNodeType",
         "label": "hasNodeType",
+        "name": "hasNodeType",
         "kind": "relationship",
         "source": "fOiOA0MLRFIGU3IK7tZ9-1",
         "target": "flr8XU77myX9OvzYn5zU-1",
-        "sourceLabel": "N2: Database ServerNode",
-        "targetLabel": "Database ServerNodeType",
-        "description": "N2: Database ServerNode hasNodeType Database ServerNodeType."
+        "sourceLabel": "N2: Database Server",
+        "targetLabel": "Database Server",
+        "sourceMetamodelEntity": "Node",
+        "targetMetamodelEntity": "NodeType",
+        "description": "N2: Database Server hasNodeType Database Server.",
+        "drawioId": "flr8XU77myX9OvzYn5zU-2",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Node 1..* — 1 NodeType"
       }
     },
     {
       "data": {
         "id": "pADUx78GfB26Rjjpd5Rp-3",
-        "name": "isDestionation",
-        "label": "isDestionation",
+        "label": "isDestination",
+        "name": "isDestination",
         "kind": "relationship",
         "source": "fOiOA0MLRFIGU3IK7tZ9-1",
         "target": "ze9FDJWhSHo_2HU-X0Ti-2",
-        "sourceLabel": "N2: Database ServerNode",
-        "targetLabel": "Interact with DBConnection",
-        "description": "N2: Database ServerNode isDestionation Interact with DBConnection."
+        "sourceLabel": "N2: Database Server",
+        "targetLabel": "Interact with DB",
+        "sourceMetamodelEntity": "Node",
+        "targetMetamodelEntity": "Connection",
+        "description": "N2: Database Server isDestination Interact with DB.",
+        "drawioId": "pADUx78GfB26Rjjpd5Rp-3",
+        "sourceCardinality": "1",
+        "targetCardinality": "0..*",
+        "cardinality": "Node 1 — 0..* Connection"
       }
     },
     {
       "data": {
         "id": "1qLYpMFIIv6NwulWZkVb-3",
-        "name": "exposesPort",
         "label": "exposesPort",
+        "name": "exposesPort",
         "kind": "relationship",
         "source": "fOiOA0MLRFIGU3IK7tZ9-1",
         "target": "pADUx78GfB26Rjjpd5Rp-5",
-        "sourceLabel": "N2: Database ServerNode",
-        "targetLabel": "5432Port",
-        "description": "N2: Database ServerNode exposesPort 5432Port."
+        "sourceLabel": "N2: Database Server",
+        "targetLabel": "5432",
+        "sourceMetamodelEntity": "Node",
+        "targetMetamodelEntity": "Port",
+        "description": "N2: Database Server exposesPort 5432.",
+        "drawioId": "1qLYpMFIIv6NwulWZkVb-3",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Node 1 — 1..* Port"
       }
     },
     {
       "data": {
         "id": "yAQWF--oj1ht1P_PKinq-2",
-        "name": "hostsResource",
         "label": "hostsResource",
+        "name": "hostsResource",
         "kind": "relationship",
         "source": "fOiOA0MLRFIGU3IK7tZ9-1",
         "target": "rVEplnxd9geB-yA5XOS9-1",
-        "sourceLabel": "N2: Database ServerNode",
-        "targetLabel": "Client DataAsset",
-        "description": "N2: Database ServerNode hostsResource Client DataAsset."
+        "sourceLabel": "N2: Database Server",
+        "targetLabel": "Client Data",
+        "sourceMetamodelEntity": "Node",
+        "targetMetamodelEntity": "Asset",
+        "description": "N2: Database Server hostsResource Client Data.",
+        "drawioId": "yAQWF--oj1ht1P_PKinq-2",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Node 1 — 1..* Resource"
       }
     },
     {
       "data": {
         "id": "yAQWF--oj1ht1P_PKinq-4",
-        "name": "hostsResource",
         "label": "hostsResource",
+        "name": "hostsResource",
         "kind": "relationship",
         "source": "fOiOA0MLRFIGU3IK7tZ9-1",
         "target": "rVEplnxd9geB-yA5XOS9-2",
-        "sourceLabel": "N2: Database ServerNode",
-        "targetLabel": "Employees DataAsset",
-        "description": "N2: Database ServerNode hostsResource Employees DataAsset."
+        "sourceLabel": "N2: Database Server",
+        "targetLabel": "Employees Data",
+        "sourceMetamodelEntity": "Node",
+        "targetMetamodelEntity": "Asset",
+        "description": "N2: Database Server hostsResource Employees Data.",
+        "drawioId": "yAQWF--oj1ht1P_PKinq-4",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Node 1 — 1..* Resource"
       }
     },
     {
       "data": {
         "id": "flr8XU77myX9OvzYn5zU-4",
-        "name": "hasNodeType",
         "label": "hasNodeType",
+        "name": "hasNodeType",
         "kind": "relationship",
         "source": "Zcl4WLPny9slI91kZ9_o-1",
         "target": "flr8XU77myX9OvzYn5zU-6",
-        "sourceLabel": "N1: WorkstationNode",
-        "targetLabel": "Desktop ComputerNodeType",
-        "description": "N1: WorkstationNode hasNodeType Desktop ComputerNodeType."
+        "sourceLabel": "N1: Workstation",
+        "targetLabel": "Desktop Computer",
+        "sourceMetamodelEntity": "Node",
+        "targetMetamodelEntity": "NodeType",
+        "description": "N1: Workstation hasNodeType Desktop Computer.",
+        "drawioId": "flr8XU77myX9OvzYn5zU-4",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Node 1..* — 1 NodeType"
       }
     },
     {
       "data": {
         "id": "1qLYpMFIIv6NwulWZkVb-1",
-        "name": "hasDestinationPort",
         "label": "hasDestinationPort",
+        "name": "hasDestinationPort",
         "kind": "relationship",
         "source": "ze9FDJWhSHo_2HU-X0Ti-2",
         "target": "pADUx78GfB26Rjjpd5Rp-5",
-        "sourceLabel": "Interact with DBConnection",
-        "targetLabel": "5432Port",
-        "description": "Interact with DBConnection hasDestinationPort 5432Port."
+        "sourceLabel": "Interact with DB",
+        "targetLabel": "5432",
+        "sourceMetamodelEntity": "Connection",
+        "targetMetamodelEntity": "Port",
+        "description": "Interact with DB hasDestinationPort 5432.",
+        "drawioId": "1qLYpMFIIv6NwulWZkVb-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Connection 1..* — 1 Port"
       }
     },
     {
       "data": {
         "id": "eZx1rzvC6ny3f7PKwibH-4",
-        "name": "drivesSecurityRequirement",
         "label": "drivesSecurityRequirement",
+        "name": "drivesSecurityRequirement",
         "kind": "relationship",
         "source": "t9Zseuc7trHZRqGckOzh-3",
         "target": "eZx1rzvC6ny3f7PKwibH-3",
-        "sourceLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-        "targetLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-        "description": "BR1: Organization Data must be ProtectedBusinessRequirement drivesSecurityRequirement ASR1: Confidentiality of DataAssetSecurityRequirement."
+        "sourceLabel": "BR1: Organization Data must be Protected",
+        "targetLabel": "ASR1: Confidentiality of Data",
+        "sourceMetamodelEntity": "BusinessRequirement",
+        "targetMetamodelEntity": "AssetSecurityRequirement",
+        "description": "BR1: Organization Data must be Protected drivesSecurityRequirement ASR1: Confidentiality of Data.",
+        "drawioId": "eZx1rzvC6ny3f7PKwibH-4",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1..*",
+        "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement"
       }
     },
     {
       "data": {
         "id": "cdA-2u69LmOZn_5sE9tN-3",
-        "name": "drivesSecurityRequirement",
         "label": "drivesSecurityRequirement",
+        "name": "drivesSecurityRequirement",
         "kind": "relationship",
         "source": "t9Zseuc7trHZRqGckOzh-3",
         "target": "cdA-2u69LmOZn_5sE9tN-2",
-        "sourceLabel": "BR1: Organization Data must be ProtectedBusinessRequirement",
-        "targetLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "description": "BR1: Organization Data must be ProtectedBusinessRequirement drivesSecurityRequirement ASR2: Integrity of DataAssetSecurityRequirement."
+        "sourceLabel": "BR1: Organization Data must be Protected",
+        "targetLabel": "ASR2: Integrity of Data",
+        "sourceMetamodelEntity": "BusinessRequirement",
+        "targetMetamodelEntity": "AssetSecurityRequirement",
+        "description": "BR1: Organization Data must be Protected drivesSecurityRequirement ASR2: Integrity of Data.",
+        "drawioId": "cdA-2u69LmOZn_5sE9tN-3",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1..*",
+        "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement"
       }
     },
     {
       "data": {
         "id": "zYwYgb49FxiR_k0q7Q0m-2",
-        "name": "implementationOf",
         "label": "implementationOf",
+        "name": "implementationOf",
         "kind": "relationship",
         "source": "eZx1rzvC6ny3f7PKwibH-3",
         "target": "zYwYgb49FxiR_k0q7Q0m-1",
-        "sourceLabel": "ASR1: Confidentiality of DataAssetSecurityRequirement",
-        "targetLabel": "ConfidentialitySecurityRequirement",
-        "description": "ASR1: Confidentiality of DataAssetSecurityRequirement implementationOf ConfidentialitySecurityRequirement."
+        "sourceLabel": "ASR1: Confidentiality of Data",
+        "targetLabel": "Confidentiality",
+        "sourceMetamodelEntity": "AssetSecurityRequirement",
+        "targetMetamodelEntity": "SecurityRequirement",
+        "description": "ASR1: Confidentiality of Data implementationOf Confidentiality.",
+        "drawioId": "zYwYgb49FxiR_k0q7Q0m-2",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement"
       }
     },
     {
       "data": {
         "id": "YudfH6V3qxk8uhn8DXTI-1",
-        "name": "implementationOf",
         "label": "implementationOf",
+        "name": "implementationOf",
         "kind": "relationship",
         "source": "cdA-2u69LmOZn_5sE9tN-2",
         "target": "Ry1iGIntjKa-yCpNBPo0-8",
-        "sourceLabel": "ASR2: Integrity of DataAssetSecurityRequirement",
-        "targetLabel": "IntegritySecurityRequirement",
-        "description": "ASR2: Integrity of DataAssetSecurityRequirement implementationOf IntegritySecurityRequirement."
+        "sourceLabel": "ASR2: Integrity of Data",
+        "targetLabel": "Integrity",
+        "sourceMetamodelEntity": "AssetSecurityRequirement",
+        "targetMetamodelEntity": "SecurityRequirement",
+        "description": "ASR2: Integrity of Data implementationOf Integrity.",
+        "drawioId": "YudfH6V3qxk8uhn8DXTI-1",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement"
       }
     }
   ]
