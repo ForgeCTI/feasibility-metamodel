@@ -1,3 +1,54 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8" /><title>CS3 — Cloud/SaaS exposure and data exfiltration | Feasibility-Oriented Metamodel</title><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="../../style.css" /></head>
-<body><main class="case-page"><header class="topbar"><div><p class="eyebrow">Case-study implementation</p><h1>CS3 — Cloud/SaaS exposure and data exfiltration</h1><p class="subtitle">The implementation folder is ready; add the case-specific Draw.io/XML model to populate this graph.</p></div><nav class="actions"><a class="button-link" href="../../">Metamodel</a><a class="button-link" href="../">Case studies</a></nav></header><section class="page-hero compact-hero"><div class="placeholder-card"><span class="hero-kicker">Implementation folder</span><h2>Implementation model pending</h2><p>The implementation folder is ready; add the case-specific Draw.io/XML model to populate this graph.</p><p class="muted">Use the CS1 folder as the template for this case study implementation page.</p></div></section></main></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CS3 — Cloud/SaaS exposure and data exfiltration | Feasibility-Oriented Metamodel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../../style.css" />
+  <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
+</head>
+<body>
+  <main class="app case-implementation-page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Case-study implementation</p>
+        <h1 id="caseTitle">CS3 — Cloud/SaaS exposure and data exfiltration</h1>
+        <p id="caseSubtitle" class="subtitle">Interactive implementation of the cloud/SaaS exposure and data exfiltration case study.</p>
+      </div>
+      <nav class="actions" aria-label="Page navigation">
+        <a class="button-link" href="../../">Metamodel</a>
+        <a class="button-link" href="../">Case studies</a>
+        <button id="caseFitButton" type="button">Fit graph</button>
+        <button id="caseResetSelectionButton" type="button">Reset selection</button>
+        <button id="caseSaveLayoutButton" type="button">Save layout</button>
+        <button id="caseResetLayoutButton" type="button">Reset layout</button>
+      </nav>
+    </header>
+
+    <section class="case-implementation-content">
+      <aside class="case-implementation-sidebar">
+        <h2>Implementation</h2>
+        <p id="caseStats" class="stats"></p>
+        <h2>Information classes</h2>
+        <div class="case-legend-row"><span class="legend-swatch generic-a-priori"></span> Generic a priori</div>
+        <div class="case-legend-row"><span class="legend-swatch instance-specific"></span> Instance specific</div>
+        <div class="case-legend-row"><span class="legend-swatch a-posteriori"></span> A posteriori</div>
+        <h2>Layout</h2>
+        <p class="help">Entities are movable. Drag nodes to adjust the implementation layout, then use <strong>Save layout</strong> to store the positions in this browser.</p>
+        <p id="layoutNotice" class="layout-notice"></p>
+      </aside>
+
+      <section id="caseGraph" class="case-graph" aria-label="CS3 implementation graph"></section>
+
+      <aside id="caseDetails" class="case-details details">
+        <h2>Case implementation</h2>
+        <p>Click an entity or relationship to inspect its details.</p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="case-data.js"></script>
+  <script src="../case-viewer.js"></script>
+  <script>initCaseImplementation(caseData);</script>
+</body>
+</html>
