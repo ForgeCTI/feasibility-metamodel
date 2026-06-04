@@ -1,24 +1,19 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <title>Feasibility-Oriented Metamodel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Cytoscape.js graph library. The site remains plain HTML/CSS/JS. -->
   <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
 </head>
-
 <body>
   <main class="app">
     <header class="topbar">
       <div>
         <p class="eyebrow">Interactive research artifact</p>
         <h1>Feasibility-Oriented Metamodel</h1>
-        <p class="subtitle">Click entities and relationships to inspect their details.</p>
+        <p class="subtitle">Click entities and relationships to inspect their details. Drag entities to adjust the layout.</p>
       </div>
 
       <nav class="actions" aria-label="Page navigation">
@@ -26,51 +21,22 @@
         <a class="button-link" href="cases/">Case studies</a>
         <button id="fitButton" type="button">Fit graph</button>
         <button id="resetButton" type="button">Reset selection</button>
+        <button id="saveLayoutButton" type="button">Save layout</button>
+        <button id="resetLayoutButton" type="button">Reset layout</button>
       </nav>
     </header>
 
     <section class="content">
       <aside class="left-panel">
         <h2>Information classes</h2>
-
-        <label class="check-row">
-          <input type="checkbox" class="class-filter" value="generic-a-priori" checked />
-          <span class="legend-swatch generic-a-priori"></span>
-          Generic a priori
-        </label>
-
-        <label class="check-row">
-          <input type="checkbox" class="class-filter" value="instance-specific" checked />
-          <span class="legend-swatch instance-specific"></span>
-          Instance specific
-        </label>
-
-        <label class="check-row">
-          <input type="checkbox" class="class-filter" value="a-posteriori" checked />
-          <span class="legend-swatch a-posteriori"></span>
-          A posteriori
-        </label>
-
+        <label class="check-row"><input type="checkbox" class="class-filter" value="generic-a-priori" checked /><span class="legend-swatch generic-a-priori"></span>Generic a priori</label>
+        <label class="check-row"><input type="checkbox" class="class-filter" value="instance-specific" checked /><span class="legend-swatch instance-specific"></span>Instance specific</label>
+        <label class="check-row"><input type="checkbox" class="class-filter" value="a-posteriori" checked /><span class="legend-swatch a-posteriori"></span>A posteriori</label>
 
         <h2>Submetamodels</h2>
-
-        <label class="check-row submodel-row">
-          <input type="checkbox" class="submodel-filter" value="organization" checked />
-          <span class="submodel-swatch organization"></span>
-          Organization
-        </label>
-
-        <label class="check-row submodel-row">
-          <input type="checkbox" class="submodel-filter" value="infrastructure" checked />
-          <span class="submodel-swatch infrastructure"></span>
-          Infrastructure
-        </label>
-
-        <label class="check-row submodel-row">
-          <input type="checkbox" class="submodel-filter" value="cyber-threat" checked />
-          <span class="submodel-swatch cyber-threat"></span>
-          Cyber threat
-        </label>
+        <label class="check-row submodel-row"><input type="checkbox" class="submodel-filter" value="organization" checked /><span class="submodel-swatch organization"></span>Organization</label>
+        <label class="check-row submodel-row"><input type="checkbox" class="submodel-filter" value="infrastructure" checked /><span class="submodel-swatch infrastructure"></span>Infrastructure</label>
+        <label class="check-row submodel-row"><input type="checkbox" class="submodel-filter" value="cyber-threat" checked /><span class="submodel-swatch cyber-threat"></span>Cyber threat</label>
 
         <h2>Search</h2>
         <input id="search" type="search" placeholder="Entity name" />
@@ -79,10 +45,8 @@
         <p id="stats" class="stats"></p>
 
         <h2>How to use</h2>
-        <p class="help">
-          Click a node to highlight its neighborhood. Click a relationship to inspect its
-          source, target, and semantic label.
-        </p>
+        <p class="help">Click a node to highlight its neighborhood. Click a relationship to inspect source, target, and cardinalities. Drag entities to adjust positions, then use <strong>Save layout</strong>.</p>
+        <div id="layoutNotice" class="layout-notice" role="status"></div>
       </aside>
 
       <section id="graph" aria-label="Interactive feasibility-oriented metamodel graph"></section>
@@ -93,9 +57,7 @@
       </aside>
     </section>
   </main>
-
   <script src="metamodel.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>

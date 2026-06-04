@@ -1,7 +1,7 @@
 const metamodel = {
   "metadata": {
     "title": "Feasibility-Oriented Metamodel",
-    "source": "metamodel_v2.drawio.html",
+    "source": "metamodel_v2-Leonardo's touch.drawio.xml",
     "diagram": "Leonardo's touch",
     "nodeClasses": {
       "generic-a-priori": {
@@ -38,14 +38,14 @@ const metamodel = {
     "positioning": "drawio-relative-layout",
     "positioningDescription": "Each node stores exact Draw.io center coordinates and normalized relative coordinates. script.js maps them to a Draw.io-like virtual canvas with a spacing multiplier to preserve distances.",
     "drawioLayout": {
-      "sourceMinX": 100.0,
-      "sourceMinY": 760.0,
-      "sourceWidth": 1570.0,
-      "sourceHeight": 910.0,
+      "sourceMinX": 40.0,
+      "sourceMinY": 740.0,
+      "sourceWidth": 1734.0,
+      "sourceHeight": 950.0,
       "spacing": 1.18,
       "marginX": 160,
       "marginY": 120,
-      "description": "Coordinates extracted from the Leonardo's touch page of metamodel_v2.drawio.html."
+      "description": "Coordinates extracted from the Leonardo's touch Draw.io diagram."
     }
   },
   "nodes": [
@@ -77,11 +77,11 @@ const metamodel = {
             "label": "operatesIn",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "sector",
             "targetLabel": "Sector",
-            "targetCardinality": "1",
-            "cardinality": "Organization 0..* — 1 Sector",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* Sector",
             "description": "Organization operatesIn Sector."
           },
           {
@@ -90,11 +90,11 @@ const metamodel = {
             "label": "manages",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "infrastructure",
             "targetLabel": "Infrastructure",
-            "targetCardinality": "0..*",
-            "cardinality": "Organization 0..* — 0..* Infrastructure",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* Infrastructure",
             "description": "Organization manages Infrastructure."
           },
           {
@@ -103,11 +103,11 @@ const metamodel = {
             "label": "basedIn",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "home-country",
             "targetLabel": "HomeCountry",
-            "targetCardinality": "1",
-            "cardinality": "Organization 0..* — 1 HomeCountry",
+            "targetCardinality": "",
+            "cardinality": "Organization 1 —  HomeCountry",
             "description": "Organization basedIn HomeCountry."
           },
           {
@@ -116,19 +116,15 @@ const metamodel = {
             "label": "hasBusinessRequirement",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "business-requirement",
             "targetLabel": "BusinessRequirement",
-            "targetCardinality": "1",
-            "cardinality": "Organization 0..* — 1 BusinessRequirement",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* BusinessRequirement",
             "description": "Organization hasBusinessRequirement BusinessRequirement."
           }
         ],
         "incomingRelations": [],
-        "relativePosition": {
-          "x": 0.095541,
-          "y": 0.010989
-        },
         "drawioPosition": {
           "x": 250.0,
           "y": 770.0
@@ -141,7 +137,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.121107,
+          "y": 0.031579
+        }
       }
     },
     {
@@ -173,11 +173,11 @@ const metamodel = {
             "label": "operatesIn",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "sector",
             "targetLabel": "Sector",
-            "targetCardinality": "1",
-            "cardinality": "Organization 0..* — 1 Sector",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* Sector",
             "description": "Organization operatesIn Sector."
           },
           {
@@ -194,10 +194,6 @@ const metamodel = {
             "description": "Campaign targetsSector Sector."
           }
         ],
-        "relativePosition": {
-          "x": 0.184713,
-          "y": 0.417582
-        },
         "drawioPosition": {
           "x": 390.0,
           "y": 1140.0
@@ -210,7 +206,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.201845,
+          "y": 0.421053
+        }
       }
     },
     {
@@ -241,11 +241,11 @@ const metamodel = {
             "label": "hasNodeType",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "node-type",
             "targetLabel": "NodeType",
             "targetCardinality": "1",
-            "cardinality": "Node 0..* — 1 NodeType",
+            "cardinality": "Node 1..* — 1 NodeType",
             "description": "Node hasNodeType NodeType."
           },
           {
@@ -254,11 +254,11 @@ const metamodel = {
             "label": "hostsResource",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "resource",
             "targetLabel": "Resource",
-            "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* Resource",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Resource",
             "description": "Node hostsResource Resource."
           },
           {
@@ -267,11 +267,11 @@ const metamodel = {
             "label": "exposesPort",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "port",
             "targetLabel": "Port",
-            "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* Port",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Port",
             "description": "Node exposesPort Port."
           },
           {
@@ -280,25 +280,51 @@ const metamodel = {
             "label": "isDestination",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "connection",
             "targetLabel": "Connection",
             "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* Connection",
+            "cardinality": "Node 1 — 0..* Connection",
             "description": "Node isDestination Connection."
           },
           {
-            "id": "node-runsos-os",
+            "id": "node-runs-os-osinstance",
             "name": "runsOS",
             "label": "runsOS",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
-            "target": "os",
-            "targetLabel": "OS",
+            "sourceCardinality": "1",
+            "target": "osinstance",
+            "targetLabel": "OSInstance",
+            "targetCardinality": "1",
+            "cardinality": "Node 1 — 1 OSInstance",
+            "description": "Node runsOS OSInstance."
+          },
+          {
+            "id": "node-runs-app-application-instance",
+            "name": "runsApp",
+            "label": "runsApp",
+            "source": "node",
+            "sourceLabel": "Node",
+            "sourceCardinality": "1",
+            "target": "application-instance",
+            "targetLabel": "ApplicationInstance",
             "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* OS",
-            "description": "Node runsOS OS."
+            "cardinality": "Node 1 — 0..* ApplicationInstance",
+            "description": "Node runsApp ApplicationInstance."
+          },
+          {
+            "id": "node-runs-node",
+            "name": "runs",
+            "label": "runs",
+            "source": "node",
+            "sourceLabel": "Node",
+            "sourceCardinality": "1",
+            "target": "node",
+            "targetLabel": "Node",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Node",
+            "description": "Node runs Node."
           }
         ],
         "incomingRelations": [
@@ -308,11 +334,11 @@ const metamodel = {
             "label": "madeBy",
             "source": "infrastructure",
             "sourceLabel": "Infrastructure",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "node",
             "targetLabel": "Node",
-            "targetCardinality": "0..*",
-            "cardinality": "Infrastructure 0..* — 0..* Node",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* Node",
             "description": "Infrastructure madeBy Node."
           },
           {
@@ -321,18 +347,40 @@ const metamodel = {
             "label": "hasAccessTo",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "node",
             "targetLabel": "Node",
-            "targetCardinality": "0..*",
-            "cardinality": "User 0..* — 0..* Node",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "User hasAccessTo Node."
+          },
+          {
+            "id": "node-runs-node",
+            "name": "runs",
+            "label": "runs",
+            "source": "node",
+            "sourceLabel": "Node",
+            "sourceCardinality": "1",
+            "target": "node",
+            "targetLabel": "Node",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Node",
+            "description": "Node runs Node."
+          },
+          {
+            "id": "attack-tool-instance-deployed-to-node",
+            "name": "deployedTo",
+            "label": "deployedTo",
+            "source": "attack-tool-instance",
+            "sourceLabel": "AttackToolInstance",
+            "sourceCardinality": "",
+            "target": "node",
+            "targetLabel": "Node",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "AttackToolInstance deployedTo Node."
           }
         ],
-        "relativePosition": {
-          "x": 0.292994,
-          "y": 0.648352
-        },
         "drawioPosition": {
           "x": 560.0,
           "y": 1350.0
@@ -345,76 +393,77 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.299885,
+          "y": 0.642105
+        }
       }
     },
     {
       "data": {
-        "id": "os",
-        "label": "OS",
+        "id": "osinstance",
+        "label": "OSInstance",
         "kind": "entity",
         "nodeClass": "generic-a-priori",
         "nodeClassLabel": "Generic a priori",
         "description": "OS is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
         "attributes": [],
         "drawioId": "uKdIYOyGbmZlVRN5kjks-25",
-        "name": "OS",
+        "name": "OSInstance",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Vendor operating-system documentation",
-          "CPE dictionaries and software catalogues",
-          "NVD/CVE affected-platform records",
-          "Endpoint management inventory baselines"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
-        "outgoingRelations": [],
+        "outgoingRelations": [
+          {
+            "id": "osinstance-instance-of-os",
+            "name": "instanceOf",
+            "label": "instanceOf",
+            "source": "osinstance",
+            "sourceLabel": "OSInstance",
+            "sourceCardinality": "0..*",
+            "target": "os",
+            "targetLabel": "OS",
+            "targetCardinality": "1",
+            "cardinality": "OSInstance 0..* — 1 OS",
+            "description": "OSInstance instanceOf OS."
+          }
+        ],
         "incomingRelations": [
           {
-            "id": "node-runsos-os",
+            "id": "node-runs-os-osinstance",
             "name": "runsOS",
             "label": "runsOS",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
-            "target": "os",
-            "targetLabel": "OS",
-            "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* OS",
-            "description": "Node runsOS OS."
+            "sourceCardinality": "1",
+            "target": "osinstance",
+            "targetLabel": "OSInstance",
+            "targetCardinality": "1",
+            "cardinality": "Node 1 — 1 OSInstance",
+            "description": "Node runsOS OSInstance."
           },
           {
-            "id": "attack-tool-instance-designed-for-os",
+            "id": "attack-tool-instance-designed-for-osinstance",
             "name": "designedFor",
             "label": "designedFor",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
-            "target": "os",
-            "targetLabel": "OS",
+            "sourceCardinality": "1..*",
+            "target": "osinstance",
+            "targetLabel": "OSInstance",
             "targetCardinality": "1",
-            "cardinality": "AttackToolInstance 0..* — 1 OS",
-            "description": "AttackToolInstance designedFor OS."
-          },
-          {
-            "id": "attack-tool-instance-designed-for-os-2",
-            "name": "designedFor",
-            "label": "designedFor",
-            "source": "attack-tool-instance",
-            "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
-            "target": "os",
-            "targetLabel": "OS",
-            "targetCardinality": "1",
-            "cardinality": "AttackToolInstance 0..* — 1 OS",
-            "description": "AttackToolInstance designedFor OS."
+            "cardinality": "AttackToolInstance 1..* — 1 OSInstance",
+            "description": "AttackToolInstance designedFor OSInstance."
           }
         ],
-        "relativePosition": {
-          "x": 0.471338,
-          "y": 0.802198
-        },
         "drawioPosition": {
           "x": 840.0,
           "y": 1490.0
@@ -427,7 +476,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.461361,
+          "y": 0.789474
+        }
       }
     },
     {
@@ -459,38 +512,25 @@ const metamodel = {
             "label": "exposesPort",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "port",
             "targetLabel": "Port",
-            "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* Port",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Port",
             "description": "Node exposesPort Port."
           },
           {
-            "id": "config-vulnerability-affects-port-port",
-            "name": "affectsPort",
-            "label": "affectsPort",
-            "source": "config-vulnerability",
-            "sourceLabel": "ConfigVulnerability",
-            "sourceCardinality": "0..*",
-            "target": "port",
-            "targetLabel": "Port",
-            "targetCardinality": "0..*",
-            "cardinality": "ConfigVulnerability 0..* — 0..* Port",
-            "description": "ConfigVulnerability affectsPort Port."
-          },
-          {
-            "id": "process-listens-on-port",
+            "id": "code-listens-on-port",
             "name": "listensOn",
             "label": "listensOn",
-            "source": "process",
-            "sourceLabel": "Process",
-            "sourceCardinality": "0..*",
+            "source": "code",
+            "sourceLabel": "Code",
+            "sourceCardinality": "1",
             "target": "port",
             "targetLabel": "Port",
             "targetCardinality": "0..*",
-            "cardinality": "Process 0..* — 0..* Port",
-            "description": "Process listensOn Port."
+            "cardinality": "Code 1 — 0..* Port",
+            "description": "Code listensOn Port."
           },
           {
             "id": "connection-has-destination-port-port",
@@ -498,18 +538,14 @@ const metamodel = {
             "label": "hasDestinationPort",
             "source": "connection",
             "sourceLabel": "Connection",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "port",
             "targetLabel": "Port",
-            "targetCardinality": "0..*",
-            "cardinality": "Connection 0..* — 0..* Port",
+            "targetCardinality": "1",
+            "cardinality": "Connection 1..* — 1 Port",
             "description": "Connection hasDestinationPort Port."
           }
         ],
-        "relativePosition": {
-          "x": 0.292994,
-          "y": 1.0
-        },
         "drawioPosition": {
           "x": 560.0,
           "y": 1670.0
@@ -522,103 +558,103 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.299885,
+          "y": 0.978947
+        }
       }
     },
     {
       "data": {
-        "id": "threat-source",
-        "label": "ThreatSource",
+        "id": "threat-actor",
+        "label": "ThreatActor",
         "kind": "entity",
         "nodeClass": "a-posteriori",
         "nodeClassLabel": "A posteriori",
         "description": "ThreatSource is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
         "attributes": [],
         "drawioId": "uKdIYOyGbmZlVRN5kjks-41",
-        "name": "ThreatSource",
+        "name": "ThreatActor",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "CTI reports and actor profiles",
-          "CERT, government, or vendor threat advisories",
-          "Incident reports and attribution assessments",
-          "Threat intelligence platforms and knowledge bases"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
-            "id": "threat-source-related-to-adversary",
+            "id": "threat-actor-related-to-adversary",
             "name": "relatedTo",
             "label": "relatedTo",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
-            "sourceCardinality": "0..*",
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
+            "sourceCardinality": "1..*",
             "target": "adversary",
             "targetLabel": "Adversary",
             "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* Adversary",
-            "description": "ThreatSource relatedTo Adversary."
+            "cardinality": "ThreatActor 1..* — 0..* Adversary",
+            "description": "ThreatActor relatedTo Adversary."
           },
           {
-            "id": "threat-source-initiates-threat-event",
+            "id": "threat-actor-initiates-threat",
             "name": "initiates",
             "label": "initiates",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
-            "sourceCardinality": "0..*",
-            "target": "threat-event",
-            "targetLabel": "ThreatEvent",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* ThreatEvent",
-            "description": "ThreatSource initiates ThreatEvent."
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
+            "sourceCardinality": "1",
+            "target": "threat",
+            "targetLabel": "Threat",
+            "targetCardinality": "1",
+            "cardinality": "ThreatActor 1 — 1 Threat",
+            "description": "ThreatActor initiates Threat."
           },
           {
-            "id": "threat-source-has-expertise-expertise",
+            "id": "threat-actor-has-expertise-expertise",
             "name": "hasExpertise",
             "label": "hasExpertise",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
-            "sourceCardinality": "0..*",
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
+            "sourceCardinality": "1..*",
             "target": "expertise",
             "targetLabel": "Expertise",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* Expertise",
-            "description": "ThreatSource hasExpertise Expertise."
+            "targetCardinality": "1",
+            "cardinality": "ThreatActor 1..* — 1 Expertise",
+            "description": "ThreatActor hasExpertise Expertise."
           },
           {
-            "id": "threat-source-alias-threat-source",
+            "id": "threat-actor-alias-threat-actor",
             "name": "alias",
             "label": "alias",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
             "sourceCardinality": "0..*",
-            "target": "threat-source",
-            "targetLabel": "ThreatSource",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* ThreatSource",
-            "description": "ThreatSource alias ThreatSource."
+            "target": "threat-actor",
+            "targetLabel": "ThreatActor",
+            "targetCardinality": "",
+            "cardinality": "ThreatActor 0..* —  ThreatActor",
+            "description": "ThreatActor alias ThreatActor."
           }
         ],
         "incomingRelations": [
           {
-            "id": "threat-source-alias-threat-source",
+            "id": "threat-actor-alias-threat-actor",
             "name": "alias",
             "label": "alias",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
             "sourceCardinality": "0..*",
-            "target": "threat-source",
-            "targetLabel": "ThreatSource",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* ThreatSource",
-            "description": "ThreatSource alias ThreatSource."
+            "target": "threat-actor",
+            "targetLabel": "ThreatActor",
+            "targetCardinality": "",
+            "cardinality": "ThreatActor 0..* —  ThreatActor",
+            "description": "ThreatActor alias ThreatActor."
           }
         ],
-        "relativePosition": {
-          "x": 0.859873,
-          "y": 0.153846
-        },
         "drawioPosition": {
           "x": 1450.0,
           "y": 900.0
@@ -631,7 +667,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.813149,
+          "y": 0.168421
+        }
       }
     },
     {
@@ -650,36 +690,23 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
           "Incident response reports",
-          "Malware sandbox reports",
-          "EDR/SIEM detections and telemetry",
-          "Forensic artifacts from compromised hosts"
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
-          {
-            "id": "attack-tool-instance-designed-for-os",
-            "name": "designedFor",
-            "label": "designedFor",
-            "source": "attack-tool-instance",
-            "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
-            "target": "os",
-            "targetLabel": "OS",
-            "targetCardinality": "1",
-            "cardinality": "AttackToolInstance 0..* — 1 OS",
-            "description": "AttackToolInstance designedFor OS."
-          },
           {
             "id": "attack-tool-instance-produces-indicator",
             "name": "produces",
             "label": "produces",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "indicator",
             "targetLabel": "Indicator",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* Indicator",
+            "targetCardinality": "1..*",
+            "cardinality": "AttackToolInstance 1 — 1..* Indicator",
             "description": "AttackToolInstance produces Indicator."
           },
           {
@@ -688,11 +715,11 @@ const metamodel = {
             "label": "instanceOf",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "attack-tool",
             "targetLabel": "AttackTool",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* AttackTool",
+            "targetCardinality": "1",
+            "cardinality": "AttackToolInstance 1..* — 1 AttackTool",
             "description": "AttackToolInstance instanceOf AttackTool."
           },
           {
@@ -701,25 +728,25 @@ const metamodel = {
             "label": "hasConfig",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "attack-tool-configuration",
             "targetLabel": "AttackToolConfiguration",
             "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* AttackToolConfiguration",
+            "cardinality": "AttackToolInstance 1 — 0..* AttackToolConfiguration",
             "description": "AttackToolInstance hasConfig AttackToolConfiguration."
           },
           {
-            "id": "attack-tool-instance-designed-for-os-2",
+            "id": "attack-tool-instance-designed-for-osinstance",
             "name": "designedFor",
             "label": "designedFor",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
-            "target": "os",
-            "targetLabel": "OS",
+            "sourceCardinality": "1..*",
+            "target": "osinstance",
+            "targetLabel": "OSInstance",
             "targetCardinality": "1",
-            "cardinality": "AttackToolInstance 0..* — 1 OS",
-            "description": "AttackToolInstance designedFor OS."
+            "cardinality": "AttackToolInstance 1..* — 1 OSInstance",
+            "description": "AttackToolInstance designedFor OSInstance."
           },
           {
             "id": "attack-tool-instance-deploys-attack-tool-instance",
@@ -730,9 +757,22 @@ const metamodel = {
             "sourceCardinality": "0..*",
             "target": "attack-tool-instance",
             "targetLabel": "AttackToolInstance",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* AttackToolInstance",
+            "targetCardinality": "",
+            "cardinality": "AttackToolInstance 0..* —  AttackToolInstance",
             "description": "AttackToolInstance deploys AttackToolInstance."
+          },
+          {
+            "id": "attack-tool-instance-deployed-to-node",
+            "name": "deployedTo",
+            "label": "deployedTo",
+            "source": "attack-tool-instance",
+            "sourceLabel": "AttackToolInstance",
+            "sourceCardinality": "",
+            "target": "node",
+            "targetLabel": "Node",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "AttackToolInstance deployedTo Node."
           }
         ],
         "incomingRelations": [
@@ -742,11 +782,11 @@ const metamodel = {
             "label": "associatedTo",
             "source": "indicator",
             "sourceLabel": "Indicator",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "attack-tool-instance",
             "targetLabel": "AttackToolInstance",
-            "targetCardinality": "0..*",
-            "cardinality": "Indicator 0..* — 0..* AttackToolInstance",
+            "targetCardinality": "1",
+            "cardinality": "Indicator 1..* — 1 AttackToolInstance",
             "description": "Indicator associatedTo AttackToolInstance."
           },
           {
@@ -758,41 +798,41 @@ const metamodel = {
             "sourceCardinality": "0..*",
             "target": "attack-tool-instance",
             "targetLabel": "AttackToolInstance",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* AttackToolInstance",
+            "targetCardinality": "",
+            "cardinality": "AttackToolInstance 0..* —  AttackToolInstance",
             "description": "AttackToolInstance deploys AttackToolInstance."
           },
           {
-            "id": "attack-step-item-employs-attack-tool-instance",
+            "id": "threat-step-employs-attack-tool-instance",
             "name": "employs",
             "label": "employs",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "attack-tool-instance",
             "targetLabel": "AttackToolInstance",
             "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AttackToolInstance",
-            "description": "AttackStepItem employs AttackToolInstance."
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "ThreatStep employs AttackToolInstance."
           }
         ],
-        "relativePosition": {
-          "x": 0.79586,
-          "y": 0.527473
-        },
         "drawioPosition": {
-          "x": 1349.5,
-          "y": 1240.0
+          "x": 1349.0,
+          "y": 1250.0
         },
         "drawioGeometry": {
-          "x": 1289.5,
-          "y": 1220.0,
+          "x": 1289.0,
+          "y": 1230.0,
           "width": 120.0,
           "height": 40.0
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.754902,
+          "y": 0.536842
+        }
       }
     },
     {
@@ -811,10 +851,10 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "CTI campaign reports",
-          "Government or CERT advisories",
-          "Threat intelligence platform campaign records",
-          "Incident reports linking multiple events"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
@@ -842,27 +882,36 @@ const metamodel = {
             "targetCardinality": "0..*",
             "cardinality": "Campaign 0..* — 0..* HomeCountry",
             "description": "Campaign focusOn HomeCountry."
+          },
+          {
+            "id": "campaign-targets-international-body-international-body",
+            "name": "targetsInternationalBody",
+            "label": "targetsInternationalBody",
+            "source": "campaign",
+            "sourceLabel": "Campaign",
+            "sourceCardinality": "0..*",
+            "target": "international-body",
+            "targetLabel": "International Body",
+            "targetCardinality": "0..*",
+            "cardinality": "Campaign 0..* — 0..* International Body",
+            "description": "Campaign targetsInternationalBody International Body."
           }
         ],
         "incomingRelations": [
           {
-            "id": "threat-event-parts-of-campaign",
+            "id": "threat-parts-of-campaign",
             "name": "partsOf",
             "label": "partsOf",
-            "source": "threat-event",
-            "sourceLabel": "ThreatEvent",
-            "sourceCardinality": "0..*",
+            "source": "threat",
+            "sourceLabel": "Threat",
+            "sourceCardinality": "1..*",
             "target": "campaign",
             "targetLabel": "Campaign",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatEvent 0..* — 0..* Campaign",
-            "description": "ThreatEvent partsOf Campaign."
+            "targetCardinality": "1",
+            "cardinality": "Threat 1..* — 1 Campaign",
+            "description": "Threat partsOf Campaign."
           }
         ],
-        "relativePosition": {
-          "x": 0.949013,
-          "y": 0.362637
-        },
         "drawioPosition": {
           "x": 1589.95,
           "y": 1090.0
@@ -875,7 +924,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.893858,
+          "y": 0.368421
+        }
       }
     },
     {
@@ -894,10 +947,10 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "SIEM alerts and detection rules",
-          "Threat intelligence feeds",
-          "Malware analysis reports",
-          "Network, DNS, proxy, and endpoint logs"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
@@ -906,11 +959,11 @@ const metamodel = {
             "label": "associatedTo",
             "source": "indicator",
             "sourceLabel": "Indicator",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "attack-tool-instance",
             "targetLabel": "AttackToolInstance",
-            "targetCardinality": "0..*",
-            "cardinality": "Indicator 0..* — 0..* AttackToolInstance",
+            "targetCardinality": "1",
+            "cardinality": "Indicator 1..* — 1 AttackToolInstance",
             "description": "Indicator associatedTo AttackToolInstance."
           }
         ],
@@ -921,18 +974,14 @@ const metamodel = {
             "label": "produces",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "indicator",
             "targetLabel": "Indicator",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* Indicator",
+            "targetCardinality": "1..*",
+            "cardinality": "AttackToolInstance 1 — 1..* Indicator",
             "description": "AttackToolInstance produces Indicator."
           }
         ],
-        "relativePosition": {
-          "x": 0.776752,
-          "y": 0.67033
-        },
         "drawioPosition": {
           "x": 1319.5,
           "y": 1370.0
@@ -945,7 +994,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.737889,
+          "y": 0.663158
+        }
       }
     },
     {
@@ -964,58 +1017,54 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "MITRE ATT&CK knowledge base",
-          "CAPEC attack pattern catalogue",
-          "CTI reports describing adversary behavior",
-          "Red-team and incident-response reports"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [
-          {
-            "id": "ttp-impacts-asset-security-requirement",
-            "name": "impacts",
-            "label": "impacts",
-            "source": "ttp",
-            "sourceLabel": "TTP",
-            "sourceCardinality": "0..*",
-            "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "TTP 0..* — 0..* AssetSecurityRequirement",
-            "description": "TTP impacts AssetSecurityRequirement."
-          },
           {
             "id": "ttp-exploits-vulnerability-vulnerability",
             "name": "exploitsVulnerability",
             "label": "exploitsVulnerability",
             "source": "ttp",
             "sourceLabel": "TTP",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "vulnerability",
             "targetLabel": "Vulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "TTP 0..* — 0..* Vulnerability",
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 Vulnerability",
             "description": "TTP exploitsVulnerability Vulnerability."
+          },
+          {
+            "id": "ttp-violates-security-requirement",
+            "name": "violates",
+            "label": "violates",
+            "source": "ttp",
+            "sourceLabel": "TTP",
+            "sourceCardinality": "1..*",
+            "target": "security-requirement",
+            "targetLabel": "SecurityRequirement",
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 SecurityRequirement",
+            "description": "TTP violates SecurityRequirement."
           }
         ],
         "incomingRelations": [
           {
-            "id": "attack-step-item-implements-ttp",
+            "id": "threat-step-implements-ttp",
             "name": "implements",
             "label": "implements",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "ttp",
             "targetLabel": "TTP",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* TTP",
-            "description": "AttackStepItem implements TTP."
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "ThreatStep implements TTP."
           }
         ],
-        "relativePosition": {
-          "x": 0.859873,
-          "y": 0.461538
-        },
         "drawioPosition": {
           "x": 1450.0,
           "y": 1180.0
@@ -1028,7 +1077,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.813149,
+          "y": 0.463158
+        }
       }
     },
     {
@@ -1047,10 +1100,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Enterprise architecture diagrams",
-          "CMDB and asset inventory",
-          "Cloud, network, and identity-management exports",
-          "Infrastructure-as-code repositories"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
@@ -1059,12 +1112,25 @@ const metamodel = {
             "label": "madeBy",
             "source": "infrastructure",
             "sourceLabel": "Infrastructure",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "node",
             "targetLabel": "Node",
-            "targetCardinality": "0..*",
-            "cardinality": "Infrastructure 0..* — 0..* Node",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* Node",
             "description": "Infrastructure madeBy Node."
+          },
+          {
+            "id": "infrastructure-used-by-user",
+            "name": "usedBy",
+            "label": "usedBy",
+            "source": "infrastructure",
+            "sourceLabel": "Infrastructure",
+            "sourceCardinality": "1",
+            "target": "user",
+            "targetLabel": "User",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* User",
+            "description": "Infrastructure usedBy User."
           }
         ],
         "incomingRelations": [
@@ -1074,18 +1140,14 @@ const metamodel = {
             "label": "manages",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "infrastructure",
             "targetLabel": "Infrastructure",
-            "targetCardinality": "0..*",
-            "cardinality": "Organization 0..* — 0..* Infrastructure",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* Infrastructure",
             "description": "Organization manages Infrastructure."
           }
         ],
-        "relativePosition": {
-          "x": 0.292994,
-          "y": 0.417582
-        },
         "drawioPosition": {
           "x": 560.0,
           "y": 1140.0
@@ -1098,7 +1160,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.299885,
+          "y": 0.421053
+        }
       }
     },
     {
@@ -1117,10 +1183,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Infrastructure architecture standards",
-          "CMDB classification schema",
-          "Cloud service catalogues",
-          "Enterprise reference architecture"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
@@ -1130,18 +1196,14 @@ const metamodel = {
             "label": "hasNodeType",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "node-type",
             "targetLabel": "NodeType",
             "targetCardinality": "1",
-            "cardinality": "Node 0..* — 1 NodeType",
+            "cardinality": "Node 1..* — 1 NodeType",
             "description": "Node hasNodeType NodeType."
           }
         ],
-        "relativePosition": {
-          "x": 0.229299,
-          "y": 0.802198
-        },
         "drawioPosition": {
           "x": 460.0,
           "y": 1490.0
@@ -1154,20 +1216,24 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.242215,
+          "y": 0.789474
+        }
       }
     },
     {
       "data": {
-        "id": "application-type",
-        "label": "ApplicationType",
+        "id": "application",
+        "label": "Application",
         "kind": "entity",
         "nodeClass": "generic-a-priori",
         "nodeClassLabel": "Generic a priori",
         "description": "ApplicationType is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
         "attributes": [],
         "drawioId": "uKdIYOyGbmZlVRN5kjks-70",
-        "name": "ApplicationType",
+        "name": "Application",
         "informationClass": "generic-a-priori",
         "informationClassLabel": "Generic a priori",
         "submetamodel": "infrastructure",
@@ -1181,36 +1247,49 @@ const metamodel = {
         "outgoingRelations": [],
         "incomingRelations": [
           {
-            "id": "application-instance-has-application-type-application-type",
-            "name": "hasApplicationType",
-            "label": "hasApplicationType",
+            "id": "application-instance-instance-of-application",
+            "name": "instanceOf",
+            "label": "instanceOf",
             "source": "application-instance",
             "sourceLabel": "ApplicationInstance",
             "sourceCardinality": "0..*",
-            "target": "application-type",
-            "targetLabel": "ApplicationType",
+            "target": "application",
+            "targetLabel": "Application",
             "targetCardinality": "1",
-            "cardinality": "ApplicationInstance 0..* — 1 ApplicationType",
-            "description": "ApplicationInstance hasApplicationType ApplicationType."
+            "cardinality": "ApplicationInstance 0..* — 1 Application",
+            "description": "ApplicationInstance instanceOf Application."
+          },
+          {
+            "id": "software-vulnerability-affects-application",
+            "name": "affects",
+            "label": "affects",
+            "source": "software-vulnerability",
+            "sourceLabel": "SoftwareVulnerability",
+            "sourceCardinality": "0..*",
+            "target": "application",
+            "targetLabel": "Application",
+            "targetCardinality": "1",
+            "cardinality": "SoftwareVulnerability 0..* — 1 Application",
+            "description": "SoftwareVulnerability affects Application."
           }
         ],
-        "relativePosition": {
-          "x": 0.452229,
-          "y": 0.956044
-        },
         "drawioPosition": {
-          "x": 810.0,
-          "y": 1630.0
+          "x": 970.0,
+          "y": 1670.0
         },
         "drawioGeometry": {
-          "x": 750.0,
-          "y": 1610.0,
+          "x": 910.0,
+          "y": 1650.0,
           "width": 120.0,
           "height": 40.0
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.536332,
+          "y": 0.978947
+        }
       }
     },
     {
@@ -1229,31 +1308,27 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Configuration audit results",
-          "CIS benchmark assessments",
-          "Cloud security posture management findings",
-          "Vulnerability scanner misconfiguration checks"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
-            "id": "config-vulnerability-affects-port-port",
-            "name": "affectsPort",
-            "label": "affectsPort",
+            "id": "config-vulnerability-affects-code",
+            "name": "affects",
+            "label": "affects",
             "source": "config-vulnerability",
             "sourceLabel": "ConfigVulnerability",
             "sourceCardinality": "0..*",
-            "target": "port",
-            "targetLabel": "Port",
-            "targetCardinality": "0..*",
-            "cardinality": "ConfigVulnerability 0..* — 0..* Port",
-            "description": "ConfigVulnerability affectsPort Port."
+            "target": "code",
+            "targetLabel": "Code",
+            "targetCardinality": "1..*",
+            "cardinality": "ConfigVulnerability 0..* — 1..* Code",
+            "description": "ConfigVulnerability affects Code."
           }
         ],
         "incomingRelations": [],
-        "relativePosition": {
-          "x": 0.617834,
-          "y": 0.791209
-        },
         "drawioPosition": {
           "x": 1070.0,
           "y": 1480.0
@@ -1266,7 +1341,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.594002,
+          "y": 0.778947
+        }
       }
     },
     {
@@ -1285,25 +1364,25 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "NVD/CVE entries",
-          "CWE weakness catalogue",
-          "Vendor security advisories",
-          "Vulnerability scanner knowledge bases"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
           {
-            "id": "attack-step-item-exploits-vulnerability",
+            "id": "threat-step-exploits-vulnerability",
             "name": "exploits",
             "label": "exploits",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "",
             "target": "vulnerability",
             "targetLabel": "Vulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* Vulnerability",
-            "description": "AttackStepItem exploits Vulnerability."
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "ThreatStep exploits Vulnerability."
           },
           {
             "id": "ttp-exploits-vulnerability-vulnerability",
@@ -1311,11 +1390,11 @@ const metamodel = {
             "label": "exploitsVulnerability",
             "source": "ttp",
             "sourceLabel": "TTP",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "vulnerability",
             "targetLabel": "Vulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "TTP 0..* — 0..* Vulnerability",
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 Vulnerability",
             "description": "TTP exploitsVulnerability Vulnerability."
           },
           {
@@ -1324,18 +1403,14 @@ const metamodel = {
             "label": "relatesTo",
             "source": "software-vulnerability",
             "sourceLabel": "SoftwareVulnerability",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "vulnerability",
             "targetLabel": "Vulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "SoftwareVulnerability 0..* — 0..* Vulnerability",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "SoftwareVulnerability relatesTo Vulnerability."
           }
         ],
-        "relativePosition": {
-          "x": 0.687898,
-          "y": 0.263736
-        },
         "drawioPosition": {
           "x": 1180.0,
           "y": 1000.0
@@ -1348,7 +1423,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.657439,
+          "y": 0.273684
+        }
       }
     },
     {
@@ -1367,10 +1446,10 @@ const metamodel = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Official company records or public profiles",
-          "Regulatory filings and procurement records",
-          "Organization governance documents",
-          "OSINT sources about organizational headquarters"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [
           {
@@ -1379,11 +1458,11 @@ const metamodel = {
             "label": "partsOf",
             "source": "home-country",
             "sourceLabel": "HomeCountry",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "international-body",
             "targetLabel": "International Body",
-            "targetCardinality": "0..*",
-            "cardinality": "HomeCountry 0..* — 0..* International Body",
+            "targetCardinality": "1..*",
+            "cardinality": "HomeCountry 1..* — 1..* International Body",
             "description": "HomeCountry partsOf International Body."
           }
         ],
@@ -1394,11 +1473,11 @@ const metamodel = {
             "label": "basedIn",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "home-country",
             "targetLabel": "HomeCountry",
-            "targetCardinality": "1",
-            "cardinality": "Organization 0..* — 1 HomeCountry",
+            "targetCardinality": "",
+            "cardinality": "Organization 1 —  HomeCountry",
             "description": "Organization basedIn HomeCountry."
           },
           {
@@ -1415,10 +1494,6 @@ const metamodel = {
             "description": "Campaign focusOn HomeCountry."
           }
         ],
-        "relativePosition": {
-          "x": 0.0,
-          "y": 0.406593
-        },
         "drawioPosition": {
           "x": 100.0,
           "y": 1130.0
@@ -1431,7 +1506,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.034602,
+          "y": 0.410526
+        }
       }
     },
     {
@@ -1450,24 +1529,24 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Business process documentation",
-          "Data inventory and asset catalogues",
-          "CMDB resource records",
-          "Interviews with asset owners"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
-            "id": "resource-relates-to-process",
+            "id": "resource-relates-to-code",
             "name": "relatesTo",
             "label": "relatesTo",
             "source": "resource",
             "sourceLabel": "Resource",
-            "sourceCardinality": "0..*",
-            "target": "process",
-            "targetLabel": "Process",
-            "targetCardinality": "0..*",
-            "cardinality": "Resource 0..* — 0..* Process",
-            "description": "Resource relatesTo Process."
+            "sourceCardinality": "",
+            "target": "code",
+            "targetLabel": "Code",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "Resource relatesTo Code."
           },
           {
             "id": "resource-relates-to-asset",
@@ -1475,11 +1554,11 @@ const metamodel = {
             "label": "relatesTo",
             "source": "resource",
             "sourceLabel": "Resource",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "asset",
             "targetLabel": "Asset",
-            "targetCardinality": "0..*",
-            "cardinality": "Resource 0..* — 0..* Asset",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "Resource relatesTo Asset."
           }
         ],
@@ -1490,31 +1569,27 @@ const metamodel = {
             "label": "hostsResource",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "resource",
             "targetLabel": "Resource",
-            "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* Resource",
+            "targetCardinality": "1..*",
+            "cardinality": "Node 1 — 1..* Resource",
             "description": "Node hostsResource Resource."
           },
           {
-            "id": "attack-step-item-targets-resource-resource",
+            "id": "threat-step-targets-resource-resource",
             "name": "targetsResource",
             "label": "targetsResource",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "resource",
             "targetLabel": "Resource",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* Resource",
-            "description": "AttackStepItem targetsResource Resource."
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Resource",
+            "description": "ThreatStep targetsResource Resource."
           }
         ],
-        "relativePosition": {
-          "x": 0.55414,
-          "y": 0.56044
-        },
         "drawioPosition": {
           "x": 970.0,
           "y": 1270.0
@@ -1527,7 +1602,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.536332,
+          "y": 0.557895
+        }
       }
     },
     {
@@ -1546,10 +1625,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Data classification policy",
-          "Information governance catalogue",
-          "DLP classification rules",
-          "Business glossary or data dictionary"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
@@ -1559,31 +1638,31 @@ const metamodel = {
             "label": "hasInformationType",
             "source": "information",
             "sourceLabel": "Information",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "information-type",
             "targetLabel": "InformationType",
             "targetCardinality": "1",
-            "cardinality": "Information 0..* — 1 InformationType",
+            "cardinality": "Information 1..* — 1 InformationType",
             "description": "Information hasInformationType InformationType."
           }
         ],
-        "relativePosition": {
-          "x": 0.643949,
-          "y": 0.703297
-        },
         "drawioPosition": {
           "x": 1111.0,
-          "y": 1400.0
+          "y": 1410.0
         },
         "drawioGeometry": {
           "x": 1051.0,
-          "y": 1380.0,
+          "y": 1390.0,
           "width": 120.0,
           "height": 40.0
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.617647,
+          "y": 0.705263
+        }
       }
     },
     {
@@ -1602,10 +1681,10 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat actor profiles from CTI vendors",
-          "Government attribution reports",
-          "Incident reports and malware-family analyses",
-          "Threat intelligence platform entities"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
@@ -1614,46 +1693,46 @@ const metamodel = {
             "label": "hasAdversaryType",
             "source": "adversary",
             "sourceLabel": "Adversary",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "adversary-type",
             "targetLabel": "AdversaryType",
             "targetCardinality": "1",
-            "cardinality": "Adversary 0..* — 1 AdversaryType",
+            "cardinality": "Adversary 1..* — 1 AdversaryType",
             "description": "Adversary hasAdversaryType AdversaryType."
           }
         ],
         "incomingRelations": [
           {
-            "id": "threat-source-related-to-adversary",
+            "id": "threat-actor-related-to-adversary",
             "name": "relatedTo",
             "label": "relatedTo",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
-            "sourceCardinality": "0..*",
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
+            "sourceCardinality": "1..*",
             "target": "adversary",
             "targetLabel": "Adversary",
             "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* Adversary",
-            "description": "ThreatSource relatedTo Adversary."
+            "cardinality": "ThreatActor 1..* — 0..* Adversary",
+            "description": "ThreatActor relatedTo Adversary."
           }
         ],
-        "relativePosition": {
-          "x": 1.0,
-          "y": 0.153846
-        },
         "drawioPosition": {
-          "x": 1670.0,
+          "x": 1714.0,
           "y": 900.0
         },
         "drawioGeometry": {
-          "x": 1610.0,
+          "x": 1654.0,
           "y": 880.0,
           "width": 120.0,
           "height": 40.0
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.965398,
+          "y": 0.168421
+        }
       }
     },
     {
@@ -1672,31 +1751,40 @@ const metamodel = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Official institutional websites",
-          "Treaty or alliance membership lists",
-          "Public policy and regulatory documents",
-          "Organizational governance records"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
+          {
+            "id": "campaign-targets-international-body-international-body",
+            "name": "targetsInternationalBody",
+            "label": "targetsInternationalBody",
+            "source": "campaign",
+            "sourceLabel": "Campaign",
+            "sourceCardinality": "0..*",
+            "target": "international-body",
+            "targetLabel": "International Body",
+            "targetCardinality": "0..*",
+            "cardinality": "Campaign 0..* — 0..* International Body",
+            "description": "Campaign targetsInternationalBody International Body."
+          },
           {
             "id": "home-country-parts-of-international-body",
             "name": "partsOf",
             "label": "partsOf",
             "source": "home-country",
             "sourceLabel": "HomeCountry",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "international-body",
             "targetLabel": "International Body",
-            "targetCardinality": "0..*",
-            "cardinality": "HomeCountry 0..* — 0..* International Body",
+            "targetCardinality": "1..*",
+            "cardinality": "HomeCountry 1..* — 1..* International Body",
             "description": "HomeCountry partsOf International Body."
           }
         ],
-        "relativePosition": {
-          "x": 0.101911,
-          "y": 0.56044
-        },
         "drawioPosition": {
           "x": 260.0,
           "y": 1270.0
@@ -1709,20 +1797,24 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.126874,
+          "y": 0.557895
+        }
       }
     },
     {
       "data": {
-        "id": "threat-event",
-        "label": "ThreatEvent",
+        "id": "threat",
+        "label": "Threat",
         "kind": "entity",
         "nodeClass": "a-posteriori",
         "nodeClassLabel": "A posteriori",
         "description": "ThreatEvent is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
         "attributes": [],
         "drawioId": "uKdIYOyGbmZlVRN5kjks-89",
-        "name": "ThreatEvent",
+        "name": "Threat",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
@@ -1735,38 +1827,34 @@ const metamodel = {
         ],
         "outgoingRelations": [
           {
-            "id": "threat-event-parts-of-campaign",
+            "id": "threat-parts-of-campaign",
             "name": "partsOf",
             "label": "partsOf",
-            "source": "threat-event",
-            "sourceLabel": "ThreatEvent",
-            "sourceCardinality": "0..*",
+            "source": "threat",
+            "sourceLabel": "Threat",
+            "sourceCardinality": "1..*",
             "target": "campaign",
             "targetLabel": "Campaign",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatEvent 0..* — 0..* Campaign",
-            "description": "ThreatEvent partsOf Campaign."
+            "targetCardinality": "1",
+            "cardinality": "Threat 1..* — 1 Campaign",
+            "description": "Threat partsOf Campaign."
           }
         ],
         "incomingRelations": [
           {
-            "id": "threat-source-initiates-threat-event",
+            "id": "threat-actor-initiates-threat",
             "name": "initiates",
             "label": "initiates",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
-            "sourceCardinality": "0..*",
-            "target": "threat-event",
-            "targetLabel": "ThreatEvent",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* ThreatEvent",
-            "description": "ThreatSource initiates ThreatEvent."
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
+            "sourceCardinality": "1",
+            "target": "threat",
+            "targetLabel": "Threat",
+            "targetCardinality": "1",
+            "cardinality": "ThreatActor 1 — 1 Threat",
+            "description": "ThreatActor initiates Threat."
           }
         ],
-        "relativePosition": {
-          "x": 0.859873,
-          "y": 0.263736
-        },
         "drawioPosition": {
           "x": 1450.0,
           "y": 1000.0
@@ -1779,7 +1867,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.813149,
+          "y": 0.273684
+        }
       }
     },
     {
@@ -1798,10 +1890,10 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Security awareness assessment results",
-          "Phishing simulation reports",
-          "IAM and privilege review findings",
-          "Incident postmortems involving human factors"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
@@ -1819,10 +1911,6 @@ const metamodel = {
           }
         ],
         "incomingRelations": [],
-        "relativePosition": {
-          "x": 0.700955,
-          "y": 0.791209
-        },
         "drawioPosition": {
           "x": 1200.5,
           "y": 1480.0
@@ -1835,116 +1923,116 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.669262,
+          "y": 0.778947
+        }
       }
     },
     {
       "data": {
-        "id": "process",
-        "label": "Process",
+        "id": "code",
+        "label": "Code",
         "kind": "entity",
         "nodeClass": "instance-specific",
         "nodeClassLabel": "Instance specific",
         "description": "Process is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
         "attributes": [],
         "drawioId": "uKdIYOyGbmZlVRN5kjks-97",
-        "name": "Process",
+        "name": "Code",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Business process models and BPMN diagrams",
-          "Operational runbooks",
-          "Service management documentation",
-          "Interviews with process owners"
+          "Source-code repositories",
+          "Deployment artifacts and package manifests",
+          "Application inventory",
+          "Software bill of materials"
         ],
         "outgoingRelations": [
           {
-            "id": "process-affects-process-software-vulnerability",
-            "name": "affectsProcess",
-            "label": "affectsProcess",
-            "source": "process",
-            "sourceLabel": "Process",
-            "sourceCardinality": "0..*",
-            "target": "software-vulnerability",
-            "targetLabel": "SoftwareVulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "Process 0..* — 0..* SoftwareVulnerability",
-            "description": "Process affectsProcess SoftwareVulnerability."
-          },
-          {
-            "id": "process-access-information",
+            "id": "code-access-information",
             "name": "access",
             "label": "access",
-            "source": "process",
-            "sourceLabel": "Process",
+            "source": "code",
+            "sourceLabel": "Code",
             "sourceCardinality": "0..*",
             "target": "information",
             "targetLabel": "Information",
             "targetCardinality": "0..*",
-            "cardinality": "Process 0..* — 0..* Information",
-            "description": "Process access Information."
+            "cardinality": "Code 0..* — 0..* Information",
+            "description": "Code access Information."
           },
           {
-            "id": "process-listens-on-port",
+            "id": "code-listens-on-port",
             "name": "listensOn",
             "label": "listensOn",
-            "source": "process",
-            "sourceLabel": "Process",
-            "sourceCardinality": "0..*",
+            "source": "code",
+            "sourceLabel": "Code",
+            "sourceCardinality": "1",
             "target": "port",
             "targetLabel": "Port",
             "targetCardinality": "0..*",
-            "cardinality": "Process 0..* — 0..* Port",
-            "description": "Process listensOn Port."
+            "cardinality": "Code 1 — 0..* Port",
+            "description": "Code listensOn Port."
           }
         ],
         "incomingRelations": [
           {
-            "id": "resource-relates-to-process",
+            "id": "config-vulnerability-affects-code",
+            "name": "affects",
+            "label": "affects",
+            "source": "config-vulnerability",
+            "sourceLabel": "ConfigVulnerability",
+            "sourceCardinality": "0..*",
+            "target": "code",
+            "targetLabel": "Code",
+            "targetCardinality": "1..*",
+            "cardinality": "ConfigVulnerability 0..* — 1..* Code",
+            "description": "ConfigVulnerability affects Code."
+          },
+          {
+            "id": "resource-relates-to-code",
             "name": "relatesTo",
             "label": "relatesTo",
             "source": "resource",
             "sourceLabel": "Resource",
-            "sourceCardinality": "0..*",
-            "target": "process",
-            "targetLabel": "Process",
-            "targetCardinality": "0..*",
-            "cardinality": "Resource 0..* — 0..* Process",
-            "description": "Resource relatesTo Process."
+            "sourceCardinality": "",
+            "target": "code",
+            "targetLabel": "Code",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "Resource relatesTo Code."
           },
           {
-            "id": "user-launches-process",
+            "id": "user-launches-code",
             "name": "launches",
             "label": "launches",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
-            "target": "process",
-            "targetLabel": "Process",
+            "sourceCardinality": "1",
+            "target": "code",
+            "targetLabel": "Code",
             "targetCardinality": "0..*",
-            "cardinality": "User 0..* — 0..* Process",
-            "description": "User launches Process."
+            "cardinality": "User 1 — 0..* Code",
+            "description": "User launches Code."
           },
           {
-            "id": "application-instance-relates-to-process",
+            "id": "application-instance-relates-to-code",
             "name": "relatesTo",
             "label": "relatesTo",
             "source": "application-instance",
             "sourceLabel": "ApplicationInstance",
-            "sourceCardinality": "0..*",
-            "target": "process",
-            "targetLabel": "Process",
-            "targetCardinality": "0..*",
-            "cardinality": "ApplicationInstance 0..* — 0..* Process",
-            "description": "ApplicationInstance relatesTo Process."
+            "sourceCardinality": "",
+            "target": "code",
+            "targetLabel": "Code",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "ApplicationInstance relatesTo Code."
           }
         ],
-        "relativePosition": {
-          "x": 0.44586,
-          "y": 0.648352
-        },
         "drawioPosition": {
           "x": 800.0,
           "y": 1350.0
@@ -1957,7 +2045,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.438293,
+          "y": 0.642105
+        }
       }
     },
     {
@@ -1976,10 +2068,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Data inventory and data catalogues",
-          "DLP and classification tooling",
-          "Document repositories and email systems",
-          "Business owner interviews"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
@@ -1988,27 +2080,27 @@ const metamodel = {
             "label": "hasInformationType",
             "source": "information",
             "sourceLabel": "Information",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "information-type",
             "targetLabel": "InformationType",
             "targetCardinality": "1",
-            "cardinality": "Information 0..* — 1 InformationType",
+            "cardinality": "Information 1..* — 1 InformationType",
             "description": "Information hasInformationType InformationType."
           }
         ],
         "incomingRelations": [
           {
-            "id": "process-access-information",
+            "id": "code-access-information",
             "name": "access",
             "label": "access",
-            "source": "process",
-            "sourceLabel": "Process",
+            "source": "code",
+            "sourceLabel": "Code",
             "sourceCardinality": "0..*",
             "target": "information",
             "targetLabel": "Information",
             "targetCardinality": "0..*",
-            "cardinality": "Process 0..* — 0..* Information",
-            "description": "Process access Information."
+            "cardinality": "Code 0..* — 0..* Information",
+            "description": "Code access Information."
           },
           {
             "id": "user-access-information-information",
@@ -2016,31 +2108,31 @@ const metamodel = {
             "label": "accessInformation",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "information",
             "targetLabel": "Information",
             "targetCardinality": "0..*",
-            "cardinality": "User 0..* — 0..* Information",
+            "cardinality": "User 1..* — 0..* Information",
             "description": "User accessInformation Information."
           }
         ],
-        "relativePosition": {
-          "x": 0.55414,
-          "y": 0.648352
-        },
         "drawioPosition": {
           "x": 970.0,
-          "y": 1350.0
+          "y": 1360.0
         },
         "drawioGeometry": {
           "x": 910.0,
-          "y": 1330.0,
+          "y": 1340.0,
           "width": 120.0,
           "height": 40.0
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.536332,
+          "y": 0.652632
+        }
       }
     },
     {
@@ -2059,10 +2151,10 @@ const metamodel = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Business requirement catalogues",
-          "Policies, standards, and governance documents",
-          "Risk registers and compliance requirements",
-          "Interviews with business stakeholders"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
@@ -2071,12 +2163,12 @@ const metamodel = {
             "label": "drivesSecurityRequirement",
             "source": "business-requirement",
             "sourceLabel": "BusinessRequirement",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "BusinessRequirement 0..* — 0..* AssetSecurityRequirement",
-            "description": "BusinessRequirement drivesSecurityRequirement AssetSecurityRequirement."
+            "targetLabel": "Asset\nSecurityRequirement",
+            "targetCardinality": "1..*",
+            "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement",
+            "description": "BusinessRequirement drivesSecurityRequirement Asset\nSecurityRequirement."
           }
         ],
         "incomingRelations": [
@@ -2086,18 +2178,14 @@ const metamodel = {
             "label": "hasBusinessRequirement",
             "source": "organization",
             "sourceLabel": "Organization",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "business-requirement",
             "targetLabel": "BusinessRequirement",
-            "targetCardinality": "1",
-            "cardinality": "Organization 0..* — 1 BusinessRequirement",
+            "targetCardinality": "1..*",
+            "cardinality": "Organization 1 — 1..* BusinessRequirement",
             "description": "Organization hasBusinessRequirement BusinessRequirement."
           }
         ],
-        "relativePosition": {
-          "x": 0.458599,
-          "y": 0.0
-        },
         "drawioPosition": {
           "x": 820.0,
           "y": 760.0
@@ -2110,7 +2198,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.449827,
+          "y": 0.021053
+        }
       }
     },
     {
@@ -2129,10 +2221,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "IAM directory services such as Active Directory or Entra ID",
-          "HR records and role assignments",
-          "Privileged access management systems",
-          "Application access-control lists"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
@@ -2141,25 +2233,25 @@ const metamodel = {
             "label": "hasAccessTo",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "node",
             "targetLabel": "Node",
-            "targetCardinality": "0..*",
-            "cardinality": "User 0..* — 0..* Node",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "User hasAccessTo Node."
           },
           {
-            "id": "user-launches-process",
+            "id": "user-launches-code",
             "name": "launches",
             "label": "launches",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
-            "target": "process",
-            "targetLabel": "Process",
+            "sourceCardinality": "1",
+            "target": "code",
+            "targetLabel": "Code",
             "targetCardinality": "0..*",
-            "cardinality": "User 0..* — 0..* Process",
-            "description": "User launches Process."
+            "cardinality": "User 1 — 0..* Code",
+            "description": "User launches Code."
           },
           {
             "id": "user-access-information-information",
@@ -2167,11 +2259,11 @@ const metamodel = {
             "label": "accessInformation",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "information",
             "targetLabel": "Information",
             "targetCardinality": "0..*",
-            "cardinality": "User 0..* — 0..* Information",
+            "cardinality": "User 1..* — 0..* Information",
             "description": "User accessInformation Information."
           },
           {
@@ -2180,11 +2272,11 @@ const metamodel = {
             "label": "hasUserType",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "user-type",
             "targetLabel": "UserType",
             "targetCardinality": "1",
-            "cardinality": "User 0..* — 1 UserType",
+            "cardinality": "User 1..* — 1 UserType",
             "description": "User hasUserType UserType."
           }
         ],
@@ -2201,25 +2293,38 @@ const metamodel = {
             "targetCardinality": "0..*",
             "cardinality": "HumanVulnerability 0..* — 0..* User",
             "description": "HumanVulnerability affectsUser User."
+          },
+          {
+            "id": "infrastructure-used-by-user",
+            "name": "usedBy",
+            "label": "usedBy",
+            "source": "infrastructure",
+            "sourceLabel": "Infrastructure",
+            "sourceCardinality": "1",
+            "target": "user",
+            "targetLabel": "User",
+            "targetCardinality": "1..*",
+            "cardinality": "Infrastructure 1 — 1..* User",
+            "description": "Infrastructure usedBy User."
           }
         ],
-        "relativePosition": {
-          "x": 0.636943,
-          "y": 0.56044
-        },
         "drawioPosition": {
           "x": 1100.0,
-          "y": 1270.0
+          "y": 1260.0
         },
         "drawioGeometry": {
           "x": 1040.0,
-          "y": 1250.0,
+          "y": 1240.0,
           "width": 120.0,
           "height": 40.0
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.611303,
+          "y": 0.547368
+        }
       }
     },
     {
@@ -2238,44 +2343,54 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Application inventory and CMDB",
-          "Deployment manifests and container orchestration metadata",
-          "Cloud service inventory",
-          "Endpoint or server software inventory"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
-            "id": "application-instance-has-application-type-application-type",
-            "name": "hasApplicationType",
-            "label": "hasApplicationType",
+            "id": "application-instance-instance-of-application",
+            "name": "instanceOf",
+            "label": "instanceOf",
             "source": "application-instance",
             "sourceLabel": "ApplicationInstance",
             "sourceCardinality": "0..*",
-            "target": "application-type",
-            "targetLabel": "ApplicationType",
+            "target": "application",
+            "targetLabel": "Application",
             "targetCardinality": "1",
-            "cardinality": "ApplicationInstance 0..* — 1 ApplicationType",
-            "description": "ApplicationInstance hasApplicationType ApplicationType."
+            "cardinality": "ApplicationInstance 0..* — 1 Application",
+            "description": "ApplicationInstance instanceOf Application."
           },
           {
-            "id": "application-instance-relates-to-process",
+            "id": "application-instance-relates-to-code",
             "name": "relatesTo",
             "label": "relatesTo",
             "source": "application-instance",
             "sourceLabel": "ApplicationInstance",
-            "sourceCardinality": "0..*",
-            "target": "process",
-            "targetLabel": "Process",
-            "targetCardinality": "0..*",
-            "cardinality": "ApplicationInstance 0..* — 0..* Process",
-            "description": "ApplicationInstance relatesTo Process."
+            "sourceCardinality": "",
+            "target": "code",
+            "targetLabel": "Code",
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "ApplicationInstance relatesTo Code."
           }
         ],
-        "incomingRelations": [],
-        "relativePosition": {
-          "x": 0.471338,
-          "y": 0.747253
-        },
+        "incomingRelations": [
+          {
+            "id": "node-runs-app-application-instance",
+            "name": "runsApp",
+            "label": "runsApp",
+            "source": "node",
+            "sourceLabel": "Node",
+            "sourceCardinality": "1",
+            "target": "application-instance",
+            "targetLabel": "ApplicationInstance",
+            "targetCardinality": "0..*",
+            "cardinality": "Node 1 — 0..* ApplicationInstance",
+            "description": "Node runsApp ApplicationInstance."
+          }
+        ],
         "drawioPosition": {
           "x": 840.0,
           "y": 1440.0
@@ -2288,142 +2403,129 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.461361,
+          "y": 0.736842
+        }
       }
     },
     {
       "data": {
-        "id": "attack-step-item",
-        "label": "AttackStepItem",
+        "id": "threat-step",
+        "label": "ThreatStep",
         "kind": "entity",
         "nodeClass": "a-posteriori",
         "nodeClassLabel": "A posteriori",
         "description": "AttackStepItem is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
         "attributes": [],
         "drawioId": "uKdIYOyGbmZlVRN5kjks-113",
-        "name": "AttackStepItem",
+        "name": "ThreatStep",
         "informationClass": "a-posteriori",
         "informationClassLabel": "A posteriori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Incident reports and kill-chain reconstruction",
-          "CTI reports describing specific attack actions",
-          "SIEM/EDR detections mapped to attack steps",
-          "Forensic evidence and investigation notes"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
-            "id": "attack-step-item-exploits-vulnerability",
+            "id": "threat-step-exploits-vulnerability",
             "name": "exploits",
             "label": "exploits",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "",
             "target": "vulnerability",
             "targetLabel": "Vulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* Vulnerability",
-            "description": "AttackStepItem exploits Vulnerability."
+            "targetCardinality": "",
+            "cardinality": "",
+            "description": "ThreatStep exploits Vulnerability."
           },
           {
-            "id": "attack-step-item-implements-ttp",
+            "id": "threat-step-implements-ttp",
             "name": "implements",
             "label": "implements",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "ttp",
             "targetLabel": "TTP",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* TTP",
-            "description": "AttackStepItem implements TTP."
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 TTP",
+            "description": "ThreatStep implements TTP."
           },
           {
-            "id": "attack-step-item-compromises-asset-security-requirement",
+            "id": "threat-step-compromises-asset-security-requirement",
             "name": "compromises",
             "label": "compromises",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AssetSecurityRequirement",
-            "description": "AttackStepItem compromises AssetSecurityRequirement."
+            "targetLabel": "Asset\nSecurityRequirement",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Asset\nSecurityRequirement",
+            "description": "ThreatStep compromises Asset\nSecurityRequirement."
           },
           {
-            "id": "attack-step-item-employs-attack-tool-instance",
+            "id": "threat-step-employs-attack-tool-instance",
             "name": "employs",
             "label": "employs",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "attack-tool-instance",
             "targetLabel": "AttackToolInstance",
             "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AttackToolInstance",
-            "description": "AttackStepItem employs AttackToolInstance."
+            "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance",
+            "description": "ThreatStep employs AttackToolInstance."
           },
           {
-            "id": "attack-step-item-followed-by-attack-step-item",
+            "id": "threat-step-followed-by-threat-step",
             "name": "followedBy",
             "label": "followedBy",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
             "sourceCardinality": "0..*",
-            "target": "attack-step-item",
-            "targetLabel": "AttackStepItem",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AttackStepItem",
-            "description": "AttackStepItem followedBy AttackStepItem."
+            "target": "threat-step",
+            "targetLabel": "ThreatStep",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "ThreatStep followedBy ThreatStep."
           },
           {
-            "id": "attack-step-item-refers-to-attack-step",
-            "name": "refersTo",
-            "label": "refersTo",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
-            "target": "attack-step",
-            "targetLabel": "AttackStep",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AttackStep",
-            "description": "AttackStepItem refersTo AttackStep."
-          },
-          {
-            "id": "attack-step-item-targets-resource-resource",
+            "id": "threat-step-targets-resource-resource",
             "name": "targetsResource",
             "label": "targetsResource",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "resource",
             "targetLabel": "Resource",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* Resource",
-            "description": "AttackStepItem targetsResource Resource."
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Resource",
+            "description": "ThreatStep targetsResource Resource."
           }
         ],
         "incomingRelations": [
           {
-            "id": "attack-step-item-followed-by-attack-step-item",
+            "id": "threat-step-followed-by-threat-step",
             "name": "followedBy",
             "label": "followedBy",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
             "sourceCardinality": "0..*",
-            "target": "attack-step-item",
-            "targetLabel": "AttackStepItem",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AttackStepItem",
-            "description": "AttackStepItem followedBy AttackStepItem."
+            "target": "threat-step",
+            "targetLabel": "ThreatStep",
+            "targetCardinality": "",
+            "cardinality": "ThreatStep 0..* —  ThreatStep",
+            "description": "ThreatStep followedBy ThreatStep."
           }
         ],
-        "relativePosition": {
-          "x": 0.859873,
-          "y": 0.362637
-        },
         "drawioPosition": {
           "x": 1450.0,
           "y": 1090.0
@@ -2436,7 +2538,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.813149,
+          "y": 0.368421
+        }
       }
     },
     {
@@ -2455,10 +2561,10 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "CTI reports and malware/tool profiles",
-          "MITRE ATT&CK software entries",
-          "Malware repositories and sandbox reports",
-          "Vendor and CERT advisories"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [
           {
@@ -2467,11 +2573,11 @@ const metamodel = {
             "label": "requires",
             "source": "attack-tool",
             "sourceLabel": "AttackTool",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "attack-tool-configuration",
             "targetLabel": "AttackToolConfiguration",
             "targetCardinality": "0..*",
-            "cardinality": "AttackTool 0..* — 0..* AttackToolConfiguration",
+            "cardinality": "AttackTool 1 — 0..* AttackToolConfiguration",
             "description": "AttackTool requires AttackToolConfiguration."
           },
           {
@@ -2480,11 +2586,11 @@ const metamodel = {
             "label": "requiresExpertise",
             "source": "attack-tool",
             "sourceLabel": "AttackTool",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "expertise",
             "targetLabel": "Expertise",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackTool 0..* — 0..* Expertise",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "AttackTool requiresExpertise Expertise."
           }
         ],
@@ -2495,18 +2601,14 @@ const metamodel = {
             "label": "instanceOf",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "attack-tool",
             "targetLabel": "AttackTool",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* AttackTool",
+            "targetCardinality": "1",
+            "cardinality": "AttackToolInstance 1..* — 1 AttackTool",
             "description": "AttackToolInstance instanceOf AttackTool."
           }
         ],
-        "relativePosition": {
-          "x": 0.853185,
-          "y": 0.802198
-        },
         "drawioPosition": {
           "x": 1439.5,
           "y": 1490.0
@@ -2519,7 +2621,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.807093,
+          "y": 0.789474
+        }
       }
     },
     {
@@ -2538,10 +2644,10 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Malware configuration extraction reports",
-          "Tool documentation or public repositories",
-          "Forensic analysis of command-line arguments and config files",
-          "Incident response reports"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
@@ -2551,11 +2657,11 @@ const metamodel = {
             "label": "hasConfig",
             "source": "attack-tool-instance",
             "sourceLabel": "AttackToolInstance",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "attack-tool-configuration",
             "targetLabel": "AttackToolConfiguration",
             "targetCardinality": "0..*",
-            "cardinality": "AttackToolInstance 0..* — 0..* AttackToolConfiguration",
+            "cardinality": "AttackToolInstance 1 — 0..* AttackToolConfiguration",
             "description": "AttackToolInstance hasConfig AttackToolConfiguration."
           },
           {
@@ -2564,18 +2670,14 @@ const metamodel = {
             "label": "requires",
             "source": "attack-tool",
             "sourceLabel": "AttackTool",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "attack-tool-configuration",
             "targetLabel": "AttackToolConfiguration",
             "targetCardinality": "0..*",
-            "cardinality": "AttackTool 0..* — 0..* AttackToolConfiguration",
+            "cardinality": "AttackTool 1 — 0..* AttackToolConfiguration",
             "description": "AttackTool requires AttackToolConfiguration."
           }
         ],
-        "relativePosition": {
-          "x": 0.795541,
-          "y": 0.901099
-        },
         "drawioPosition": {
           "x": 1349.0,
           "y": 1580.0
@@ -2587,8 +2689,12 @@ const metamodel = {
           "height": 35.0
         },
         "layoutWidth": 150.0,
-        "layoutHeight": 40,
-        "textMaxWidth": 138.0
+        "layoutHeight": 40.0,
+        "textMaxWidth": 138.0,
+        "relativePosition": {
+          "x": 0.754902,
+          "y": 0.884211
+        }
       }
     },
     {
@@ -2607,10 +2713,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "CMDB and asset inventory",
-          "Business impact analysis records",
-          "Data and service ownership catalogues",
-          "Enterprise architecture documentation"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
@@ -2619,12 +2725,12 @@ const metamodel = {
             "label": "hasSecurityRequirement",
             "source": "asset",
             "sourceLabel": "Asset",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "1",
-            "cardinality": "Asset 0..* — 1 AssetSecurityRequirement",
-            "description": "Asset hasSecurityRequirement AssetSecurityRequirement."
+            "targetLabel": "Asset\nSecurityRequirement",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Asset hasSecurityRequirement Asset\nSecurityRequirement."
           }
         ],
         "incomingRelations": [
@@ -2634,18 +2740,14 @@ const metamodel = {
             "label": "relatesTo",
             "source": "resource",
             "sourceLabel": "Resource",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "asset",
             "targetLabel": "Asset",
-            "targetCardinality": "0..*",
-            "cardinality": "Resource 0..* — 0..* Asset",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "Resource relatesTo Asset."
           }
         ],
-        "relativePosition": {
-          "x": 0.567516,
-          "y": 0.263736
-        },
         "drawioPosition": {
           "x": 991.0,
           "y": 1000.0
@@ -2658,20 +2760,24 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.548443,
+          "y": 0.273684
+        }
       }
     },
     {
       "data": {
         "id": "asset-security-requirement",
-        "label": "AssetSecurityRequirement",
+        "label": "Asset\nSecurityRequirement",
         "kind": "entity",
         "nodeClass": "instance-specific",
         "nodeClassLabel": "Instance specific",
         "description": "AssetSecurityRequirement is an entity in the feasibility-oriented metamodel. It is classified as instance specific information.",
         "attributes": [],
         "drawioId": "uKdIYOyGbmZlVRN5kjks-124",
-        "name": "AssetSecurityRequirement",
+        "name": "Asset\nSecurityRequirement",
         "informationClass": "instance-specific",
         "informationClassLabel": "Instance specific",
         "submetamodel": "organization",
@@ -2688,41 +2794,28 @@ const metamodel = {
             "name": "implementationOf",
             "label": "implementationOf",
             "source": "asset-security-requirement",
-            "sourceLabel": "AssetSecurityRequirement",
-            "sourceCardinality": "0..*",
+            "sourceLabel": "Asset\nSecurityRequirement",
+            "sourceCardinality": "1..*",
             "target": "security-requirement",
             "targetLabel": "SecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "AssetSecurityRequirement 0..* — 0..* SecurityRequirement",
-            "description": "AssetSecurityRequirement implementationOf SecurityRequirement."
+            "targetCardinality": "1",
+            "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement",
+            "description": "Asset\nSecurityRequirement implementationOf SecurityRequirement."
           }
         ],
         "incomingRelations": [
           {
-            "id": "ttp-impacts-asset-security-requirement",
-            "name": "impacts",
-            "label": "impacts",
-            "source": "ttp",
-            "sourceLabel": "TTP",
-            "sourceCardinality": "0..*",
-            "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "TTP 0..* — 0..* AssetSecurityRequirement",
-            "description": "TTP impacts AssetSecurityRequirement."
-          },
-          {
-            "id": "attack-step-item-compromises-asset-security-requirement",
+            "id": "threat-step-compromises-asset-security-requirement",
             "name": "compromises",
             "label": "compromises",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
+            "source": "threat-step",
+            "sourceLabel": "ThreatStep",
+            "sourceCardinality": "1..*",
             "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AssetSecurityRequirement",
-            "description": "AttackStepItem compromises AssetSecurityRequirement."
+            "targetLabel": "Asset\nSecurityRequirement",
+            "targetCardinality": "1",
+            "cardinality": "ThreatStep 1..* — 1 Asset\nSecurityRequirement",
+            "description": "ThreatStep compromises Asset\nSecurityRequirement."
           },
           {
             "id": "business-requirement-drives-security-requirement-asset-security-requirement",
@@ -2730,12 +2823,12 @@ const metamodel = {
             "label": "drivesSecurityRequirement",
             "source": "business-requirement",
             "sourceLabel": "BusinessRequirement",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "BusinessRequirement 0..* — 0..* AssetSecurityRequirement",
-            "description": "BusinessRequirement drivesSecurityRequirement AssetSecurityRequirement."
+            "targetLabel": "Asset\nSecurityRequirement",
+            "targetCardinality": "1..*",
+            "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement",
+            "description": "BusinessRequirement drivesSecurityRequirement Asset\nSecurityRequirement."
           },
           {
             "id": "asset-has-security-requirement-asset-security-requirement",
@@ -2743,18 +2836,14 @@ const metamodel = {
             "label": "hasSecurityRequirement",
             "source": "asset",
             "sourceLabel": "Asset",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "asset-security-requirement",
-            "targetLabel": "AssetSecurityRequirement",
-            "targetCardinality": "1",
-            "cardinality": "Asset 0..* — 1 AssetSecurityRequirement",
-            "description": "Asset hasSecurityRequirement AssetSecurityRequirement."
+            "targetLabel": "Asset\nSecurityRequirement",
+            "targetCardinality": "1..*",
+            "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement",
+            "description": "Asset hasSecurityRequirement Asset\nSecurityRequirement."
           }
         ],
-        "relativePosition": {
-          "x": 0.458599,
-          "y": 0.263736
-        },
         "drawioPosition": {
           "x": 820.0,
           "y": 1000.0
@@ -2767,77 +2856,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
-      }
-    },
-    {
-      "data": {
-        "id": "attack-step",
-        "label": "AttackStep",
-        "kind": "entity",
-        "nodeClass": "generic-a-priori",
-        "nodeClassLabel": "Generic a priori",
-        "description": "AttackStep is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
-        "attributes": [],
-        "drawioId": "a54gTwOUOqDvF5TlCa_3-0",
-        "name": "AttackStep",
-        "informationClass": "generic-a-priori",
-        "informationClassLabel": "Generic a priori",
-        "submetamodel": "cyber-threat",
-        "submetamodelLabel": "Cyber threat",
-        "possibleSourcesOfInformation": [
-          "MITRE ATT&CK techniques and procedures",
-          "CAPEC attack patterns",
-          "CTI reports and intrusion-set playbooks",
-          "Red-team playbooks and threat emulation plans"
-        ],
-        "outgoingRelations": [
-          {
-            "id": "attack-step-violates-security-requirement",
-            "name": "violates",
-            "label": "violates",
-            "source": "attack-step",
-            "sourceLabel": "AttackStep",
-            "sourceCardinality": "0..*",
-            "target": "security-requirement",
-            "targetLabel": "SecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStep 0..* — 0..* SecurityRequirement",
-            "description": "AttackStep violates SecurityRequirement."
-          }
-        ],
-        "incomingRelations": [
-          {
-            "id": "attack-step-item-refers-to-attack-step",
-            "name": "refersTo",
-            "label": "refersTo",
-            "source": "attack-step-item",
-            "sourceLabel": "AttackStepItem",
-            "sourceCardinality": "0..*",
-            "target": "attack-step",
-            "targetLabel": "AttackStep",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStepItem 0..* — 0..* AttackStep",
-            "description": "AttackStepItem refersTo AttackStep."
-          }
-        ],
+        "textMaxWidth": 108.0,
         "relativePosition": {
-          "x": 0.738854,
-          "y": 0.450549
-        },
-        "drawioPosition": {
-          "x": 1260.0,
-          "y": 1170.0
-        },
-        "drawioGeometry": {
-          "x": 1200.0,
-          "y": 1150.0,
-          "width": 120.0,
-          "height": 40.0
-        },
-        "layoutWidth": 120.0,
-        "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+          "x": 0.449827,
+          "y": 0.273684
+        }
       }
     },
     {
@@ -2856,10 +2879,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "Network topology maps",
-          "Firewall rules and security-group policies",
-          "Flow logs and NetFlow/IPFIX data",
-          "Service dependency maps"
+          "Organizational documentation, policies, and business requirement catalogues",
+          "Asset inventory, CMDB, IAM directory, network inventory, and architecture diagrams",
+          "Configuration management, vulnerability scanning, EDR/SIEM inventory, and cloud-management exports",
+          "Interviews, questionnaires, and manual assessment of the target organization"
         ],
         "outgoingRelations": [
           {
@@ -2868,11 +2891,11 @@ const metamodel = {
             "label": "hasDestinationPort",
             "source": "connection",
             "sourceLabel": "Connection",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "port",
             "targetLabel": "Port",
-            "targetCardinality": "0..*",
-            "cardinality": "Connection 0..* — 0..* Port",
+            "targetCardinality": "1",
+            "cardinality": "Connection 1..* — 1 Port",
             "description": "Connection hasDestinationPort Port."
           }
         ],
@@ -2883,18 +2906,14 @@ const metamodel = {
             "label": "isDestination",
             "source": "node",
             "sourceLabel": "Node",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1",
             "target": "connection",
             "targetLabel": "Connection",
             "targetCardinality": "0..*",
-            "cardinality": "Node 0..* — 0..* Connection",
+            "cardinality": "Node 1 — 0..* Connection",
             "description": "Node isDestination Connection."
           }
         ],
-        "relativePosition": {
-          "x": 0.343949,
-          "y": 0.78022
-        },
         "drawioPosition": {
           "x": 640.0,
           "y": 1470.0
@@ -2907,7 +2926,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.346021,
+          "y": 0.768421
+        }
       }
     },
     {
@@ -2926,10 +2949,10 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat actor taxonomies",
-          "CTI platform classification schemas",
-          "Government and CERT threat reports",
-          "Academic and industry threat models"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
@@ -2939,31 +2962,31 @@ const metamodel = {
             "label": "hasAdversaryType",
             "source": "adversary",
             "sourceLabel": "Adversary",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "adversary-type",
             "targetLabel": "AdversaryType",
             "targetCardinality": "1",
-            "cardinality": "Adversary 0..* — 1 AdversaryType",
+            "cardinality": "Adversary 1..* — 1 AdversaryType",
             "description": "Adversary hasAdversaryType AdversaryType."
           }
         ],
-        "relativePosition": {
-          "x": 1.0,
-          "y": 0.274725
-        },
         "drawioPosition": {
-          "x": 1670.0,
+          "x": 1714.0,
           "y": 1010.0
         },
         "drawioGeometry": {
-          "x": 1610.0,
+          "x": 1654.0,
           "y": 990.0,
           "width": 120.0,
           "height": 40.0
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.965398,
+          "y": 0.284211
+        }
       }
     },
     {
@@ -2982,10 +3005,10 @@ const metamodel = {
         "submetamodel": "organization",
         "submetamodelLabel": "Organization",
         "possibleSourcesOfInformation": [
-          "Security policies and standards",
-          "Control frameworks such as ISO 27001, NIST, CIS, or ENS/ENISA guidance",
-          "Risk assessment methodology",
-          "Compliance and audit requirements"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
@@ -2994,32 +3017,28 @@ const metamodel = {
             "name": "implementationOf",
             "label": "implementationOf",
             "source": "asset-security-requirement",
-            "sourceLabel": "AssetSecurityRequirement",
-            "sourceCardinality": "0..*",
+            "sourceLabel": "Asset\nSecurityRequirement",
+            "sourceCardinality": "1..*",
             "target": "security-requirement",
             "targetLabel": "SecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "AssetSecurityRequirement 0..* — 0..* SecurityRequirement",
-            "description": "AssetSecurityRequirement implementationOf SecurityRequirement."
+            "targetCardinality": "1",
+            "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement",
+            "description": "Asset\nSecurityRequirement implementationOf SecurityRequirement."
           },
           {
-            "id": "attack-step-violates-security-requirement",
+            "id": "ttp-violates-security-requirement",
             "name": "violates",
             "label": "violates",
-            "source": "attack-step",
-            "sourceLabel": "AttackStep",
-            "sourceCardinality": "0..*",
+            "source": "ttp",
+            "sourceLabel": "TTP",
+            "sourceCardinality": "1..*",
             "target": "security-requirement",
             "targetLabel": "SecurityRequirement",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackStep 0..* — 0..* SecurityRequirement",
-            "description": "AttackStep violates SecurityRequirement."
+            "targetCardinality": "1",
+            "cardinality": "TTP 1..* — 1 SecurityRequirement",
+            "description": "TTP violates SecurityRequirement."
           }
         ],
-        "relativePosition": {
-          "x": 0.356688,
-          "y": 0.153846
-        },
         "drawioPosition": {
           "x": 660.0,
           "y": 900.0
@@ -3032,7 +3051,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.357555,
+          "y": 0.168421
+        }
       }
     },
     {
@@ -3051,10 +3074,10 @@ const metamodel = {
         "submetamodel": "infrastructure",
         "submetamodelLabel": "Infrastructure",
         "possibleSourcesOfInformation": [
-          "IAM role catalogues",
-          "HR job family and role definitions",
-          "Access-control models",
-          "Privileged access management policy"
+          "Cyber Threat Intelligence reports and knowledge bases",
+          "MITRE ATT&CK, CAPEC, CWE, CVE/NVD, and vendor advisories",
+          "Public standards, taxonomies, catalogues, and domain ontologies",
+          "Sector-level or technology-level documentation independent of a specific organization"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
@@ -3064,18 +3087,14 @@ const metamodel = {
             "label": "hasUserType",
             "source": "user",
             "sourceLabel": "User",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "1..*",
             "target": "user-type",
             "targetLabel": "UserType",
             "targetCardinality": "1",
-            "cardinality": "User 0..* — 1 UserType",
+            "cardinality": "User 1..* — 1 UserType",
             "description": "User hasUserType UserType."
           }
         ],
-        "relativePosition": {
-          "x": 0.636943,
-          "y": 0.428571
-        },
         "drawioPosition": {
           "x": 1100.0,
           "y": 1150.0
@@ -3088,7 +3107,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.611303,
+          "y": 0.431579
+        }
       }
     },
     {
@@ -3096,21 +3119,21 @@ const metamodel = {
         "id": "software-vulnerability",
         "label": "SoftwareVulnerability",
         "kind": "entity",
-        "nodeClass": "a-posteriori",
-        "nodeClassLabel": "A posteriori",
+        "nodeClass": "generic-a-priori",
+        "nodeClassLabel": "Generic a priori",
         "description": "SoftwareVulnerability is an entity in the feasibility-oriented metamodel. It is classified as a posteriori information.",
         "attributes": [],
         "drawioId": "NVh1UeR0c02L9Xc4LGjI-0",
         "name": "SoftwareVulnerability",
-        "informationClass": "a-posteriori",
-        "informationClassLabel": "A posteriori",
+        "informationClass": "generic-a-priori",
+        "informationClassLabel": "Generic a priori",
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "NVD/CVE and vendor advisories",
-          "Software composition analysis tools",
-          "Vulnerability scanner results",
-          "Exploit databases and proof-of-concept reports"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [
           {
@@ -3119,33 +3142,41 @@ const metamodel = {
             "label": "relatesTo",
             "source": "software-vulnerability",
             "sourceLabel": "SoftwareVulnerability",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "vulnerability",
             "targetLabel": "Vulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "SoftwareVulnerability 0..* — 0..* Vulnerability",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "SoftwareVulnerability relatesTo Vulnerability."
-          }
-        ],
-        "incomingRelations": [
+          },
           {
-            "id": "process-affects-process-software-vulnerability",
-            "name": "affectsProcess",
-            "label": "affectsProcess",
-            "source": "process",
-            "sourceLabel": "Process",
+            "id": "software-vulnerability-affects-application",
+            "name": "affects",
+            "label": "affects",
+            "source": "software-vulnerability",
+            "sourceLabel": "SoftwareVulnerability",
             "sourceCardinality": "0..*",
-            "target": "software-vulnerability",
-            "targetLabel": "SoftwareVulnerability",
-            "targetCardinality": "0..*",
-            "cardinality": "Process 0..* — 0..* SoftwareVulnerability",
-            "description": "Process affectsProcess SoftwareVulnerability."
+            "target": "application",
+            "targetLabel": "Application",
+            "targetCardinality": "1",
+            "cardinality": "SoftwareVulnerability 0..* — 1 Application",
+            "description": "SoftwareVulnerability affects Application."
+          },
+          {
+            "id": "software-vulnerability-affects-os",
+            "name": "affects",
+            "label": "affects",
+            "source": "software-vulnerability",
+            "sourceLabel": "SoftwareVulnerability",
+            "sourceCardinality": "1..*",
+            "target": "os",
+            "targetLabel": "OS",
+            "targetCardinality": "1",
+            "cardinality": "SoftwareVulnerability 1..* — 1 OS",
+            "description": "SoftwareVulnerability affects OS."
           }
         ],
-        "relativePosition": {
-          "x": 0.567516,
-          "y": 0.868132
-        },
+        "incomingRelations": [],
         "drawioPosition": {
           "x": 991.0,
           "y": 1550.0
@@ -3158,7 +3189,11 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.548443,
+          "y": 0.852632
+        }
       }
     },
     {
@@ -3177,25 +3212,25 @@ const metamodel = {
         "submetamodel": "cyber-threat",
         "submetamodelLabel": "Cyber threat",
         "possibleSourcesOfInformation": [
-          "Threat actor capability assessments",
-          "CTI actor profiles",
-          "Observed tradecraft in incident reports",
-          "Malware sophistication and TTP analysis"
+          "Cyber Threat Intelligence reports",
+          "MITRE ATT&CK and related threat knowledge bases",
+          "Incident response reports",
+          "SIEM, EDR, network, and forensic telemetry"
         ],
         "outgoingRelations": [],
         "incomingRelations": [
           {
-            "id": "threat-source-has-expertise-expertise",
+            "id": "threat-actor-has-expertise-expertise",
             "name": "hasExpertise",
             "label": "hasExpertise",
-            "source": "threat-source",
-            "sourceLabel": "ThreatSource",
-            "sourceCardinality": "0..*",
+            "source": "threat-actor",
+            "sourceLabel": "ThreatActor",
+            "sourceCardinality": "1..*",
             "target": "expertise",
             "targetLabel": "Expertise",
-            "targetCardinality": "0..*",
-            "cardinality": "ThreatSource 0..* — 0..* Expertise",
-            "description": "ThreatSource hasExpertise Expertise."
+            "targetCardinality": "1",
+            "cardinality": "ThreatActor 1..* — 1 Expertise",
+            "description": "ThreatActor hasExpertise Expertise."
           },
           {
             "id": "attack-tool-requires-expertise-expertise",
@@ -3203,18 +3238,14 @@ const metamodel = {
             "label": "requiresExpertise",
             "source": "attack-tool",
             "sourceLabel": "AttackTool",
-            "sourceCardinality": "0..*",
+            "sourceCardinality": "",
             "target": "expertise",
             "targetLabel": "Expertise",
-            "targetCardinality": "0..*",
-            "cardinality": "AttackTool 0..* — 0..* Expertise",
+            "targetCardinality": "",
+            "cardinality": "",
             "description": "AttackTool requiresExpertise Expertise."
           }
         ],
-        "relativePosition": {
-          "x": 1.0,
-          "y": 0.087912
-        },
         "drawioPosition": {
           "x": 1670.0,
           "y": 840.0
@@ -3227,7 +3258,80 @@ const metamodel = {
         },
         "layoutWidth": 120.0,
         "layoutHeight": 40.0,
-        "textMaxWidth": 108.0
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.940023,
+          "y": 0.105263
+        }
+      }
+    },
+    {
+      "data": {
+        "id": "os",
+        "label": "OS",
+        "kind": "entity",
+        "nodeClass": "generic-a-priori",
+        "nodeClassLabel": "Generic a priori",
+        "description": "OS is an entity in the feasibility-oriented metamodel. It is classified as generic a priori information.",
+        "attributes": [],
+        "drawioId": "c7kL2Rsf185yzwPImgeT-57",
+        "name": "OS",
+        "informationClass": "generic-a-priori",
+        "informationClassLabel": "Generic a priori",
+        "submetamodel": "infrastructure",
+        "submetamodelLabel": "Infrastructure",
+        "possibleSourcesOfInformation": [
+          "Vendor operating-system documentation",
+          "CPE dictionaries and software catalogues",
+          "NVD/CVE affected-platform records",
+          "Endpoint management inventory baselines"
+        ],
+        "outgoingRelations": [],
+        "incomingRelations": [
+          {
+            "id": "osinstance-instance-of-os",
+            "name": "instanceOf",
+            "label": "instanceOf",
+            "source": "osinstance",
+            "sourceLabel": "OSInstance",
+            "sourceCardinality": "0..*",
+            "target": "os",
+            "targetLabel": "OS",
+            "targetCardinality": "1",
+            "cardinality": "OSInstance 0..* — 1 OS",
+            "description": "OSInstance instanceOf OS."
+          },
+          {
+            "id": "software-vulnerability-affects-os",
+            "name": "affects",
+            "label": "affects",
+            "source": "software-vulnerability",
+            "sourceLabel": "SoftwareVulnerability",
+            "sourceCardinality": "1..*",
+            "target": "os",
+            "targetLabel": "OS",
+            "targetCardinality": "1",
+            "cardinality": "SoftwareVulnerability 1..* — 1 OS",
+            "description": "SoftwareVulnerability affects OS."
+          }
+        ],
+        "drawioPosition": {
+          "x": 810.0,
+          "y": 1630.0
+        },
+        "drawioGeometry": {
+          "x": 750.0,
+          "y": 1610.0,
+          "width": 120.0,
+          "height": 40.0
+        },
+        "layoutWidth": 120.0,
+        "layoutHeight": 40.0,
+        "textMaxWidth": 108.0,
+        "relativePosition": {
+          "x": 0.44406,
+          "y": 0.936842
+        }
       }
     }
   ],
@@ -3244,9 +3348,9 @@ const metamodel = {
         "description": "Organization operatesIn Sector.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-2",
         "name": "operatesIn",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "1",
-        "cardinality": "Organization 0..* — 1 Sector"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Organization 1 — 1..* Sector"
       }
     },
     {
@@ -3261,9 +3365,9 @@ const metamodel = {
         "description": "Organization manages Infrastructure.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-4",
         "name": "manages",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Organization 0..* — 0..* Infrastructure"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Organization 1 — 1..* Infrastructure"
       }
     },
     {
@@ -3278,9 +3382,9 @@ const metamodel = {
         "description": "Organization basedIn HomeCountry.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-6",
         "name": "basedIn",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "1",
-        "cardinality": "Organization 0..* — 1 HomeCountry"
+        "sourceCardinality": "1",
+        "targetCardinality": "",
+        "cardinality": "Organization 1 —  HomeCountry"
       }
     },
     {
@@ -3295,9 +3399,9 @@ const metamodel = {
         "description": "Infrastructure madeBy Node.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-8",
         "name": "madeBy",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Infrastructure 0..* — 0..* Node"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Infrastructure 1 — 1..* Node"
       }
     },
     {
@@ -3312,9 +3416,9 @@ const metamodel = {
         "description": "Organization hasBusinessRequirement BusinessRequirement.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-10",
         "name": "hasBusinessRequirement",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "1",
-        "cardinality": "Organization 0..* — 1 BusinessRequirement"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Organization 1 — 1..* BusinessRequirement"
       }
     },
     {
@@ -3329,9 +3433,9 @@ const metamodel = {
         "description": "Node hasNodeType NodeType.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-18",
         "name": "hasNodeType",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "1",
-        "cardinality": "Node 0..* — 1 NodeType"
+        "cardinality": "Node 1..* — 1 NodeType"
       }
     },
     {
@@ -3346,9 +3450,9 @@ const metamodel = {
         "description": "Node hostsResource Resource.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-20",
         "name": "hostsResource",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Node 0..* — 0..* Resource"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Node 1 — 1..* Resource"
       }
     },
     {
@@ -3363,9 +3467,9 @@ const metamodel = {
         "description": "Node exposesPort Port.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-22",
         "name": "exposesPort",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Node 0..* — 0..* Port"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Node 1 — 1..* Port"
       }
     },
     {
@@ -3380,179 +3484,179 @@ const metamodel = {
         "description": "Node isDestination Connection.",
         "drawioId": "WFLJC8hL8nc4JAM74MDT-14",
         "name": "isDestination",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1",
         "targetCardinality": "0..*",
-        "cardinality": "Node 0..* — 0..* Connection"
+        "cardinality": "Node 1 — 0..* Connection"
       }
     },
     {
       "data": {
-        "id": "node-runsos-os",
+        "id": "node-runs-os-osinstance",
         "label": "runsOS",
         "kind": "relationship",
         "source": "node",
-        "target": "os",
+        "target": "osinstance",
         "sourceLabel": "Node",
-        "targetLabel": "OS",
-        "description": "Node runsOS OS.",
+        "targetLabel": "OSInstance",
+        "description": "Node runsOS OSInstance.",
         "drawioId": "BASQ9MWghEwbMtnNXxMo-3",
         "name": "runsOS",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Node 0..* — 0..* OS"
+        "sourceCardinality": "1",
+        "targetCardinality": "1",
+        "cardinality": "Node 1 — 1 OSInstance"
       }
     },
     {
       "data": {
-        "id": "process-affects-process-software-vulnerability",
-        "label": "affectsProcess",
+        "id": "node-runs-app-application-instance",
+        "label": "runsApp",
         "kind": "relationship",
-        "source": "process",
-        "target": "software-vulnerability",
-        "sourceLabel": "Process",
-        "targetLabel": "SoftwareVulnerability",
-        "description": "Process affectsProcess SoftwareVulnerability.",
-        "drawioId": "uKdIYOyGbmZlVRN5kjks-26",
-        "name": "affectsProcess",
-        "sourceCardinality": "0..*",
+        "source": "node",
+        "target": "application-instance",
+        "sourceLabel": "Node",
+        "targetLabel": "ApplicationInstance",
+        "description": "Node runsApp ApplicationInstance.",
+        "drawioId": "O_TDg8Gssq8FO45yOkle-2",
+        "name": "runsApp",
+        "sourceCardinality": "1",
         "targetCardinality": "0..*",
-        "cardinality": "Process 0..* — 0..* SoftwareVulnerability"
+        "cardinality": "Node 1 — 0..* ApplicationInstance"
       }
     },
     {
       "data": {
-        "id": "application-instance-has-application-type-application-type",
-        "label": "hasApplicationType",
+        "id": "osinstance-instance-of-os",
+        "label": "instanceOf",
+        "kind": "relationship",
+        "source": "osinstance",
+        "target": "os",
+        "sourceLabel": "OSInstance",
+        "targetLabel": "OS",
+        "description": "OSInstance instanceOf OS.",
+        "drawioId": "c7kL2Rsf185yzwPImgeT-62",
+        "name": "instanceOf",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "1",
+        "cardinality": "OSInstance 0..* — 1 OS"
+      }
+    },
+    {
+      "data": {
+        "id": "application-instance-instance-of-application",
+        "label": "instanceOf",
         "kind": "relationship",
         "source": "application-instance",
-        "target": "application-type",
+        "target": "application",
         "sourceLabel": "ApplicationInstance",
-        "targetLabel": "ApplicationType",
-        "description": "ApplicationInstance hasApplicationType ApplicationType.",
+        "targetLabel": "Application",
+        "description": "ApplicationInstance instanceOf Application.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-28",
-        "name": "hasApplicationType",
+        "name": "instanceOf",
         "sourceCardinality": "0..*",
         "targetCardinality": "1",
-        "cardinality": "ApplicationInstance 0..* — 1 ApplicationType"
+        "cardinality": "ApplicationInstance 0..* — 1 Application"
       }
     },
     {
       "data": {
-        "id": "threat-event-parts-of-campaign",
+        "id": "threat-parts-of-campaign",
         "label": "partsOf",
         "kind": "relationship",
-        "source": "threat-event",
+        "source": "threat",
         "target": "campaign",
-        "sourceLabel": "ThreatEvent",
+        "sourceLabel": "Threat",
         "targetLabel": "Campaign",
-        "description": "ThreatEvent partsOf Campaign.",
+        "description": "Threat partsOf Campaign.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-33",
         "name": "partsOf",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "ThreatEvent 0..* — 0..* Campaign"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Threat 1..* — 1 Campaign"
       }
     },
     {
       "data": {
-        "id": "threat-source-related-to-adversary",
+        "id": "threat-actor-related-to-adversary",
         "label": "relatedTo",
         "kind": "relationship",
-        "source": "threat-source",
+        "source": "threat-actor",
         "target": "adversary",
-        "sourceLabel": "ThreatSource",
+        "sourceLabel": "ThreatActor",
         "targetLabel": "Adversary",
-        "description": "ThreatSource relatedTo Adversary.",
+        "description": "ThreatActor relatedTo Adversary.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-35",
         "name": "relatedTo",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "0..*",
-        "cardinality": "ThreatSource 0..* — 0..* Adversary"
+        "cardinality": "ThreatActor 1..* — 0..* Adversary"
       }
     },
     {
       "data": {
-        "id": "threat-source-initiates-threat-event",
+        "id": "threat-actor-initiates-threat",
         "label": "initiates",
         "kind": "relationship",
-        "source": "threat-source",
-        "target": "threat-event",
-        "sourceLabel": "ThreatSource",
-        "targetLabel": "ThreatEvent",
-        "description": "ThreatSource initiates ThreatEvent.",
+        "source": "threat-actor",
+        "target": "threat",
+        "sourceLabel": "ThreatActor",
+        "targetLabel": "Threat",
+        "description": "ThreatActor initiates Threat.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-37",
         "name": "initiates",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "ThreatSource 0..* — 0..* ThreatEvent"
-      }
-    },
-    {
-      "data": {
-        "id": "attack-tool-instance-designed-for-os",
-        "label": "designedFor",
-        "kind": "relationship",
-        "source": "attack-tool-instance",
-        "target": "os",
-        "sourceLabel": "AttackToolInstance",
-        "targetLabel": "OS",
-        "description": "AttackToolInstance designedFor OS.",
-        "drawioId": "BASQ9MWghEwbMtnNXxMo-1",
-        "name": "designedFor",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1",
         "targetCardinality": "1",
-        "cardinality": "AttackToolInstance 0..* — 1 OS"
+        "cardinality": "ThreatActor 1 — 1 Threat"
       }
     },
     {
       "data": {
-        "id": "attack-step-item-exploits-vulnerability",
+        "id": "threat-step-exploits-vulnerability",
         "label": "exploits",
         "kind": "relationship",
-        "source": "attack-step-item",
+        "source": "threat-step",
         "target": "vulnerability",
-        "sourceLabel": "AttackStepItem",
+        "sourceLabel": "ThreatStep",
         "targetLabel": "Vulnerability",
-        "description": "AttackStepItem exploits Vulnerability.",
+        "description": "ThreatStep exploits Vulnerability.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-39",
         "name": "exploits",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackStepItem 0..* — 0..* Vulnerability"
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
-        "id": "threat-source-has-expertise-expertise",
+        "id": "threat-actor-has-expertise-expertise",
         "label": "hasExpertise",
         "kind": "relationship",
-        "source": "threat-source",
+        "source": "threat-actor",
         "target": "expertise",
-        "sourceLabel": "ThreatSource",
+        "sourceLabel": "ThreatActor",
         "targetLabel": "Expertise",
-        "description": "ThreatSource hasExpertise Expertise.",
+        "description": "ThreatActor hasExpertise Expertise.",
         "drawioId": "-5rHft1h9aHdpQshA84F-3",
         "name": "hasExpertise",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "ThreatSource 0..* — 0..* Expertise"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatActor 1..* — 1 Expertise"
       }
     },
     {
       "data": {
-        "id": "attack-step-item-implements-ttp",
+        "id": "threat-step-implements-ttp",
         "label": "implements",
         "kind": "relationship",
-        "source": "attack-step-item",
+        "source": "threat-step",
         "target": "ttp",
-        "sourceLabel": "AttackStepItem",
+        "sourceLabel": "ThreatStep",
         "targetLabel": "TTP",
-        "description": "AttackStepItem implements TTP.",
+        "description": "ThreatStep implements TTP.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-42",
         "name": "implements",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackStepItem 0..* — 0..* TTP"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 TTP"
       }
     },
     {
@@ -3567,9 +3671,9 @@ const metamodel = {
         "description": "AttackToolInstance produces Indicator.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-44",
         "name": "produces",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackToolInstance 0..* — 0..* Indicator"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "AttackToolInstance 1 — 1..* Indicator"
       }
     },
     {
@@ -3584,9 +3688,9 @@ const metamodel = {
         "description": "AttackToolInstance instanceOf AttackTool.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-46",
         "name": "instanceOf",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackToolInstance 0..* — 0..* AttackTool"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "AttackToolInstance 1..* — 1 AttackTool"
       }
     },
     {
@@ -3601,26 +3705,26 @@ const metamodel = {
         "description": "AttackToolInstance hasConfig AttackToolConfiguration.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-48",
         "name": "hasConfig",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1",
         "targetCardinality": "0..*",
-        "cardinality": "AttackToolInstance 0..* — 0..* AttackToolConfiguration"
+        "cardinality": "AttackToolInstance 1 — 0..* AttackToolConfiguration"
       }
     },
     {
       "data": {
-        "id": "attack-tool-instance-designed-for-os-2",
+        "id": "attack-tool-instance-designed-for-osinstance",
         "label": "designedFor",
         "kind": "relationship",
         "source": "attack-tool-instance",
-        "target": "os",
+        "target": "osinstance",
         "sourceLabel": "AttackToolInstance",
-        "targetLabel": "OS",
-        "description": "AttackToolInstance designedFor OS.",
+        "targetLabel": "OSInstance",
+        "description": "AttackToolInstance designedFor OSInstance.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-51",
         "name": "designedFor",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "1",
-        "cardinality": "AttackToolInstance 0..* — 1 OS"
+        "cardinality": "AttackToolInstance 1..* — 1 OSInstance"
       }
     },
     {
@@ -3659,6 +3763,23 @@ const metamodel = {
     },
     {
       "data": {
+        "id": "campaign-targets-international-body-international-body",
+        "label": "targetsInternationalBody",
+        "kind": "relationship",
+        "source": "campaign",
+        "target": "international-body",
+        "sourceLabel": "Campaign",
+        "targetLabel": "International Body",
+        "description": "Campaign targetsInternationalBody International Body.",
+        "drawioId": "0UovC9M0b2mUkjZTJ50l-2",
+        "name": "targetsInternationalBody",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "0..*",
+        "cardinality": "Campaign 0..* — 0..* International Body"
+      }
+    },
+    {
+      "data": {
         "id": "indicator-associated-to-attack-tool-instance",
         "label": "associatedTo",
         "kind": "relationship",
@@ -3669,26 +3790,9 @@ const metamodel = {
         "description": "Indicator associatedTo AttackToolInstance.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-58",
         "name": "associatedTo",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Indicator 0..* — 0..* AttackToolInstance"
-      }
-    },
-    {
-      "data": {
-        "id": "ttp-impacts-asset-security-requirement",
-        "label": "impacts",
-        "kind": "relationship",
-        "source": "ttp",
-        "target": "asset-security-requirement",
-        "sourceLabel": "TTP",
-        "targetLabel": "AssetSecurityRequirement",
-        "description": "TTP impacts AssetSecurityRequirement.",
-        "drawioId": "WFLJC8hL8nc4JAM74MDT-7",
-        "name": "impacts",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "TTP 0..* — 0..* AssetSecurityRequirement"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Indicator 1..* — 1 AttackToolInstance"
       }
     },
     {
@@ -3703,9 +3807,9 @@ const metamodel = {
         "description": "TTP exploitsVulnerability Vulnerability.",
         "drawioId": "pY2hJQMgUQGyS6tkFW3p-0",
         "name": "exploitsVulnerability",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "TTP 0..* — 0..* Vulnerability"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "TTP 1..* — 1 Vulnerability"
       }
     },
     {
@@ -3721,8 +3825,8 @@ const metamodel = {
         "drawioId": "uKdIYOyGbmZlVRN5kjks-62",
         "name": "deploys",
         "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackToolInstance 0..* — 0..* AttackToolInstance"
+        "targetCardinality": "",
+        "cardinality": "AttackToolInstance 0..* —  AttackToolInstance"
       }
     },
     {
@@ -3737,26 +3841,43 @@ const metamodel = {
         "description": "SoftwareVulnerability relatesTo Vulnerability.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-64",
         "name": "relatesTo",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "SoftwareVulnerability 0..* — 0..* Vulnerability"
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
-        "id": "attack-step-item-compromises-asset-security-requirement",
+        "id": "config-vulnerability-affects-code",
+        "label": "affects",
+        "kind": "relationship",
+        "source": "config-vulnerability",
+        "target": "code",
+        "sourceLabel": "ConfigVulnerability",
+        "targetLabel": "Code",
+        "description": "ConfigVulnerability affects Code.",
+        "drawioId": "O_TDg8Gssq8FO45yOkle-0",
+        "name": "affects",
+        "sourceCardinality": "0..*",
+        "targetCardinality": "1..*",
+        "cardinality": "ConfigVulnerability 0..* — 1..* Code"
+      }
+    },
+    {
+      "data": {
+        "id": "threat-step-compromises-asset-security-requirement",
         "label": "compromises",
         "kind": "relationship",
-        "source": "attack-step-item",
+        "source": "threat-step",
         "target": "asset-security-requirement",
-        "sourceLabel": "AttackStepItem",
-        "targetLabel": "AssetSecurityRequirement",
-        "description": "AttackStepItem compromises AssetSecurityRequirement.",
+        "sourceLabel": "ThreatStep",
+        "targetLabel": "Asset\nSecurityRequirement",
+        "description": "ThreatStep compromises Asset\nSecurityRequirement.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-72",
         "name": "compromises",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackStepItem 0..* — 0..* AssetSecurityRequirement"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 Asset\nSecurityRequirement"
       }
     },
     {
@@ -3771,9 +3892,9 @@ const metamodel = {
         "description": "HomeCountry partsOf International Body.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-75",
         "name": "partsOf",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "HomeCountry 0..* — 0..* International Body"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1..*",
+        "cardinality": "HomeCountry 1..* — 1..* International Body"
       }
     },
     {
@@ -3788,26 +3909,26 @@ const metamodel = {
         "description": "Information hasInformationType InformationType.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-78",
         "name": "hasInformationType",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "1",
-        "cardinality": "Information 0..* — 1 InformationType"
+        "cardinality": "Information 1..* — 1 InformationType"
       }
     },
     {
       "data": {
-        "id": "resource-relates-to-process",
+        "id": "resource-relates-to-code",
         "label": "relatesTo",
         "kind": "relationship",
         "source": "resource",
-        "target": "process",
+        "target": "code",
         "sourceLabel": "Resource",
-        "targetLabel": "Process",
-        "description": "Resource relatesTo Process.",
+        "targetLabel": "Code",
+        "description": "Resource relatesTo Code.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-80",
         "name": "relatesTo",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Resource 0..* — 0..* Process"
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
@@ -3822,43 +3943,26 @@ const metamodel = {
         "description": "Adversary hasAdversaryType AdversaryType.",
         "drawioId": "D0jO0kr4g-7j_zKJJSQx-1",
         "name": "hasAdversaryType",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "1",
-        "cardinality": "Adversary 0..* — 1 AdversaryType"
+        "cardinality": "Adversary 1..* — 1 AdversaryType"
       }
     },
     {
       "data": {
-        "id": "threat-source-alias-threat-source",
+        "id": "threat-actor-alias-threat-actor",
         "label": "alias",
         "kind": "relationship",
-        "source": "threat-source",
-        "target": "threat-source",
-        "sourceLabel": "ThreatSource",
-        "targetLabel": "ThreatSource",
-        "description": "ThreatSource alias ThreatSource.",
+        "source": "threat-actor",
+        "target": "threat-actor",
+        "sourceLabel": "ThreatActor",
+        "targetLabel": "ThreatActor",
+        "description": "ThreatActor alias ThreatActor.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-85",
         "name": "alias",
         "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "ThreatSource 0..* — 0..* ThreatSource"
-      }
-    },
-    {
-      "data": {
-        "id": "config-vulnerability-affects-port-port",
-        "label": "affectsPort",
-        "kind": "relationship",
-        "source": "config-vulnerability",
-        "target": "port",
-        "sourceLabel": "ConfigVulnerability",
-        "targetLabel": "Port",
-        "description": "ConfigVulnerability affectsPort Port.",
-        "drawioId": "uKdIYOyGbmZlVRN5kjks-92",
-        "name": "affectsPort",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "ConfigVulnerability 0..* — 0..* Port"
+        "targetCardinality": "",
+        "cardinality": "ThreatActor 0..* —  ThreatActor"
       }
     },
     {
@@ -3880,36 +3984,36 @@ const metamodel = {
     },
     {
       "data": {
-        "id": "process-access-information",
+        "id": "code-access-information",
         "label": "access",
         "kind": "relationship",
-        "source": "process",
+        "source": "code",
         "target": "information",
-        "sourceLabel": "Process",
+        "sourceLabel": "Code",
         "targetLabel": "Information",
-        "description": "Process access Information.",
+        "description": "Code access Information.",
         "drawioId": "WFLJC8hL8nc4JAM74MDT-3",
         "name": "access",
         "sourceCardinality": "0..*",
         "targetCardinality": "0..*",
-        "cardinality": "Process 0..* — 0..* Information"
+        "cardinality": "Code 0..* — 0..* Information"
       }
     },
     {
       "data": {
-        "id": "process-listens-on-port",
+        "id": "code-listens-on-port",
         "label": "listensOn",
         "kind": "relationship",
-        "source": "process",
+        "source": "code",
         "target": "port",
-        "sourceLabel": "Process",
+        "sourceLabel": "Code",
         "targetLabel": "Port",
-        "description": "Process listensOn Port.",
+        "description": "Code listensOn Port.",
         "drawioId": "WFLJC8hL8nc4JAM74MDT-16",
         "name": "listensOn",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1",
         "targetCardinality": "0..*",
-        "cardinality": "Process 0..* — 0..* Port"
+        "cardinality": "Code 1 — 0..* Port"
       }
     },
     {
@@ -3920,13 +4024,13 @@ const metamodel = {
         "source": "business-requirement",
         "target": "asset-security-requirement",
         "sourceLabel": "BusinessRequirement",
-        "targetLabel": "AssetSecurityRequirement",
-        "description": "BusinessRequirement drivesSecurityRequirement AssetSecurityRequirement.",
+        "targetLabel": "Asset\nSecurityRequirement",
+        "description": "BusinessRequirement drivesSecurityRequirement Asset\nSecurityRequirement.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-100",
         "name": "drivesSecurityRequirement",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "BusinessRequirement 0..* — 0..* AssetSecurityRequirement"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1..*",
+        "cardinality": "BusinessRequirement 1..* — 1..* Asset\nSecurityRequirement"
       }
     },
     {
@@ -3941,26 +4045,26 @@ const metamodel = {
         "description": "User hasAccessTo Node.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-103",
         "name": "hasAccessTo",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "User 0..* — 0..* Node"
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
-        "id": "user-launches-process",
+        "id": "user-launches-code",
         "label": "launches",
         "kind": "relationship",
         "source": "user",
-        "target": "process",
+        "target": "code",
         "sourceLabel": "User",
-        "targetLabel": "Process",
-        "description": "User launches Process.",
+        "targetLabel": "Code",
+        "description": "User launches Code.",
         "drawioId": "WFLJC8hL8nc4JAM74MDT-5",
         "name": "launches",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1",
         "targetCardinality": "0..*",
-        "cardinality": "User 0..* — 0..* Process"
+        "cardinality": "User 1 — 0..* Code"
       }
     },
     {
@@ -3975,9 +4079,9 @@ const metamodel = {
         "description": "User accessInformation Information.",
         "drawioId": "GkmxRLZZG02JlUlJrdg4-0",
         "name": "accessInformation",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "0..*",
-        "cardinality": "User 0..* — 0..* Information"
+        "cardinality": "User 1..* — 0..* Information"
       }
     },
     {
@@ -3992,77 +4096,77 @@ const metamodel = {
         "description": "User hasUserType UserType.",
         "drawioId": "rdsXt6uEBotSDfQAMUaa-1",
         "name": "hasUserType",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "1",
-        "cardinality": "User 0..* — 1 UserType"
+        "cardinality": "User 1..* — 1 UserType"
       }
     },
     {
       "data": {
-        "id": "application-instance-relates-to-process",
+        "id": "application-instance-relates-to-code",
         "label": "relatesTo",
         "kind": "relationship",
         "source": "application-instance",
-        "target": "process",
+        "target": "code",
         "sourceLabel": "ApplicationInstance",
-        "targetLabel": "Process",
-        "description": "ApplicationInstance relatesTo Process.",
+        "targetLabel": "Code",
+        "description": "ApplicationInstance relatesTo Code.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-106",
         "name": "relatesTo",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "ApplicationInstance 0..* — 0..* Process"
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
-        "id": "attack-step-item-employs-attack-tool-instance",
+        "id": "threat-step-employs-attack-tool-instance",
         "label": "employs",
         "kind": "relationship",
-        "source": "attack-step-item",
+        "source": "threat-step",
         "target": "attack-tool-instance",
-        "sourceLabel": "AttackStepItem",
+        "sourceLabel": "ThreatStep",
         "targetLabel": "AttackToolInstance",
-        "description": "AttackStepItem employs AttackToolInstance.",
+        "description": "ThreatStep employs AttackToolInstance.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-109",
         "name": "employs",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1..*",
         "targetCardinality": "0..*",
-        "cardinality": "AttackStepItem 0..* — 0..* AttackToolInstance"
+        "cardinality": "ThreatStep 1..* — 0..* AttackToolInstance"
       }
     },
     {
       "data": {
-        "id": "attack-step-item-followed-by-attack-step-item",
+        "id": "threat-step-followed-by-threat-step",
         "label": "followedBy",
         "kind": "relationship",
-        "source": "attack-step-item",
-        "target": "attack-step-item",
-        "sourceLabel": "AttackStepItem",
-        "targetLabel": "AttackStepItem",
-        "description": "AttackStepItem followedBy AttackStepItem.",
+        "source": "threat-step",
+        "target": "threat-step",
+        "sourceLabel": "ThreatStep",
+        "targetLabel": "ThreatStep",
+        "description": "ThreatStep followedBy ThreatStep.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-111",
         "name": "followedBy",
         "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackStepItem 0..* — 0..* AttackStepItem"
+        "targetCardinality": "",
+        "cardinality": "ThreatStep 0..* —  ThreatStep"
       }
     },
     {
       "data": {
-        "id": "attack-step-item-refers-to-attack-step",
-        "label": "refersTo",
+        "id": "infrastructure-used-by-user",
+        "label": "usedBy",
         "kind": "relationship",
-        "source": "attack-step-item",
-        "target": "attack-step",
-        "sourceLabel": "AttackStepItem",
-        "targetLabel": "AttackStep",
-        "description": "AttackStepItem refersTo AttackStep.",
-        "drawioId": "a54gTwOUOqDvF5TlCa_3-1",
-        "name": "refersTo",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackStepItem 0..* — 0..* AttackStep"
+        "source": "infrastructure",
+        "target": "user",
+        "sourceLabel": "Infrastructure",
+        "targetLabel": "User",
+        "description": "Infrastructure usedBy User.",
+        "drawioId": "uKdIYOyGbmZlVRN5kjks-114",
+        "name": "usedBy",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Infrastructure 1 — 1..* User"
       }
     },
     {
@@ -4077,9 +4181,9 @@ const metamodel = {
         "description": "AttackTool requires AttackToolConfiguration.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-115",
         "name": "requires",
-        "sourceCardinality": "0..*",
+        "sourceCardinality": "1",
         "targetCardinality": "0..*",
-        "cardinality": "AttackTool 0..* — 0..* AttackToolConfiguration"
+        "cardinality": "AttackTool 1 — 0..* AttackToolConfiguration"
       }
     },
     {
@@ -4094,9 +4198,9 @@ const metamodel = {
         "description": "AttackTool requiresExpertise Expertise.",
         "drawioId": "-5rHft1h9aHdpQshA84F-5",
         "name": "requiresExpertise",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackTool 0..* — 0..* Expertise"
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
@@ -4107,13 +4211,13 @@ const metamodel = {
         "source": "asset",
         "target": "asset-security-requirement",
         "sourceLabel": "Asset",
-        "targetLabel": "AssetSecurityRequirement",
-        "description": "Asset hasSecurityRequirement AssetSecurityRequirement.",
+        "targetLabel": "Asset\nSecurityRequirement",
+        "description": "Asset hasSecurityRequirement Asset\nSecurityRequirement.",
         "drawioId": "uKdIYOyGbmZlVRN5kjks-121",
         "name": "hasSecurityRequirement",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "1",
-        "cardinality": "Asset 0..* — 1 AssetSecurityRequirement"
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Asset 1 — 1..* Asset\nSecurityRequirement"
       }
     },
     {
@@ -4123,14 +4227,14 @@ const metamodel = {
         "kind": "relationship",
         "source": "asset-security-requirement",
         "target": "security-requirement",
-        "sourceLabel": "AssetSecurityRequirement",
+        "sourceLabel": "Asset\nSecurityRequirement",
         "targetLabel": "SecurityRequirement",
-        "description": "AssetSecurityRequirement implementationOf SecurityRequirement.",
+        "description": "Asset\nSecurityRequirement implementationOf SecurityRequirement.",
         "drawioId": "D0jO0kr4g-7j_zKJJSQx-4",
         "name": "implementationOf",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AssetSecurityRequirement 0..* — 0..* SecurityRequirement"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Asset\nSecurityRequirement 1..* — 1 SecurityRequirement"
       }
     },
     {
@@ -4145,43 +4249,43 @@ const metamodel = {
         "description": "Resource relatesTo Asset.",
         "drawioId": "AFeN5JUjJK33a1JbX35I-1",
         "name": "relatesTo",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Resource 0..* — 0..* Asset"
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     },
     {
       "data": {
-        "id": "attack-step-item-targets-resource-resource",
+        "id": "threat-step-targets-resource-resource",
         "label": "targetsResource",
         "kind": "relationship",
-        "source": "attack-step-item",
+        "source": "threat-step",
         "target": "resource",
-        "sourceLabel": "AttackStepItem",
+        "sourceLabel": "ThreatStep",
         "targetLabel": "Resource",
-        "description": "AttackStepItem targetsResource Resource.",
+        "description": "ThreatStep targetsResource Resource.",
         "drawioId": "AFeN5JUjJK33a1JbX35I-16",
         "name": "targetsResource",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackStepItem 0..* — 0..* Resource"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "ThreatStep 1..* — 1 Resource"
       }
     },
     {
       "data": {
-        "id": "attack-step-violates-security-requirement",
+        "id": "ttp-violates-security-requirement",
         "label": "violates",
         "kind": "relationship",
-        "source": "attack-step",
+        "source": "ttp",
         "target": "security-requirement",
-        "sourceLabel": "AttackStep",
+        "sourceLabel": "TTP",
         "targetLabel": "SecurityRequirement",
-        "description": "AttackStep violates SecurityRequirement.",
+        "description": "TTP violates SecurityRequirement.",
         "drawioId": "xTMQG-FE3YYiqCm4yd_D-0",
         "name": "violates",
-        "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "AttackStep 0..* — 0..* SecurityRequirement"
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "TTP 1..* — 1 SecurityRequirement"
       }
     },
     {
@@ -4196,9 +4300,77 @@ const metamodel = {
         "description": "Connection hasDestinationPort Port.",
         "drawioId": "WFLJC8hL8nc4JAM74MDT-9",
         "name": "hasDestinationPort",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "Connection 1..* — 1 Port"
+      }
+    },
+    {
+      "data": {
+        "id": "software-vulnerability-affects-application",
+        "label": "affects",
+        "kind": "relationship",
+        "source": "software-vulnerability",
+        "target": "application",
+        "sourceLabel": "SoftwareVulnerability",
+        "targetLabel": "Application",
+        "description": "SoftwareVulnerability affects Application.",
+        "drawioId": "c7kL2Rsf185yzwPImgeT-53",
+        "name": "affects",
         "sourceCardinality": "0..*",
-        "targetCardinality": "0..*",
-        "cardinality": "Connection 0..* — 0..* Port"
+        "targetCardinality": "1",
+        "cardinality": "SoftwareVulnerability 0..* — 1 Application"
+      }
+    },
+    {
+      "data": {
+        "id": "software-vulnerability-affects-os",
+        "label": "affects",
+        "kind": "relationship",
+        "source": "software-vulnerability",
+        "target": "os",
+        "sourceLabel": "SoftwareVulnerability",
+        "targetLabel": "OS",
+        "description": "SoftwareVulnerability affects OS.",
+        "drawioId": "c7kL2Rsf185yzwPImgeT-58",
+        "name": "affects",
+        "sourceCardinality": "1..*",
+        "targetCardinality": "1",
+        "cardinality": "SoftwareVulnerability 1..* — 1 OS"
+      }
+    },
+    {
+      "data": {
+        "id": "node-runs-node",
+        "label": "runs",
+        "kind": "relationship",
+        "source": "node",
+        "target": "node",
+        "sourceLabel": "Node",
+        "targetLabel": "Node",
+        "description": "Node runs Node.",
+        "drawioId": "O_TDg8Gssq8FO45yOkle-8",
+        "name": "runs",
+        "sourceCardinality": "1",
+        "targetCardinality": "1..*",
+        "cardinality": "Node 1 — 1..* Node"
+      }
+    },
+    {
+      "data": {
+        "id": "attack-tool-instance-deployed-to-node",
+        "label": "deployedTo",
+        "kind": "relationship",
+        "source": "attack-tool-instance",
+        "target": "node",
+        "sourceLabel": "AttackToolInstance",
+        "targetLabel": "Node",
+        "description": "AttackToolInstance deployedTo Node.",
+        "drawioId": "0UovC9M0b2mUkjZTJ50l-0",
+        "name": "deployedTo",
+        "sourceCardinality": "",
+        "targetCardinality": "",
+        "cardinality": ""
       }
     }
   ]
